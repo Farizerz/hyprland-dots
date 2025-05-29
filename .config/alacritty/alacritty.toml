@@ -1,0 +1,36 @@
+[window]
+opacity = 0.6
+
+[window.padding]
+y = 10
+
+[font]
+size = 11
+normal = { family = "JetBrainsMono Nerd Font", style = "bold" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+
+[colors.primary]
+background = "#000000"   # Set this as you prefer
+foreground = "#F0F8FF"
+
+[colors.normal]
+black   = "#4C4F69"
+red     = "#D20F39"
+green   = "#40A02B"
+yellow  = "#DF8E1D"
+blue    = "#4D88FF"
+magenta = "#EA76CB"
+cyan    = "#00F1FF"
+white   = "#F0F8FF"
+
+[colors.bright]
+black   = "#6C6F85"
+red     = "#D20F39"
+green   = "#40A02B"
+yellow  = "#DF8E1D"
+blue    = "#4D88FF"
+magenta = "#EA76CB"
+cyan    = "#00F1FF"
+white   = "#F0F8FF"

@@ -1,0 +1,121 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #f0f8ff;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#workspaces,
+#temperature,
+#memory,
+#cpu,
+#battery,
+#custom-power {
+  background-color: rgba(25, 43, 87, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#workspaces,
+#workspaces button,
+#custom-power {
+  border-radius: 20px;
+}
+
+#temperature {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#battery {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#workspaces {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#workspaces button {
+  padding: 0 10px 0px 6px;
+  background-color: transparent;
+  border: 0px;
+  color: #526b95;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+}
+
+#workspaces button.active {
+  background: transparent;
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  animation: expand 0.15s ease-in-out forwards;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#image,
+#clock, 
+#pulseaudio, 
+#network, 
+#bluetooth,
+#battery {
+  margin-right: 5px;
+}
+
+#custom-power {
+  padding: 1px 13px 2px 10px;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#custom-power:hover {
+  animation: glow 0.2s ease forwards;
+}
+
+@keyframes expand {
+  from {
+    min-width: 0;
+  } to {
+    min-width: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    background-color: rgba(25, 43, 87, 0.8);
+    color: #f0f8ff;
+  } to {
+    background-color: #89b4fa;
+    color: rgba(25, 43, 87, 1);
+  }
+}
