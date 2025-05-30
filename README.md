@@ -58,7 +58,7 @@ This theme includes interactable waybar buttons such as
  - Sound Controller via pavucontrol 
  - Wifi Menu
  - Bluetooth Menu
- - Battery Profile Menu (For laptops that supports limit charging)
+ - Battery Profile Menu (For laptops that support limit charging)
  
 To enable the feature, simply make the scripts executable
 
@@ -66,8 +66,8 @@ To enable the feature, simply make the scripts executable
     chmod +x ~/.config/scripts/rofi-bluetooth.sh
     chmod +x ~/.config/scripts/rofi-battery.sh
 
-**IMPORTANT**
-For battery profile menu, it requires few extra steps because it modifies the file system. Basically it needs to execute the script without requiring the root password.
+**(IMPORTANT)**
+Batter profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
  1. In the terminal, open `sudo visudo`, alternatively you can open `sudo EDITOR=nano visudo`
  2. Paste the code into a new line
  
@@ -78,6 +78,6 @@ For battery profile menu, it requires few extra steps because it modifies the fi
 		
 	Replace `<yourusername>` into your username
 
- 3. Check if the permission is now registered by opening `sudo -l`
+ 3. Check if the permission is now registered by opening `sudo -l` in the terminal
 
 If things are working correctly, you can now use the battery profile menu.
