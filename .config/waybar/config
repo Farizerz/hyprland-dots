@@ -129,7 +129,7 @@
   "battery": {
     "interval": 2,
     "format": "{icon} {capacity:3d}%",
-    "format-charging": "<span color='#00FA9A'>󰁹 󱐋</span>",
+    "format-charging": "<span color='#00FA9A'>󰁹 󱐋</span> {capacity:3d}%",
     "format-icons": [
       "<span color='#FF0000'>󰁹 </span>", 
       "<span color='#FF0000'>󰁹 </span>", 
