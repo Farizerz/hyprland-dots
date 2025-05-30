@@ -67,7 +67,7 @@ To enable the feature, simply make the scripts executable
     chmod +x ~/.config/scripts/rofi-battery.sh
 
 **(IMPORTANT)**
-Batter profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
+Battery profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
  1. In the terminal, open `sudo visudo`, alternatively you can open `sudo EDITOR=nano visudo`
  2. Paste the code into a new line
  
