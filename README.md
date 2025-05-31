@@ -14,7 +14,7 @@ Here are the list of the package required to install from pacman
  - networkmanager
  - bluez bluez-utils
  - thunar
- - git
+ - tumbler
  - rofi-wayland
  - rofi-emoji
  - fastfetch
@@ -32,6 +32,7 @@ Here are the list of the package required to install from pacman
  - papirus-icon-theme
  - noto-fonts-cjk
  - noto-fonts-emoji
+ - swayidle
 
 Make sure to install yay:
 
@@ -81,3 +82,21 @@ Battery profile menu requires modifying the file system, basically it needs to e
  3. Check if the permission is now registered by opening `sudo -l` in the terminal
 
 If things are working correctly, you can now use the battery profile menu.
+
+## XWayland Apps
+If you are using native scale (1) for your monitor, skip this step.
+
+For xwayland apps that doesn't support scaling in wayland (Steam, Discord, etc), we need to disable the automatic scaling for the apps
+
+ 1. in hyprland.conf, add this into a new line
+
+    xwayland {
+        force_zero_scaling = true
+    }
+
+ 2. After that, we need to create a desktop shortcut for the app.
+ 3. Make the script executable (for example, scale-steam.sh in the ~/.config/scripts)
+ 4. Edit the shortcut file via `sudo nano ~/Desktop/steam.desktop`
+ 5. Change the Exec values to `Exec=/home/<yourusername>/scripts/scale-steam.sh`
+
+ You can make the scripts for the other xwayland apps, you just need to find the command for scaling the apps (scaling command between apps may vary).
