@@ -22,7 +22,7 @@ configuration {
   lightbg:                     #EEE8D5;
   selected-active-foreground:  #FDF6E3;
   alternate-active-background: #455A64;
-  background:                  rgb(46, 46, 46);
+  background:                  rgb(30, 30, 30);
   bordercolor:                 #2A373E;
   alternate-normal-foreground: @foreground;
   normal-background:           @background;

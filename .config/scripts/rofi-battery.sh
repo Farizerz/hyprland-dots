@@ -20,15 +20,15 @@ chosen=$(echo -e "$options" | rofi -dmenu -p "Select Battery Preset: " -selected
 
 case "$chosen" in
   "Full Capacity (100%)")
-    sudo cp /home/fariz/.config/scripts/battery-presets/full-capacity.txt /etc/tlp.conf
+    sudo cp $HOME/.config/scripts/battery-presets/full-capacity.txt /etc/tlp.conf
     sudo tlp start
     ;;
   "Balanced (80%)")
-    sudo cp /home/fariz/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
+    sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
     sudo tlp start
     ;;
   "Maximum Lifespan (60%)")
-    sudo cp /home/fariz/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf
+    sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf
     sudo tlp start
     ;;
   *)

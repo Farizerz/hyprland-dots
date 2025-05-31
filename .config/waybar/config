@@ -11,7 +11,7 @@
   "modules-right": ["temperature", "memory", "cpu", "battery","custom/power"],
 
   "image#logo": {
-    "path": "/home/fariz/.config/waybar/icons/logo.png",
+    "path": "$HOME/.config/waybar/icons/logo.png",
     "size": 20,
     "on-click": "rofi -show drun"
   },
@@ -48,7 +48,7 @@
     "format-ethernet": "󰈀 Ethernet",
     "format-disconnected": "",
     "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "on-click": "/home/fariz/.config/scripts/rofi-wifi.sh"
+    "on-click": "$HOME/.config/scripts/rofi-wifi.sh"
   },
 
   "bluetooth": {
@@ -57,7 +57,7 @@
     "format-off": "<span>󰂲</span>",
     "format-on": "<span>󰂯</span>",
     "format-connected": "<span color='#00AEFF'>󰂱</span>",
-    "on-click": "/home/fariz/.config/scripts/rofi-bluetooth.sh"
+    "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
   },
 
   "hyprland/workspaces": {
@@ -142,7 +142,7 @@
       "<span color='#3CB371'>󰁹 </span>", 
       "<span color='#00FA9A'>󰁹 </span>"
     ],
-    "on-click":"/home/fariz/.config/scripts/rofi-battery.sh"
+    "on-click":"$HOME/.config/scripts/rofi-battery.sh"
   },
 
   "custom/power": {
