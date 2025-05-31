@@ -48,8 +48,7 @@ Also, here are the list of the package required to install from yay:
  - neofetch (optional)
 
 ## Installation
- 1. After installing required packages, you need to change the monitors section in the hyprland.conf to match your monitor specifications
- 1. Copy the contents into `~/` or
+ 1. After installing the required packages, copy the contents into `~/` or
     `/home/<yourusername>`.
  2. Restart hyprland session or reboot your PC.
 
