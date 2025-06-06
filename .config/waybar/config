@@ -1,19 +1,33 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 20,
+  "height": 28,
   "margin-top": 5,
   "margin-bottom": -4,
   "margin-left": 10,
   "margin-right": 10,
-  "modules-left": ["image#logo","clock", "pulseaudio", "network","bluetooth"],
+  "modules-left": ["image#logo","clock", "pulseaudio", "network","bluetooth","mpris"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["temperature", "memory", "cpu", "battery","custom/power"],
 
   "image#logo": {
-    "path": "$HOME/.config/waybar/icons/logo.png",
+    "path": "/home/fariz/.config/waybar/icons/logo.png",
     "size": 20,
     "on-click": "rofi -show drun"
+  },
+
+  "mpris": {
+    "interval": 1,
+    "format": " <span font='8'>{player_icon} {artist} - {title}</span>",
+    "format-paused": " <span font='8'>{status_icon} <i>{artist} - {title}</i></span>",
+    "player-icons": {
+      "default": "󰎇",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "󰏤"
+    },
+    "max-length": 50
   },
 
   "clock": {
@@ -45,16 +59,17 @@
   "network": {
     "interval": 2,
     "format-wifi": "{icon}  {essid}",
-    "format-ethernet": "󰈀 Ethernet",
+    "format-wifi-no-intenet": "󰤫",
+    "format-ethernet": "󰈀  Ethernet",
     "format-disconnected": "",
-    "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click": "$HOME/.config/scripts/rofi-wifi.sh"
   },
 
   "bluetooth": {
     "format-disabled": "<span color='#919191'>󰂲</span>",
     "format-no-controller": "<span color='#FF0000'>󰂲</span>",
-    "format-off": "<span>󰂲</span>",
+    "format-off": "<span>󰂯</span>",
     "format-on": "<span>󰂯</span>",
     "format-connected": "<span color='#00AEFF'>󰂱</span>",
     "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
@@ -95,7 +110,7 @@
 
   "memory": {
     "interval": 2,
-    "format": "{icon} {percentage:3d}%",
+    "format": "{icon}{percentage:3d}%",
     "format-icons": [
       "<span color='#FFC069'>  </span>", 
       "<span color='#FFC069'>  </span>", 
@@ -129,8 +144,8 @@
 
   "battery": {
     "interval": 2,
-    "format": "{icon} {capacity:3d}%",
-    "format-charging": "<span color='#00FA9A'>󰁹 󱐋</span> {capacity:3d}%",
+    "format": "{icon}{capacity:3d}%",
+    "format-charging": "<span color='#00FA9A'>󰁹 <span color='#FFD700'>󱐋</span></span>{capacity:3d}%",
     "format-icons": [
       "<span color='#FF0000'>󰁹 </span>", 
       "<span color='#FF0000'>󰁹 </span>", 
