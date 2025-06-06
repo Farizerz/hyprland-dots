@@ -36,11 +36,14 @@ window#waybar {
   border-radius: 20px;
 }
 
+#network {
+  padding-right: 12px;
+  padding-left: 9px;
+}
 
-#network,
 #bluetooth {
   padding-right: 11px;
-  padding-left: 9px;
+  padding-left: 10px;
 }
 
 #temperature {
@@ -62,7 +65,7 @@ window#waybar {
   padding: 0 10px 0px 6px;
   background-color: transparent;
   border: 0px;
-  color: #526b95;
+  color: #70a4d1;
 }
 
 #workspaces button:hover {
@@ -72,8 +75,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: transparent;
-  background-color: #89b4fa;
+  background: linear-gradient(135deg, #33ccff, #33ccff, #00ff99);
   color: #1e1e2e;
   animation: expand 0.15s ease-in-out forwards;
   margin-right: 5px;
@@ -81,10 +83,11 @@ window#waybar {
 }
 
 #image,
-#clock, 
-#pulseaudio, 
-#network, 
+#clock,
+#pulseaudio,
+#network,
 #bluetooth,
+#mpris,
 #battery {
   margin-right: 5px;
 }
@@ -104,7 +107,8 @@ window#waybar {
 @keyframes expand {
   from {
     min-width: 0;
-  } to {
+  }
+  to {
     min-width: 30px;
   }
 }
@@ -112,7 +116,8 @@ window#waybar {
 @keyframes fadeIn {
   from {
     opacity: 0;
-  } to {
+  }
+  to {
     opacity: 1;
   }
 }
@@ -121,8 +126,9 @@ window#waybar {
   from {
     background-color: rgba(25, 43, 87, 0.8);
     color: #f0f8ff;
-  } to {
-    background-color: #89b4fa;
+  }
+  to {
+    background: linear-gradient(135deg, #33ccff, #33ccff, #00ff99);
     color: rgba(25, 43, 87, 1);
   }
 }
