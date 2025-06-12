@@ -15,7 +15,7 @@ fi
 
 forget_option="󰅛  Forget Wi-Fi"
 
-separator="---------"
+separator="------------------"
 
 # Use rofi to select wifi network
 chosen_network=$(echo -e "$toggle\n$forget_option\n$separator\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 2 -p "Wi-Fi SSID: " )
