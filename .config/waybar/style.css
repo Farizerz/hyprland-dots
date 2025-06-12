@@ -19,7 +19,7 @@ window#waybar {
 #cpu,
 #battery,
 #custom-power {
-  background-color: rgba(25, 43, 87, 0.8);
+  background-color: rgba(25, 43, 87, 0.6);
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 5px;
@@ -38,6 +38,11 @@ window#waybar {
 
 #network {
   padding-right: 12px;
+  padding-left: 9px;
+}
+
+#network.disabled {
+  padding-right: 14px;
   padding-left: 9px;
 }
 
@@ -124,7 +129,7 @@ window#waybar {
 
 @keyframes glow {
   from {
-    background-color: rgba(25, 43, 87, 0.8);
+    background-color: rgba(25, 43, 87, 0.6);
     color: #f0f8ff;
   }
   to {
