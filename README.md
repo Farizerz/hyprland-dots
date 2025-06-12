@@ -35,6 +35,7 @@ Here are the list of the package required to install from pacman
 - noto-fonts-cjk
 - noto-fonts-emoji
 - swayidle
+- brightnessctl
 
 Make sure to install yay:
 
