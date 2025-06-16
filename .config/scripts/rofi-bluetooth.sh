@@ -17,7 +17,7 @@
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl), bc
 
 # Constants
-divider="------------------"
+divider="---------"
 goback="Back"
 
 # Checks if bluetooth controller is powered on
@@ -61,6 +61,7 @@ toggle_scan() {
         bluetoothctl scan off
         show_menu
     else
+        notify-send "Scanning list of available devices..."
         bluetoothctl --timeout 5 scan on
         echo "Scanning..."
         show_menu
@@ -125,9 +126,11 @@ device_connected() {
 toggle_connection() {
     if device_connected "$1"; then
         bluetoothctl disconnect "$1"
+        notify-send "$device_name_nospace disconnected."
         device_menu "$device"
     else
         bluetoothctl connect "$1"
+        notify-send "$device_name_nospace connected."
         device_menu "$device"
     fi
 }
@@ -136,10 +139,10 @@ toggle_connection() {
 device_paired() {
     device_info=$(bluetoothctl info "$1")
     if echo "$device_info" | grep -q "Paired: yes"; then
-        echo "Paired: yes"
+        echo "Remove Device"
         return 0
     else
-        echo "Paired: no"
+        echo "Pair Device"
         return 1
     fi
 }
@@ -148,10 +151,16 @@ device_paired() {
 toggle_paired() {
     if device_paired "$1"; then
         bluetoothctl remove "$1"
-        device_menu "$device"
+        notify-send "$device_name_nospace removed."
+        show_menu
     else
-        bluetoothctl pair "$1"
-        device_menu "$device"
+        bluetoothctl <<EOF
+agent on
+default-agent
+pair $1
+EOF
+        notify-send "$device_name_nospace paired."
+        timeout 1 device_menu "$device"
     fi
 }
 
@@ -218,17 +227,23 @@ device_menu() {
 
     # Get device name and mac address
     device_name=$(echo "$device" | cut -d ' ' -f 3-)
+    device_name_nospace=$(echo "$device_name" | awk '{$1=$1; print}')
     mac=$(echo "$device" | cut -d ' ' -f 2)
 
     # Build options
     if device_connected "$mac"; then
-        connected="Connected: yes"
+        connected="Disconnect Device"
     else
-        connected="Connected: no"
+        connected="Connect Device"
     fi
     paired=$(device_paired "$mac")
     trusted=$(device_trusted "$mac")
-    options="$connected\n$paired\n$trusted\n$divider\n$goback\nExit"
+
+    if device_paired "$mac"; then
+        options="$connected\n$paired\n$divider\n$goback\nExit"
+    else
+        options="$paired\n$divider\n$trusted\n$goback\nExit"
+    fi
 
     # Open rofi menu, read chosen option
     chosen="$(echo -e "$options" | $rofi_command "$device_name")"
@@ -261,8 +276,7 @@ show_menu() {
 
         # Human-readable names of devices, one per line
         # If scan is off, will only list paired devices
-        devices=$(bluetoothctl devices | sed 's/^Device //' | awk '{ if (NF > 2) { $1=$1; print } else { print $1 } }')
-
+        devices=$(bluetoothctl devices | grep Device | cut -d ' ' -f 3-)
 
         # Get controller flags
         scan=$(scan_on)
@@ -277,7 +291,7 @@ show_menu() {
     fi
 
     # Open rofi menu, read chosen option
-    chosen="$(echo -e "$options" | $rofi_command "Bluetooth: ")"
+    chosen="$(echo -e "$options" | $rofi_command "Bluetooth ")"
 
     # Match chosen option to command
     case "$chosen" in
