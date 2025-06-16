@@ -15,7 +15,7 @@ Here are the list of the package required to install from pacman
 - alacritty
 - ttf-jetbrains-mono-nerd
 - networkmanager
-- bluez bluez-utils
+- bluez bluez-utils bc
 - thunar thunar-volman gvfs udisks2 polkit polkit-gnome ntfs-3g tumbler
 - rofi-wayland
 - rofi-emoji
@@ -27,6 +27,7 @@ Here are the list of the package required to install from pacman
 - tlp
 - slurp
 - grim
+- wl-clipboard
 - gwenview
 - nwg-look
 - file-roller
@@ -50,6 +51,7 @@ Also, here are the list of the package required to install from yay:
 - swaylock-effects
 - pokemon-colorscripts-git
 - neofetch (optional)
+- ryzenadj (optional for ryzen cpu)
 
 ## Installation
 
@@ -73,20 +75,24 @@ To enable the feature, simply make the scripts executable
     chmod +x ~/.config/scripts/rofi-bluetooth.sh
     chmod +x ~/.config/scripts/rofi-battery.sh
 
+Do the same for all of the scripts.
+
 **(IMPORTANT)**
 Battery profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
 
-1.  In the terminal, open `sudo visudo`, alternatively you can open `sudo EDITOR=nano visudo`
+1.  In the terminal, open `sudo visudo`, alternatively you can open using custom editor like `sudo EDITOR=nano visudo`
 2.  Paste the code into a new line
 
-        <yourusername> ALL=(ALL) NOPASSWD: /home/<yourusername>/.config/scripts/rofi-battery.sh, \
-            /bin/grep, /bin/cp, /usr/bin/tlp
-
-        <yourusername> ALL=(ALL) NOPASSWD: /etc/tlp.conf
+        <yourusername> ALL=(ALL) NOPASSWD: \
+        /home/<yourusername>/.config/scripts/rofi-battery.sh, \
+        /bin/grep, \
+        /bin/cp, \
+        /usr/bin/tlp
 
     Replace `<yourusername>` into your username
 
 3.  Check if the permission is now registered by opening `sudo -l` in the terminal
+4.  Enable the tlp service by typing `sudo systemctl enable tlp.service`
 
 If things are working correctly, you can now use the battery profile menu.
 
