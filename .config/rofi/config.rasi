@@ -6,6 +6,8 @@ configuration {
   modi: "window,run,drun,emoji";
   show-icons: true;
   icon-theme: "Papirus";
+  sort: true;
+  disable-history: true;
 }
 
 * {
