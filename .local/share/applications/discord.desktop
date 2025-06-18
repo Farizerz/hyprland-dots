@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Discord
+Exec=chromium --profile-directory="Profile 1" --app=https://canary.discord.com/channels/@me
+Icon=discord
+Terminal=false
+Type=Application
+Categories=discord;

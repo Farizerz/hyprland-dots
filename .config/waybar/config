@@ -1,7 +1,6 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
   "margin-top": 5,
   "margin-bottom": -4,
   "margin-left": 10,
@@ -11,15 +10,15 @@
   "modules-right": ["temperature", "memory", "cpu", "battery","custom/power"],
 
   "image#logo": {
-    "path": "/home/fariz/.config/waybar/icons/logo.png",
+    "path": "/home/fariz/assets/icons/logo.png",
     "size": 20,
     "on-click": "rofi -show drun"
   },
 
   "mpris": {
     "interval": 1,
-    "format": " <span font='8'>{player_icon} {artist} - {title}</span>",
-    "format-paused": " <span font='8'>{status_icon} <i>{artist} - {title}</i></span>",
+    "format": " {player_icon} {artist} - {title}",
+    "format-paused": " {status_icon} <i>{artist} - {title}</i>",
     "player-icons": {
       "default": "󰎇",
       "mpv": "🎵"
@@ -101,11 +100,11 @@
     "interval": 2,
     "format": "{icon} {temperatureC}°C",
     "format-icons": [
-      "<span color='#00C8FF'></span>", 
-      "<span color='#00C8FF'></span>", 
-      "<span color='#FFD700'></span>", 
-      "<span color='#FFD700'></span>", 
-      "<span color='#FF0000'></span>"
+      "<span color='#00C8FF' font='11'></span>", 
+      "<span color='#00C8FF' font='11'></span>", 
+      "<span color='#FFD700' font='11'></span>", 
+      "<span color='#FFD700' font='11'></span>", 
+      "<span color='#FF0000' font='11'></span>"
     ]
   },
 
@@ -146,7 +145,7 @@
   "battery": {
     "interval": 2,
     "format": "{icon}{capacity:3d}%",
-    "format-charging": "<span color='#00FA9A'>󰁹 <span color='#FFD700'>󱐋</span></span>{capacity:3d}%",
+    "format-charging": "<span color='#00FA9A'> <span color='#FFD700'>󱐋</span></span>{capacity:3d}%",
     "format-icons": [
       "<span color='#FF0000'>󰁹 </span>", 
       "<span color='#FF0000'>󰁹 </span>", 
@@ -154,7 +153,7 @@
       "<span color='#FFD700'>󰁹 </span>", 
       "<span color='#FFD700'>󰁹 </span>",
       "<span color='#3CB371'>󰁹 </span>", 
-      "<span color='#3CB371'>󰁹 </span>", 
+      "<span color='#3CB371'><span font='11'>󰁹</span> </span>", 
       "<span color='#3CB371'>󰁹 </span>", 
       "<span color='#3CB371'>󰁹 </span>", 
       "<span color='#00FA9A'>󰁹 </span>"

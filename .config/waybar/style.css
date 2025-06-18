@@ -1,3 +1,5 @@
+@import "/home/fariz/.cache/wal/colors-waybar.css";
+
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
@@ -6,7 +8,8 @@
 
 window#waybar {
   background-color: transparent;
-  color: #f0f8ff;
+  color: @foreground;
+  font-weight: bold;
 }
 
 #clock,
@@ -19,11 +22,11 @@ window#waybar {
 #cpu,
 #battery,
 #custom-power {
-  background-color: rgba(25, 43, 87, 0.6);
+  background-color: @background;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
 
 #clock,
@@ -51,6 +54,11 @@ window#waybar {
   padding-left: 10px;
 }
 
+#mpris {
+  font-size: 11px;
+  text-shadow: 1px 1.5px 1px #000000;
+}
+
 #temperature {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -70,7 +78,7 @@ window#waybar {
   padding: 0 10px 0px 6px;
   background-color: transparent;
   border: 0px;
-  color: #70a4d1;
+  color: @color8;
 }
 
 #workspaces button:hover {
@@ -80,7 +88,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: linear-gradient(135deg, #33ccff, #33ccff, #00ff99);
+  background: linear-gradient(135deg, @color13, @color14);
   color: #1e1e2e;
   animation: expand 0.15s ease-in-out forwards;
   margin-right: 5px;
@@ -114,7 +122,7 @@ window#waybar {
     min-width: 0;
   }
   to {
-    min-width: 30px;
+    min-width: 25px;
   }
 }
 
@@ -129,11 +137,11 @@ window#waybar {
 
 @keyframes glow {
   from {
-    background-color: rgba(25, 43, 87, 0.6);
-    color: #f0f8ff;
+    background-color: @background;
+    color: @foreground;
   }
   to {
-    background: linear-gradient(135deg, #33ccff, #33ccff, #00ff99);
-    color: rgba(25, 43, 87, 1);
+    background: linear-gradient(135deg, @color13, @color14);
+    color: @background;
   }
 }
