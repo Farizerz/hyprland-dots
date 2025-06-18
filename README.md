@@ -37,6 +37,7 @@ Here are the list of the package required to install from pacman
 - noto-fonts-emoji
 - swayidle
 - brightnessctl
+- imagemagick
 
 Make sure to install yay:
 
@@ -48,6 +49,8 @@ Make sure to install yay:
 Also, here are the list of the package required to install from yay:
 
 - wlogout
+- waypaper
+- python-pywal16
 - swaylock-effects
 - pokemon-colorscripts-git
 - neofetch (optional)
