@@ -108,10 +108,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#33ccffee"
+    # frame_color = "#33ccffee"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -197,7 +197,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
@@ -235,7 +235,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 32
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -343,14 +343,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
     foreground = "#888888"
-    timeout = 10
+    timeout = 5
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#1e1e2e99"
+    background = "#1e1e2e"
     foreground = "#cdd6f4"
-    timeout = 10
+    timeout = 5
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information

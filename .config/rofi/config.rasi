@@ -1,3 +1,5 @@
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
 configuration {
   display-drun: " ";
   display-window: "Windows: ";
@@ -11,8 +13,6 @@ configuration {
 }
 
 * {
-  selected-normal-foreground:  #FAFBFC;
-  foreground:                  #FAFBFC;
   normal-foreground:           @foreground;
   alternate-normal-background: @background;
   red:                         #DC322F;
@@ -24,17 +24,14 @@ configuration {
   lightbg:                     #EEE8D5;
   selected-active-foreground:  #FDF6E3;
   alternate-active-background: #455A64;
-  background:                  rgb(30, 30, 30);
   bordercolor:                 #2A373E;
   alternate-normal-foreground: @foreground;
   normal-background:           @background;
   lightfg:                     #586875;
-  selected-normal-background:  rgb(75, 75, 75);
   border-color:                @foreground;
-  spacing:                     2;
+  spacing:                     0;
   separatorcolor:              rgba(195, 198, 200, 0);
   urgent-background:           #455A64;
-  selected-urgent-background:  #FF5252;
   alternate-urgent-foreground: @urgent-foreground;
   background-color:            #00000000; // Transparent
   alternate-active-foreground: @active-foreground;
@@ -44,8 +41,8 @@ configuration {
 
 window {
   background-color: @background;
-  border:           1;
-  border-color:     @selected-normal-background;
+  border:           0;
+  border-color:     #00BCD4;
   padding:          0;
   children:         [rowbox];
   width:            600px;
@@ -64,13 +61,17 @@ img-container {
   background-position: center;
   width:               180px;
   height:              200px;
-  margin:              0px 0px 2px 0px;
-  border-radius:       3.5% 0px 0px 2.1%;
+  margin:              0px -2px 0px 0px;
+  border-radius:       10px 0px 0px 10px;
+  border: 2;
+  border-color: @background;
 }
 
 mainbox {
-  border:  0;
   padding: 0;
+  border-radius: 0px 10px 10px 0px;
+  border: 2;
+  border-color: @background;
 }
 
 message {
@@ -85,7 +86,7 @@ listview {
   scrollbar:    true;
   fixed-height: false;
   lines:        8;
-  margin:       -5px 0px 0px 0px;
+  margin:       0px 0px 0px 0px;
 }
 
 element {
@@ -160,17 +161,16 @@ button.selected {
 
 inputbar {
   spacing:          0;
-  background-color: #FFFFFF;
+  background-color: @foreground;
   height:           100%;
   padding:          10;
-  margin:           2px 0px 0px 0px;
+  margin:           0px 0px -2px 0px;
   children:         [prompt, textbox-prompt-colon, entry, case-indicator];
-	border-radius: 0px 1.4% 0px 0px;
 }
 
 case-indicator {
   spacing:    0;
-  text-color: @normal-foreground;
+  text-color: @foreground;
 }
 
 entry {

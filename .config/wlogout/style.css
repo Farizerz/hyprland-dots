@@ -1,3 +1,5 @@
+@import "/home/fariz/.cache/wal/colors-waybar.css";
+
 * {
   background-image: none;
   box-shadow: none;
@@ -23,7 +25,7 @@ button {
 
 button:hover,
 button:focus {
-  background-color: #2e9ee4;
+  background-color: @color14;
   outline-style: none;
 }
 

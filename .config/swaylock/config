@@ -3,10 +3,10 @@ ignore-empty-password
 clock
 indicator-thickness=15
 indicator-radius=150
-image=~/.config/swaylock/lockscreen/lockscreen.jpg
+image=~/assets/lockscreens/lockscreen.jpg
 effect-blur=3x3
 effect-vignette=0.5:0.5
-ring-color=005CDC
+ring-color=00000000
 key-hl-color=00B7FF
 line-color=00000000
 text-color=FFFFFF
