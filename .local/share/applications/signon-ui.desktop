@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Account authentication
+Comment=Login to online accounts
+Exec=/usr/bin/signon-ui
+Icon=
+Type=Application
+Terminal=false
+NoDisplay=true
+X-Ubuntu-Gettext-Domain=signon-ui

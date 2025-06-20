@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Spotify
+Exec=chromium --profile-directory="Profile 1" --app=https://open.spotify.com
+Icon=spotify
+Terminal=false
+Type=Application
+Categories=Audio;Music;Player;
