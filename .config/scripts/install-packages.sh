@@ -45,6 +45,7 @@ pacman=(
   nvim
   chromium
   cava
+  libreoffice-still
 )
 
 # Install packages using pacman
