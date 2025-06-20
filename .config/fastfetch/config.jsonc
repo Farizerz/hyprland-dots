@@ -26,6 +26,6 @@
     "colors"
   ],
   "logo": {
-    "source": "/home/fariz/.config/fastfetch/ascii.txt"
+    "source": "~/.config/fastfetch/ascii.txt"
   }
 }
