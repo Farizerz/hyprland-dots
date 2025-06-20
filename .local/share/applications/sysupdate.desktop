@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=System Update
+Exec=yay -Syu
+Icon=update-manager
+Terminal=true
+Type=Application
+Categories=Update;System;SystemUpdate
