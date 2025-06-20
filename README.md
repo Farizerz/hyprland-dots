@@ -8,59 +8,14 @@
 
 ## Requirements
 
-Here are the list of the package required to install from pacman
-
-- waybar
-- hyprpaper
-- alacritty
-- ttf-jetbrains-mono-nerd
-- networkmanager
-- bluez bluez-utils bc
-- thunar thunar-volman gvfs udisks2 polkit polkit-gnome ntfs-3g tumbler
-- rofi-wayland
-- rofi-emoji
-- fastfetch
-- dunst
-- btop
-- pipewire
-- pavucontrol
-- tlp
-- slurp
-- grim
-- wl-clipboard
-- gwenview
-- nwg-look
-- file-roller
-- mousepad
-- papirus-icon-theme
-- noto-fonts-cjk
-- noto-fonts-emoji
-- swayidle
-- brightnessctl
-- imagemagick
-
-Make sure to install yay:
-
-    sudo pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-
-Also, here are the list of the package required to install from yay:
-
-- wlogout
-- waypaper
-- python-pywal16
-- swaylock-effects
-- pokemon-colorscripts-git
-- neofetch (optional)
-- ryzenadj (optional for ryzen cpu)
+Arch Linux with Hyprland already installed.
 
 ## Installation
 
-1.  After installing required packages, copy the contents into `~/` or
+1.  Copy the contents into the `~/` or
     `/home/<yourusername>`.
-2.  Restart hyprland session or reboot your PC.
+2.  On the terminal, run `bash ~/install.sh`
+3.  Restart hyprland session or reboot your PC.
 
 ## Waybar Features
 
@@ -71,14 +26,6 @@ This theme includes interactable waybar buttons such as
 - Wifi Menu
 - Bluetooth Menu
 - Battery Profile Menu (For laptops that support limit charging)
-
-To enable the feature, simply make the scripts executable
-
-    chmod +x ~/.config/scripts/rofi-wifi.sh
-    chmod +x ~/.config/scripts/rofi-bluetooth.sh
-    chmod +x ~/.config/scripts/rofi-battery.sh
-
-Do the same for all of the scripts.
 
 **(IMPORTANT)**
 Battery profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
@@ -95,7 +42,6 @@ Battery profile menu requires modifying the file system, basically it needs to e
     Replace `<yourusername>` into your username
 
 3.  Check if the permission is now registered by opening `sudo -l` in the terminal
-4.  Enable the tlp service by typing `sudo systemctl enable tlp.service`
 
 If things are working correctly, you can now use the battery profile menu.
 
@@ -117,3 +63,8 @@ For xwayland apps that doesn't support scaling in wayland (Steam, Discord, etc),
 5.  Change the Exec values to `Exec=/home/<yourusername>/scripts/scale-steam.sh`
 
 You can make the scripts for the other xwayland apps, you just need to find the command for scaling the apps (scaling command between apps may vary).
+
+## Changelogs
+
+1.  Added dynamic theme based on wallpaper
+2.  Added auto install all package into install.sh
