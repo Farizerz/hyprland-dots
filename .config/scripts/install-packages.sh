@@ -3,12 +3,14 @@
 # Packages to install
 pacman=(
   hyprland
+  sddm
   git base-devel
   waybar
   hyprpaper
   alacritty
   ttf-jetbrains-mono-nerd
   networkmanager
+  network-manager-applet
   bluez
   bluez-utils
   bc
@@ -17,7 +19,16 @@ pacman=(
   gvfs
   udisks2
   polkit
+  polkit-kde-agent
   polkit-gnome
+  qt5-wayland
+  qt6-wayland
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk
+  xdg-user-dirs
+  pacman-contrib
+  parallel
+  jq
   ntfs-3g
   tumbler
   rofi-wayland
@@ -26,13 +37,20 @@ pacman=(
   dunst
   btop
   pipewire
+  pipewire-alsa
+  pipewire-audio
+  pipewire-pulse
+  pipewire-jack
+  wireplumber
   pavucontrol
   tlp
   slurp
   grim
+  swappy
   wl-clipboard
   gwenview
   nwg-look
+  nwg-displays
   file-roller
   mousepad
   papirus-icon-theme
@@ -41,11 +59,11 @@ pacman=(
   noto-fonts-emoji
   swayidle
   brightnessctl
+  playerctl
   imagemagick
   nvim
   chromium
   cava
-  libreoffice-still
 )
 
 # Install packages using pacman
@@ -86,8 +104,9 @@ fi
 # Install packages from AUR using yay
 yay -S --noconfirm --needed "${yay[@]}"
 
+# Post-installation steps
 sudo chown -R "$(whoami)":"$(whoami)" $HOME/.local/share/icons
 
 sudo mv /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark /usr/share/icons/Papirus-Light ~/.local/share/icons/
 
-echo "✅ All packages installed successfully."
+echo "✅ Install finished."
