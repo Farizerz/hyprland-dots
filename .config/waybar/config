@@ -7,7 +7,7 @@
   "margin-right": 10,
   "modules-left": ["image#logo","clock", "pulseaudio", "network","bluetooth","mpris"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["temperature", "memory", "cpu", "battery","custom/power"],
+  "modules-right": ["custom/updates", "temperature", "memory", "cpu", "battery","custom/power"],
 
   "image#logo": {
     "path": "/home/fariz/assets/icons/logo.png",
@@ -100,6 +100,15 @@
       "3": [],
       "4": [],
     }
+  },
+
+  "custom/updates": {
+    "interval": 60,
+    "format": " {}",
+    "exec": "~/.config/scripts/check-updates.sh",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "alacritty -e $HOME/.config/scripts/install-updates.sh"
   },
 
   "temperature": {

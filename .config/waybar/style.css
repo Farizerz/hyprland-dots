@@ -17,6 +17,7 @@ window#waybar {
 #network,
 #bluetooth,
 #workspaces,
+#custom-updates,
 #temperature,
 #memory,
 #cpu,
@@ -35,6 +36,7 @@ window#waybar {
 #bluetooth,
 #workspaces,
 #workspaces button,
+#custom-updates,
 #custom-power {
   border-radius: 20px;
 }
@@ -52,6 +54,10 @@ window#waybar {
 #bluetooth {
   padding-right: 11px;
   padding-left: 10px;
+}
+
+#custom-updates {
+  font-weight: 800;
 }
 
 #mpris {
@@ -101,6 +107,7 @@ window#waybar {
 #network,
 #bluetooth,
 #mpris,
+#custom-updates,
 #battery {
   margin-right: 5px;
 }
