@@ -7,6 +7,7 @@ pacman=(
   git base-devel
   waybar
   hyprpaper
+  hyprlock
   alacritty
   ttf-jetbrains-mono-nerd
   networkmanager
@@ -38,9 +39,7 @@ pacman=(
   btop
   pipewire
   pipewire-alsa
-  pipewire-audio
   pipewire-pulse
-  pipewire-jack
   wireplumber
   pavucontrol
   tlp
@@ -72,10 +71,10 @@ sudo pacman -S --noconfirm --needed "${pacman[@]}"
 yay=(
   wlogout
   papirus-folders
+  ttf-ms-fonts
   tty-clock
   waypaper
-  python-pywal16
-  swaylock-effects
+  python-pywal
   pokemon-colorscripts-git
   visual-studio-code-bin
 )

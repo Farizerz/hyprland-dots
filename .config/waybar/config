@@ -5,76 +5,103 @@
   "margin-bottom": -4,
   "margin-left": 10,
   "margin-right": 10,
-  "modules-left": ["image#logo","clock", "pulseaudio", "network","bluetooth","mpris"],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["custom/updates", "temperature", "memory", "cpu", "battery","custom/power"],
-
+  "spacing": 0,
+  "modules-left": [
+    "image#logo",
+    "clock",
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "temperature",
+    "memory",
+    "cpu",
+    "custom/bridge",
+    "battery",
+    "custom/power"
+  ],
   "image#logo": {
-    "path": "/home/fariz/assets/icons/logo.png",
+    "exec": "echo $HOME/assets/icons/logo.png",
     "size": 20,
     "on-click": "rofi -show drun"
   },
-
   "mpris": {
     "interval": 1,
-    "format": " {player_icon} {artist} - {title}",
-    "format-paused": " {status_icon} <i>{artist} - {title}</i>",
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
     "player-icons": {
       "default": "󰎇",
-      "mpv": "🎵"
+      "mpv": "󰎇"
     },
     "status-icons": {
       "paused": "󰏤"
     },
+    "dynamic-order": [
+      "artist",
+      "title"
+    ],
     "max-length": 50
   },
-
   "clock": {
     "interval": 60,
     "format": "{:%a, %b %d  %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "weeks-pos"     : "right",
-      "on-scroll"     : 1,
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
       "format": {
-        "months":     "<span color='#505050'><b>{}</b></span>",
-        "days":       "<span color='#695F59'><b>{}</b></span>",
-        "weeks":      "<span color='#538F7B'><b>W{}</b></span>",
-        "weekdays":   "<span color='#96783B'><b>{}</b></span>",
-        "today":      "<span color='#FF0000'><b><u>{}</u></b></span>"
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#eaeaea'><b>{}</b></span>",
+        "weeks": "<span color='#ffead3'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc00'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
     }
   },
-
   "pulseaudio": {
     "format": "{icon} {volume:3d}",
-    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰕾"
+    ],
     "format-muted": "   -",
-    "on-click":"pavucontrol"
+    "on-click": "hyprctl dispatch exec pavucontrol"
   },
-
   "network": {
     "interval": 2,
     "format-wifi": "{icon}  {essid}",
-    "format-wifi-no-intenet": "󰤫",
     "format-ethernet": "󰈀  Ethernet",
     "format-disconnected": "",
     "format-disabled": "󰤮",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip-format": "<span color='#00FF00'>󰁆</span> {bandwidthDownBits}\n<span color='#FF0000'>󰁞</span> {bandwidthUpBits}",
     "on-click": "$HOME/.config/scripts/rofi-wifi.sh"
   },
-
   "bluetooth": {
     "format-disabled": "<span color='#919191'>󰂲</span>",
     "format-no-controller": "<span color='#FF0000'>󰂲</span>",
     "format-off": "<span>󰂯</span>",
     "format-on": "<span>󰂯</span>",
     "format-connected": "<span color='#00AEFF'>󰂱</span>",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
   },
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
@@ -98,86 +125,86 @@
     "persistent-workspaces": {
       "2": [],
       "3": [],
-      "4": [],
+      "4": []
     }
   },
-
   "custom/updates": {
-    "interval": 60,
     "format": " {}",
     "exec": "~/.config/scripts/check-updates.sh",
     "return-type": "json",
     "tooltip": true,
-    "on-click": "alacritty -e $HOME/.config/scripts/install-updates.sh"
+    "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
   },
-
   "temperature": {
     "interval": 2,
     "format": "{icon} {temperatureC}°C",
     "format-icons": [
-      "<span color='#00C8FF' font='11'></span>", 
-      "<span color='#00C8FF' font='11'></span>", 
-      "<span color='#FFD700' font='11'></span>", 
-      "<span color='#FFD700' font='11'></span>", 
+      "<span color='#00C8FF' font='11'></span>",
+      "<span color='#00C8FF' font='11'></span>",
+      "<span color='#FFD700' font='11'></span>",
+      "<span color='#FFD700' font='11'></span>",
       "<span color='#FF0000' font='11'></span>"
-    ]
+    ],
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
   },
-
   "memory": {
     "interval": 2,
     "format": "{icon}{percentage:3d}%",
     "format-icons": [
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FFC069'>  </span>", 
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FFC069'>  </span>",
       "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FFC069'>  </span>", 
-      "<span color='#FF0000'>  </span>", 
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FFC069'>  </span>",
+      "<span color='#FF0000'>  </span>",
       "<span color='#FF0000'>  </span>"
-    ]
+    ],
+    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB"
   },
-
   "cpu": {
     "interval": 2,
     "format": "{icon}{usage:3d}%",
     "format-icons": [
-      "<span color='#85C2FF'>  </span>", 
-      "<span color='#85C2FF'>  </span>", 
-      "<span color='#85C2FF'>  </span>", 
-      "<span color='#85C2FF'>  </span>", 
+      "<span color='#85C2FF'>  </span>",
+      "<span color='#85C2FF'>  </span>",
+      "<span color='#85C2FF'>  </span>",
+      "<span color='#85C2FF'>  </span>",
       "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>", 
-      "<span color='#FFD700'>  </span>", 
-      "<span color='#FFD700'>  </span>", 
-      "<span color='#FF0000'>  </span>", 
+      "<span color='#85C2FF'>  </span>",
+      "<span color='#FFD700'>  </span>",
+      "<span color='#FFD700'>  </span>",
+      "<span color='#FF0000'>  </span>",
       "<span color='#FF0000'>  </span>"
     ]
   },
-
+  "custom/bridge": {
+    "exec": "[ -d /sys/class/power_supply/BAT0 ] && echo ' ' || exit 0"
+  },
   "battery": {
     "interval": 2,
+    "adapter": "AC POWER",
     "format": "{icon}{capacity:3d}%",
     "format-charging": "<span color='#00FA9A'> <span color='#FFD700'>󱐋</span></span>{capacity:3d}%",
     "format-icons": [
-      "<span color='#FF0000'>󰁹 </span>", 
-      "<span color='#FF0000'>󰁹 </span>", 
-      "<span color='#FF0000'>󰁹 </span>", 
-      "<span color='#FFD700'>󰁹 </span>", 
+      "<span color='#FF0000'>󰁹 </span>",
+      "<span color='#FF0000'>󰁹 </span>",
+      "<span color='#FF0000'>󰁹 </span>",
+      "<span color='#FFD700'>󰁹 </span>",
       "<span color='#FFD700'>󰁹 </span>",
-      "<span color='#3CB371'>󰁹 </span>", 
-      "<span color='#3CB371'><span font='11'>󰁹</span> </span>", 
-      "<span color='#3CB371'>󰁹 </span>", 
-      "<span color='#3CB371'>󰁹 </span>", 
+      "<span color='#3CB371'>󰁹 </span>",
+      "<span color='#3CB371'>󰁹 </span>",
+      "<span color='#3CB371'>󰁹 </span>",
+      "<span color='#3CB371'>󰁹 </span>",
       "<span color='#00FA9A'>󰁹 </span>"
     ],
-    "on-click":"$HOME/.config/scripts/rofi-battery.sh"
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
-
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout"
+    "on-click": "wlogout",
+    "tooltip-format": "Power Options"
   }
 }
