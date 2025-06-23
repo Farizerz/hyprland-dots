@@ -68,4 +68,4 @@ input_rgb=($(printf "%d %d %d" 0x${input_color:1:2} 0x${input_color:3:2} 0x${inp
 input_color_name=$(get_closest_color "${input_rgb[*]}")
 
 # Use the closest color name in the papirus-folders command
-papirus-folders -C $input_color_name --theme Papirus-Dark
+papirus-folders -C $input_color_name

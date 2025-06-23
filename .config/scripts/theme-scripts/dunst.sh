@@ -4,7 +4,7 @@ WAL_COLORS="$HOME/.cache/wal/colors.css"
 # Extract background value from colors.css
 background=$(grep -Po -- '--background:\s*\K#[0-9a-fA-F]+' "$WAL_COLORS")
 foreground=$(grep -Po -- '--foreground:\s*\K#[0-9a-fA-F]+' "$WAL_COLORS")
-frame=$(grep -Po -- '--color13:\s*\K#[0-9a-fA-F]+' "$WAL_COLORS")
+frame=$(grep -Po -- '--color14:\s*\K#[0-9a-fA-F]+' "$WAL_COLORS")
 
 # Make sure color was found
 if [[ -z "$background" || -z "$foreground" || -z "$frame" ]]; then
@@ -26,7 +26,7 @@ awk -v new_bg="$background" -v new_fg="$foreground" -v new_frame="$frame" '
       sub(/#[0-9a-fA-F]{6,8}/, new_frame)
   }
   { print }
-' "$DUNST_CONFIG" > "$DUNST_CONFIG.tmp" && mv "$DUNST_CONFIG.tmp" "$DUNST_CONFIG"
+' "$DUNST_CONFIG" > "$DUNST_CONFIG.tmp" && sleep 0.1 && mv "$DUNST_CONFIG.tmp" "$DUNST_CONFIG"
 
 # Restart dunst to apply changes
   pkill dunst && dunst &

@@ -1,4 +1,4 @@
-@import "/home/fariz/.cache/wal/colors-waybar.css";
+@import "colors.css";
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -10,6 +10,11 @@ window#waybar {
   background-color: transparent;
   color: @foreground;
   font-weight: bold;
+}
+
+tooltip {
+  border-radius: 10px;
+  background-color: @color0;
 }
 
 #clock,
@@ -62,7 +67,8 @@ window#waybar {
 
 #mpris {
   font-size: 11px;
-  text-shadow: 1px 1.5px 1px #000000;
+  text-shadow: 1px 1.5px 1px @color0;
+  padding: 0px 10px 0px 10px;
 }
 
 #temperature {
@@ -70,9 +76,23 @@ window#waybar {
   border-bottom-left-radius: 20px;
 }
 
-#battery {
+#battery,
+#cpu {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+#cpu {
+  padding-right: 11px;
+}
+
+#custom-bridge {
+  background-color: @color0;
+  margin-left: -11px;
+}
+
+#battery {
+  padding-left: 9px;
 }
 
 #workspaces {
@@ -94,7 +114,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: linear-gradient(135deg, @color13, @color14);
+  background: linear-gradient(135deg, @color14, @color13);
   color: #1e1e2e;
   animation: expand 0.15s ease-in-out forwards;
   margin-right: 5px;
@@ -107,13 +127,13 @@ window#waybar {
 #network,
 #bluetooth,
 #mpris,
-#custom-updates,
-#battery {
+#custom-updates {
   margin-right: 5px;
 }
 
 #custom-power {
   padding: 1px 13px 2px 10px;
+  margin-left: 5px;
 }
 
 #pulseaudio:hover,
@@ -148,7 +168,7 @@ window#waybar {
     color: @foreground;
   }
   to {
-    background: linear-gradient(135deg, @color13, @color14);
+    background: linear-gradient(135deg, @color14, @color13);
     color: @background;
   }
 }

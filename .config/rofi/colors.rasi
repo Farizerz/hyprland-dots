@@ -1,18 +1,18 @@
 * {
-    color0: #12212c;
-    color1: #96CA5F;
-    color2: #2B709E;
-    color3: #1362BD;
-    color4: #50A0A2;
-    color5: #3093D1;
-    color6: #55AFD3;
-    color7: #c3c7ca;
-    color8: #616e77;
-    color9: #96CA5F;
-    color10: #2B709E;
-    color11: #1362BD;
-    color12: #50A0A2;
-    color13: #3093D1;
-    color14: #55AFD3;
-    color15: #c3c7ca;
+    color0: #010133;
+    color1: #0261B0;
+    color2: #4546A8;
+    color3: #0475C8;
+    color4: #9A61AE;
+    color5: #039CE4;
+    color6: #0CCBFD;
+    color7: #a5daef;
+    color8: #7398a7;
+    color9: #0261B0;
+    color10: #4546A8;
+    color11: #0475C8;
+    color12: #9A61AE;
+    color13: #039CE4;
+    color14: #0CCBFD;
+    color15: #a5daef;
 }

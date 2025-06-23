@@ -18,4 +18,5 @@ pkill waybar
 sleep 0.5
 ~/.config/scripts/switch-monitor.sh
 
+pkill thunar && thunar &
 waybar
