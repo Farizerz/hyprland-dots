@@ -104,8 +104,24 @@ fi
 yay -S --noconfirm --needed "${yay[@]}"
 
 # Post-installation steps
-sudo chown -R "$(whoami)":"$(whoami)" $HOME/.local/share/icons
+sudo chown -R "$(whoami)":"$(whoami)" $HOME/.local
 
 sudo mv /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark /usr/share/icons/Papirus-Light ~/.local/share/icons/
+
+# Applying sddm theme
+sudo cp -r /home/$SUDO_USER/.local/share/sddm/themes /usr/share/sddm
+
+sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
+
+echo "[Theme]
+Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+
+sudo mkdir -p /etc/sddm.conf.d
+sudo tee /etc/sddm.conf.d/virtualkbd.conf > /dev/null <<EOF
+[General]
+InputMethod=qtvirtualkeyboard
+EOF
+
+# Finished
 
 echo "✅ Install finished."
