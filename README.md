@@ -8,7 +8,7 @@
 
 ## Requirements
 
-Arch Linux with Hyprland already installed.
+Arch Linux already installed.
 
 ## Installation
 
@@ -26,24 +26,8 @@ This theme includes interactable waybar buttons such as
 - Wifi Menu
 - Bluetooth Menu
 - Battery Profile Menu (For laptops that support limit charging)
-
-**(IMPORTANT)**
-Battery profile menu requires modifying the file system, basically it needs to execute the script without requiring the root password.
-
-1.  In the terminal, open `sudo visudo`, alternatively you can open using custom editor like `sudo EDITOR=nano visudo`
-2.  Paste the code into a new line
-
-        <yourusername> ALL=(ALL) NOPASSWD: \
-        /home/<yourusername>/.config/scripts/rofi-battery.sh, \
-        /bin/grep, \
-        /bin/cp, \
-        /usr/bin/tlp
-
-    Replace `<yourusername>` into your username
-
-3.  Check if the permission is now registered by opening `sudo -l` in the terminal
-
-If things are working correctly, you can now use the battery profile menu.
+- System Update Checker
+- Toggle Wifi
 
 ## XWayland Apps
 
@@ -51,20 +35,20 @@ If you are using native scale (1) for your monitor, skip this step.
 
 For xwayland apps that doesn't support scaling in wayland (Steam, Discord, etc), we need to disable the automatic scaling for the apps
 
-1.  in hyprland.conf, add this into a new line
-
-        xwayland {
-            force_zero_scaling=true
-        }
-
-2.  After that, we need to create a desktop shortcut for the app.
-3.  Make the script executable (for example, scale-steam.sh in the ~/.config/scripts)
-4.  Edit the shortcut file via `sudo nano ~/Desktop/steam.desktop`
-5.  Change the Exec values to `Exec=/home/<yourusername>/scripts/scale-steam.sh`
+1.  Create or edit a shortcut for the app (via ~/.local/share/applications or /usr/share/applications).
+2.  Make the script executable (for example, scale-steam.sh in the ~/.config/scripts)
+3.  Edit the shortcut file via `sudo nano ~/Desktop/steam.desktop`
+4.  Change the Exec values to `Exec=/home/<yourusername>/scripts/scale-steam.sh`
 
 You can make the scripts for the other xwayland apps, you just need to find the command for scaling the apps (scaling command between apps may vary).
 
 ## Changelogs
 
-1.  Added dynamic theme based on wallpaper
-2.  Added auto install all package into install.sh
+Version 1.5
+
+1.  Changed hyprpaper to swww as default backend for waypaper
+2.  Added wallpaper selector feature (SUPER + TAB) & Random wallpaper selector (SUPER + SHIFT + TAB)
+3.  Added extra packages for install script
+4.  Fixed internal monitor behavior when plugging in & out of external devices
+5.  Added styling for thunar
+6.  Added microphone toggle and microphone indicator in waybar (ALT + M)
