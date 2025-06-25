@@ -5,7 +5,15 @@ WAL_COLORS="$HOME/.cache/wal/colors.css"
 # Update Rofi Thumbnail
 ROFI_THUMB_PATH=$HOME/.config/rofi/thumbs/rofi-thumb.jpg
 
-cp "$WALLPAPER_PATH" "$ROFI_THUMB_PATH"
+# Check file extension (case-insensitive)
+EXT="${WALLPAPER_PATH##*.}"
+EXT_LOWER=$(echo "$EXT" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$EXT_LOWER" == "jpg" || "$EXT_LOWER" == "jpeg" ]]; then
+  cp "$WALLPAPER_PATH" "$ROFI_THUMB_PATH"
+else
+  convert "$WALLPAPER_PATH[0]" "$ROFI_THUMB_PATH"
+fi
 
 magick "$ROFI_THUMB_PATH" -crop 500x1280+950+200 "$ROFI_THUMB_PATH"
 

@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# For toggling internal monitors on / off if connected to external monitor
+
+MONITOR_INTERNAL_NAME="$($HOME/.config/scripts/get-monitors.sh name_internal)"
+MONITOR_INTERNAL_DETAILED="$($HOME/.config/scripts/get-monitors.sh detailed_internal)"
+MONITOR_EXTERNAL_NAME="$($HOME/.config/scripts/get-monitors.sh name_external)"
 monitors=$(hyprctl monitors)
 
-if echo "$monitors" | grep -q "^Monitor eDP-1" && echo "$monitors" | grep -q "^Monitor HDMI-A-1"; then
-  hyprctl keyword monitor "eDP-1,disable"
+if echo "$monitors" | grep -q "^Monitor $MONITOR_INTERNAL_NAME" && echo "$monitors" | grep -q "^Monitor $MONITOR_EXTERNAL_NAME"; then
+  hyprctl keyword monitor "$MONITOR_INTERNAL_NAME,disable"
 else
-  hyprctl keyword monitor "eDP-1,2880x1620@120,auto,1.5"
+  hyprctl keyword monitor "$MONITOR_INTERNAL_DETAILED"
 fi

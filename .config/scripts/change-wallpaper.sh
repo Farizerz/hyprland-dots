@@ -1,7 +1,11 @@
 pkill waybar
 
-# Change Random Wallpaper
-~/.config/scripts/theme-scripts/wallpaper.sh
+IMAGE_PATH="$1"
+
+~/.config/scripts/switch-monitor.sh 
+
+# Change wallpaper
+~/.config/scripts/theme-scripts/wallpaper.sh "$IMAGE_PATH"
 
 # Change rofi theme
 ~/.config/scripts/theme-scripts/rofi.sh &
@@ -15,8 +19,7 @@ pkill waybar
 # Change folder color
 ~/.config/scripts/theme-scripts/papirus-folders-color.sh &
 
-sleep 0.5
-~/.config/scripts/switch-monitor.sh
-
+sleep 1.5
 pkill thunar && thunar &
+
 waybar

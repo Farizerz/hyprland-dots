@@ -10,6 +10,7 @@
     "image#logo",
     "clock",
     "pulseaudio",
+    "custom/mic",
     "network",
     "bluetooth",
     "mpris"
@@ -19,6 +20,7 @@
   ],
   "modules-right": [
     "custom/updates",
+    "tray",
     "temperature",
     "memory",
     "cpu",
@@ -75,6 +77,13 @@
     ],
     "format-muted": "   -",
     "on-click": "hyprctl dispatch exec pavucontrol"
+  },
+  "custom/mic": {
+    "format": "{}",
+    "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\\[MUTED\\]' && exit 0 || echo ''",
+    "interval": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && notify-send 'Mic disabled.'",
+    "tooltip-format": "Mic on"
   },
   "network": {
     "interval": 2,
@@ -134,6 +143,11 @@
     "return-type": "json",
     "tooltip": true,
     "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
+  },
+  "tray": {
+    "icon-size": 15,
+    "show-passive-items": true,
+    "spacing": 10
   },
   "temperature": {
     "interval": 2,
