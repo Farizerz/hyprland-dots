@@ -117,7 +117,7 @@
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 5
 
     # Define a color for the separator.
     # possible values are:
@@ -348,9 +348,9 @@
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#181734"
-    foreground = "#e5c6be"
-    frame_color = "#BF94A4"
+    background = "#010D15"
+    foreground = "#88c0d8"
+    frame_color = "#2E76B3"
     timeout = 5
     override_pause_level = 30
     # Icon for notifications with normal urgency
@@ -359,7 +359,7 @@
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
-    frame_color = "#BF94A4"
+    frame_color = "#2E76B3"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency

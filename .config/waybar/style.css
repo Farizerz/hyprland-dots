@@ -1,4 +1,4 @@
-@import "colors.css";
+@import "../colors/colors.css";
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
@@ -19,6 +19,7 @@ tooltip {
 
 #clock,
 #pulseaudio,
+#custom-mic,
 #network,
 #bluetooth,
 #workspaces,
@@ -37,6 +38,7 @@ tooltip {
 
 #clock,
 #pulseaudio,
+#custom-mic,
 #network,
 #bluetooth,
 #workspaces,
@@ -114,9 +116,10 @@ tooltip {
 }
 
 #workspaces button.active {
+  padding: 0 7px 0px 6px;
   background: linear-gradient(135deg, @color14, @color13);
-  color: #1e1e2e;
-  animation: expand 0.15s ease-in-out forwards;
+  color: @color0;
+  animation: expand 0.2s ease-in-out forwards;
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -124,10 +127,12 @@ tooltip {
 #image,
 #clock,
 #pulseaudio,
+#custom-mic,
 #network,
 #bluetooth,
 #mpris,
-#custom-updates {
+#custom-updates,
+#tray {
   margin-right: 5px;
 }
 
@@ -137,6 +142,7 @@ tooltip {
 }
 
 #pulseaudio:hover,
+#custom-mic:hover,
 #network:hover,
 #bluetooth:hover,
 #battery:hover,
@@ -145,10 +151,15 @@ tooltip {
 }
 
 @keyframes expand {
-  from {
+  0% {
     min-width: 0;
+    opacity: 0;
   }
-  to {
+  50% {
+    min-width: 50px;
+    opacity: 1;
+  }
+  100% {
     min-width: 25px;
   }
 }

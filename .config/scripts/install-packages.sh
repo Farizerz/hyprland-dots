@@ -4,9 +4,11 @@
 pacman=(
   hyprland
   sddm
+  uwsm
   git base-devel
   waybar
   hyprpaper
+  swww
   hyprlock
   alacritty
   ttf-jetbrains-mono-nerd
@@ -42,6 +44,7 @@ pacman=(
   pipewire-pulse
   wireplumber
   pavucontrol
+  easyeffects
   tlp
   slurp
   grim
@@ -61,8 +64,11 @@ pacman=(
   playerctl
   imagemagick
   nvim
+  nano
   chromium
   cava
+  obs-studio
+  libreoffice-still
 )
 
 # Install packages using pacman
