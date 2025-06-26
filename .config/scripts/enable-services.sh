@@ -10,8 +10,8 @@ sudo systemctl --user enable --now wireplumber
 
 sudo EDITOR="tee -a" visudo <<EOF
 
-$(whoami) ALL=(ALL) NOPASSWD: \\
-/home/$(whoami)/.config/scripts/rofi-battery.sh, \\
+$(whoami) ALL=(ALL) NOPASSWD: \
+/home/$(whoami)/.config/scripts/rofi-battery.sh, \
 /home/$(whoami)/.config/scripts/mount-drives.sh, \
 /bin/mkdir, \
 /usr/bin/mount, \

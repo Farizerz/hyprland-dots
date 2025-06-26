@@ -10,6 +10,7 @@ pacman=(
   hyprpaper
   swww
   hyprlock
+  hypridle
   alacritty
   ttf-jetbrains-mono-nerd
   networkmanager
@@ -17,9 +18,12 @@ pacman=(
   bluez
   bluez-utils
   bc
+  mpv
   thunar
   thunar-volman
   gvfs
+  gvfs-mtp
+  gvfs-gphoto2
   udisks2
   polkit
   polkit-kde-agent
@@ -34,6 +38,7 @@ pacman=(
   jq
   ntfs-3g
   tumbler
+  ffmpegthumbnailer
   rofi-wayland
   rofi-emoji
   fastfetch
@@ -59,7 +64,6 @@ pacman=(
   noto-fonts
   noto-fonts-cjk
   noto-fonts-emoji
-  swayidle
   brightnessctl
   playerctl
   imagemagick

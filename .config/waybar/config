@@ -1,12 +1,10 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 5,
-  "margin-bottom": -4,
-  "margin-left": 10,
-  "margin-right": 10,
+  "margin-bottom": -10,
   "spacing": 0,
   "modules-left": [
+    "custom/image",
     "image#logo",
     "clock",
     "pulseaudio",
@@ -19,17 +17,13 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/updates",
     "tray",
-    "temperature",
-    "memory",
-    "cpu",
-    "custom/bridge",
-    "battery",
+    "custom/updates",
+    "group/hardware",
     "custom/power"
   ],
   "image#logo": {
-    "exec": "echo $HOME/assets/icons/logo.png",
+    "exec": "echo $HOME/assets/icons/logo.svg",
     "size": 20,
     "on-click": "rofi -show drun"
   },
@@ -76,19 +70,20 @@
       "󰕾"
     ],
     "format-muted": "   -",
-    "on-click": "hyprctl dispatch exec pavucontrol"
+    "on-click": "hyprctl dispatch exec pavucontrol",
+    "rotate": 2
   },
   "custom/mic": {
     "format": "{}",
     "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\\[MUTED\\]' && exit 0 || echo ''",
-    "interval": 1,
+    "interval": 2,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && notify-send 'Mic disabled.'",
     "tooltip-format": "Mic on"
   },
   "network": {
     "interval": 2,
     "format-wifi": "{icon}  {essid}",
-    "format-ethernet": "󰈀  Ethernet",
+    "format-ethernet": "󰈀",
     "format-disconnected": "",
     "format-disabled": "󰤮",
     "format-icons": [
@@ -102,11 +97,11 @@
     "on-click": "$HOME/.config/scripts/rofi-wifi.sh"
   },
   "bluetooth": {
-    "format-disabled": "<span color='#919191'>󰂲</span>",
+    "format-disabled": "<span>󰂲</span>",
     "format-no-controller": "<span color='#FF0000'>󰂲</span>",
-    "format-off": "<span>󰂯</span>",
+    "format-off": "<span>󰂲</span>",
     "format-on": "<span>󰂯</span>",
-    "format-connected": "<span color='#00AEFF'>󰂱</span>",
+    "format-connected": "<span>󰂱</span>",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
@@ -115,7 +110,7 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "",
+      "1": "󰄯",
       "2": "󰲠",
       "3": "󰲢",
       "4": "󰲤",
@@ -128,7 +123,7 @@
       "11": "󰿬",
       "urgent": "",
       "active": "",
-      "default": ""
+      "default": "󰄯"
     },
     "sort-by-number": true,
     "persistent-workspaces": {
@@ -137,6 +132,11 @@
       "4": []
     }
   },
+  "tray": {
+    "icon-size": 15,
+    "show-passive-items": false,
+    "spacing": 5
+  },
   "custom/updates": {
     "format": " {}",
     "exec": "~/.config/scripts/check-updates.sh",
@@ -144,10 +144,14 @@
     "tooltip": true,
     "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
   },
-  "tray": {
-    "icon-size": 15,
-    "show-passive-items": true,
-    "spacing": 10
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature",
+      "memory",
+      "cpu",
+      "battery"
+    ]
   },
   "temperature": {
     "interval": 2,
@@ -156,7 +160,7 @@
       "<span color='#00C8FF' font='11'></span>",
       "<span color='#00C8FF' font='11'></span>",
       "<span color='#FFD700' font='11'></span>",
-      "<span color='#FFD700' font='11'></span>",
+      "<span color='#FFD700' font='11'></span>",
       "<span color='#FF0000' font='11'></span>"
     ],
     "tooltip-format": "CPU Temp: {temperatureC}°C"
@@ -176,7 +180,8 @@
       "<span color='#FF0000'>  </span>",
       "<span color='#FF0000'>  </span>"
     ],
-    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB"
+    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
+    "on-click": "alacritty -e btop"
   },
   "cpu": {
     "interval": 2,
@@ -192,33 +197,31 @@
       "<span color='#FFD700'>  </span>",
       "<span color='#FF0000'>  </span>",
       "<span color='#FF0000'>  </span>"
-    ]
-  },
-  "custom/bridge": {
-    "exec": "[ -d /sys/class/power_supply/BAT0 ] && echo ' ' || exit 0"
+    ],
+    "on-click": "alacritty -e btop"
   },
   "battery": {
     "interval": 2,
     "adapter": "AC POWER",
     "format": "{icon}{capacity:3d}%",
-    "format-charging": "<span color='#00FA9A'> <span color='#FFD700'>󱐋</span></span>{capacity:3d}%",
+    "format-charging": "<span color='#00FA9A'><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>{capacity:3d}%",
     "format-icons": [
-      "<span color='#FF0000'>󰁹 </span>",
-      "<span color='#FF0000'>󰁹 </span>",
-      "<span color='#FF0000'>󰁹 </span>",
-      "<span color='#FFD700'>󰁹 </span>",
-      "<span color='#FFD700'>󰁹 </span>",
-      "<span color='#3CB371'>󰁹 </span>",
-      "<span color='#3CB371'>󰁹 </span>",
-      "<span color='#3CB371'>󰁹 </span>",
-      "<span color='#3CB371'>󰁹 </span>",
-      "<span color='#00FA9A'>󰁹 </span>"
+      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
+      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
+      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
+      "<span color='#FFD700'><span font='11'>󰁹</span> </span>",
+      "<span color='#FFD700'><span font='11'>󰁹</span> </span>",
+      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
+      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
+      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
+      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
+      "<span color='#00FA9A'><span font='11'>󰁹</span> </span>"
     ],
     "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout",
+    "on-click": "wlogout --buttons-per-row 5",
     "tooltip-format": "Power Options"
   }
 }

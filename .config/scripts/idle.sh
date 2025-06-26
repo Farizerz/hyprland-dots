@@ -1,5 +1,7 @@
 #/bin/sh
 
+# Deprecated, now using hypridle instead
+
 if [ -f "/usr/bin/swayidle" ]; then
   swayidle -w \
   timeout 180 "playerctl status | grep -q Playing || hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on" \

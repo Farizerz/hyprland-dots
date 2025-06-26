@@ -12,20 +12,21 @@ window {
 button {
   border-radius: 10px;
   text-shadow: none;
-  color: white;
+  color: transparent;
   background-color: transparent;
   border-style: solid;
   border-width: 0px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 25%;
+  background-size: 60%;
   margin: 10px;
 }
 
 button:hover,
 button:focus {
-  background-color: @color14;
+  background-color: alpha(@color14, 0.8);
   outline-style: none;
+  background-size: 70%;
 }
 
 #lock {

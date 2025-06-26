@@ -1,15 +1,15 @@
+ FFFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZZ
   FFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZ
-   FFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZ 
-    FFF        FFF  ZZZ        ZZZ  
-     FFF       FFF  ZZZ       ZZZ   
-      FFFFFFFFF        ZZZZZZZZZ    
-       FFFFFFFF      ZZZZZZZZZZ     
-        FFF         ZZZ             
-         FFF        ZZZ             
-          FFF       ZZZ  ZZZZ       
-           FFF      ZZZ ZZZZ        
-            FFF     ZZZZZZZ         
-             FFF    ZZZZZZ          
+   FFFF        FFF  ZZZ        ZZZZ 
+    FFFF       FFF  ZZZ       ZZZZ  
+     FFFFFFFFFF        ZZZZZZZZZZ   
+      FFFFFFFFF      ZZZZZZZZZZZ    
+       FFFF         ZZZ             
+        FFFF        ZZZ             
+         FFFF       ZZZ  ZZZZ       
+          FFFF      ZZZ ZZZZ        
+           FFFF     ZZZZZZZ         
+            FFFF    ZZZZZZ          
              FFFF   ZZZZZ           
               FFFF  ZZZZ            
                FFF  ZZZ             

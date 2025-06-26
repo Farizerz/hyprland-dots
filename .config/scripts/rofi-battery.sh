@@ -16,7 +16,7 @@ else
   select_index=0
 fi
 
-chosen=$(echo -e "$options" | rofi -dmenu -p "Select Battery Preset: " -selected-row $select_index)
+chosen=$(echo -e "$options" | rofi -dmenu -p "Select Battery Preset " -selected-row $select_index)
 
 case "$chosen" in
   "Full Capacity (100%)")

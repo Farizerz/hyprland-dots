@@ -17,7 +17,7 @@
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl), bc
 
 # Constants
-divider="------------------"
+divider=""
 goback="Back"
 
 # Checks if bluetooth controller is powered on
@@ -272,7 +272,7 @@ device_menu() {
 show_menu() {
     # Get menu options
     if power_on; then
-        power="Power: on"
+        power="Turn off"
 
         # Human-readable names of devices, one per line
         # If scan is off, will only list paired devices
@@ -286,7 +286,7 @@ show_menu() {
         # Options passed to rofi
         options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
     else
-        power="Power: off"
+        power="Turn on"
         options="$power\nExit"
     fi
 

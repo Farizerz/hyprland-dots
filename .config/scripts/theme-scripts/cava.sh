@@ -21,3 +21,13 @@ awk -v new_color1="$gradientColor1" -v new_color2="$gradientColor2" '
   }
   { print }
 ' "$CAVA_CONFIG" > "$CAVA_CONFIG.tmp" && mv "$CAVA_CONFIG.tmp" "$CAVA_CONFIG"
+
+# Check if cava is running
+if pgrep -x "cava" > /dev/null; then
+    pkill -SIGUSR1 cava
+fi
+
+# Check if tty-clock is running
+if pgrep -x "tty-clock" > /dev/null; then
+    for i in 1 2; do tty-clock || break; done
+fi

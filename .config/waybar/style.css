@@ -6,6 +6,21 @@
   min-height: 0;
 }
 
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}
+
 window#waybar {
   background-color: transparent;
   color: @foreground;
@@ -17,6 +32,10 @@ tooltip {
   background-color: @color0;
 }
 
+#image {
+  margin-bottom: -2px;
+}
+
 #clock,
 #pulseaudio,
 #custom-mic,
@@ -24,16 +43,16 @@ tooltip {
 #bluetooth,
 #workspaces,
 #custom-updates,
-#temperature,
-#memory,
-#cpu,
-#battery,
 #custom-power {
   background-color: @background;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 4px;
   padding-top: 4px;
+}
+
+#hardware {
+  background-color: @background;
 }
 
 #clock,
@@ -44,6 +63,7 @@ tooltip {
 #workspaces,
 #workspaces button,
 #custom-updates,
+#hardware,
 #custom-power {
   border-radius: 20px;
 }
@@ -63,6 +83,14 @@ tooltip {
   padding-left: 10px;
 }
 
+#bluetooth.off {
+  color: @color8;
+}
+
+#bluetooth.connected {
+  color: #00aeff;
+}
+
 #custom-updates {
   font-weight: 800;
 }
@@ -71,30 +99,6 @@ tooltip {
   font-size: 11px;
   text-shadow: 1px 1.5px 1px @color0;
   padding: 0px 10px 0px 10px;
-}
-
-#temperature {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-#battery,
-#cpu {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-#cpu {
-  padding-right: 11px;
-}
-
-#custom-bridge {
-  background-color: @color0;
-  margin-left: -11px;
-}
-
-#battery {
-  padding-left: 9px;
 }
 
 #workspaces {
@@ -119,7 +123,7 @@ tooltip {
   padding: 0 7px 0px 6px;
   background: linear-gradient(135deg, @color14, @color13);
   color: @color0;
-  animation: expand 0.2s ease-in-out forwards;
+  animation: bounce 0.2s ease-in-out forwards;
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -136,6 +140,21 @@ tooltip {
   margin-right: 5px;
 }
 
+#temperature {
+  padding: 0px 10px 0px 12px;
+}
+
+#memory,
+#cpu {
+  padding: 0px 10px 0px 10px;
+}
+
+#battery {
+  padding: 0px 12px 0px 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 #custom-power {
   padding: 1px 13px 2px 10px;
   margin-left: 5px;
@@ -145,12 +164,15 @@ tooltip {
 #custom-mic:hover,
 #network:hover,
 #bluetooth:hover,
+#custom-updates:hover,
+#memory:hover,
+#cpu:hover,
 #battery:hover,
 #custom-power:hover {
   animation: glow 0.2s ease forwards;
 }
 
-@keyframes expand {
+@keyframes bounce {
   0% {
     min-width: 0;
     opacity: 0;

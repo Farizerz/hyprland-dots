@@ -166,7 +166,8 @@ prompt {
 
 textbox-prompt-colon {
   expand:     false;
-  str:        "  ";
+  str:        "🔍";
   text-color: @color0;
   background-color: @color15;
+  padding: 0px 10px 0px 0px;
 }
