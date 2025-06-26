@@ -44,11 +44,11 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5
+Version 1.5.1
 
-1.  Changed hyprpaper to swww as default backend for waypaper
-2.  Added wallpaper selector feature (SUPER + TAB) & Random wallpaper selector (SUPER + SHIFT + TAB)
-3.  Added extra packages for install script
-4.  Fixed internal monitor behavior when plugging in & out of external devices
-5.  Added styling for thunar
-6.  Added microphone toggle and microphone indicator in waybar (ALT + M)
+1.  Tweaked waybar; using groups on the right module
+2.  Switched from swayidle to hypridle
+3.  Wlogout now displayed in 1 row
+4.  Added logo generator everytime the theme changes
+5.  Fixed cava & tty-clock behavior when changing themes
+6.  Adjusted rofi styling
