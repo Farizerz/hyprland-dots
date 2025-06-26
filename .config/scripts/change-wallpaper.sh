@@ -1,5 +1,3 @@
-pkill waybar
-
 IMAGE_PATH="$1"
 
 ~/.config/scripts/switch-monitor.sh 
@@ -19,7 +17,9 @@ IMAGE_PATH="$1"
 # Change folder color
 ~/.config/scripts/theme-scripts/papirus-folders-color.sh &
 
+# Generate logo
+~/.config/scripts/theme-scripts/generate-logo.sh &
+
 sleep 1.5
 pkill thunar && thunar &
-
-waybar
+pkill waybar && waybar

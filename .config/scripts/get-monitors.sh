@@ -8,8 +8,8 @@
 MODE="$1"
 
 # Get the monitor config
-MONITOR_INTERNAL=$(grep -E '^monitor=(eDP|LVDS|DSI)' ~/.config/hypr/monitor-sources.conf | cut -d= -f2)
-MONITOR_EXTERNAL=$(grep -E '^monitor=(HDMI|DP|DisplayPort|DVI-D|VGA|USB-C|NV)' ~/.config/hypr/monitor-sources.conf | cut -d= -f2)
+MONITOR_INTERNAL=$(grep -E '^monitor=(eDP|LVDS|DSI)' ~/.config/hypr/hyprconfig/monitor-sources.conf | cut -d= -f2)
+MONITOR_EXTERNAL=$(grep -E '^monitor=(HDMI|DP|DisplayPort|DVI-D|VGA|USB-C|NV)' ~/.config/hypr/hyprconfig/monitor-sources.conf | cut -d= -f2)
 
 if [[ "$MODE" == "name_internal" ]]; then
   echo "$MONITOR_INTERNAL" | cut -d, -f1

@@ -12,6 +12,7 @@ fi
 WALLPAPER_PATH=$(grep '^wallpaper *= *' ~/.config/waypaper/config.ini | cut -d '=' -f2- | xargs)
 WALLPAPER_PATH=${WALLPAPER_PATH/#\~/$HOME}
 
+# Change lockscreen to selected wallpaper
 TARGET="$HOME/assets/lockscreens/lockscreen.jpg"
 
 # Check file extension (case-insensitive)
@@ -81,4 +82,3 @@ white   = "${colors[color15]}"
 EOF
 
 echo "✅ Converted to $OUTPUT_FILE"
-

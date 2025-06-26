@@ -1,23 +1,17 @@
- -================================++++++++++++ 
-  ==============================+++++++++++++  
-   ============================+++++++++++++   
-    ======        ===========        ++++++    
-     ======       =========++       ++++++     
-      =============        ++++++++++++++      
-       ============      +++++++++++++++       
-        ==========+     +++++++++++++++        
-         ======         ++++++                 
-          ======        +++++  ++++++          
-           ====++       +++++  +++++           
-            ==++++      ++++++++++++           
-            +++++++     +++++++++++            
-             ++++++     ++++++++++             
-              ++++++    +++++++++              
-               ++++++   ++++++++               
-                ++++++  +++++++                
-                 ++++++ ++++++                 
-                  +++++ +++++                  
-                   ++++ ++++                   
-                    +++ +++                    
-                     ++ ++                     
-                      + *                      
+ FFFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZZ
+  FFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZ
+   FFFF        FFF  ZZZ        ZZZZ 
+    FFFF       FFF  ZZZ       ZZZZ  
+     FFFFFFFFFF        ZZZZZZZZZZ   
+      FFFFFFFFF      ZZZZZZZZZZZ    
+       FFFF         ZZZ             
+        FFFF        ZZZ             
+         FFFF       ZZZ  ZZZZ       
+          FFFF      ZZZ ZZZZ        
+           FFFF     ZZZZZZZ         
+            FFFF    ZZZZZZ          
+             FFFF   ZZZZZ           
+              FFFF  ZZZZ            
+               FFF  ZZZ             
+                FF  ZZ              
+                 F  Z
