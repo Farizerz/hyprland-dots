@@ -10,7 +10,6 @@ pacman=(
   hyprpaper
   swww
   hyprlock
-  hypridle
   alacritty
   ttf-jetbrains-mono-nerd
   networkmanager
@@ -64,6 +63,7 @@ pacman=(
   noto-fonts
   noto-fonts-cjk
   noto-fonts-emoji
+  swayidle
   brightnessctl
   playerctl
   imagemagick
@@ -114,11 +114,11 @@ fi
 yay -S --noconfirm --needed "${yay[@]}"
 
 # Post-installation steps
-sudo chown -R "$(whoami)":"$(whoami)" $HOME/.local
+sudo chown -R "$SUDO_USER":"$SUDO_USER" $HOME/.local
 
 sudo mv /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark /usr/share/icons/Papirus-Light ~/.local/share/icons/
 
-# Applying sddm theme
+# # Post-installation steps - Applying sddm theme
 sudo cp -r /home/$SUDO_USER/.local/share/sddm/themes /usr/share/sddm
 
 sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/

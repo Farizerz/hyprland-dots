@@ -1,14 +1,15 @@
 #!/bin/bash
 
-options="Full Capacity (100%)\nBalanced (80%)\nMaximum Lifespan (60%)"
+OPTIONS="Full Capacity (100%)\nBalanced (80%)\nMaximum Lifespan (60%)"
+CURRENT_THRESHOLD=$(cat /sys/class/power_supply/BAT0/charge_control_end_threshold)
 
-if sudo grep -q '# preset: full-capacity' /etc/tlp.conf; then
+if [[ $CURRENT_THRESHOLD == 100 ]]; then
   current="Full Capacity (100%)"
   select_index=0
-elif sudo grep -q '# preset: balanced' /etc/tlp.conf; then
+elif [[ $CURRENT_THRESHOLD == 80 ]]; then
   current="Balanced (80%)"
   select_index=1
-elif sudo grep -q '# preset: maximum-lifespan' /etc/tlp.conf; then
+elif [[ $CURRENT_THRESHOLD == 60 ]]; then
   current="Maximum Lifespan (60%)"
   select_index=2
 else
@@ -16,7 +17,8 @@ else
   select_index=0
 fi
 
-chosen=$(echo -e "$options" | rofi -dmenu -p "Select Battery Preset " -selected-row $select_index)
+
+chosen=$(echo -e "$OPTIONS" | rofi -dmenu -p "Select Battery Preset " -selected-row $select_index)
 
 case "$chosen" in
   "Full Capacity (100%)")
@@ -25,7 +27,7 @@ case "$chosen" in
     ;;
   "Balanced (80%)")
     sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
-    sudo tlp start
+    sudo tlp starts
     ;;
   "Maximum Lifespan (60%)")
     sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf

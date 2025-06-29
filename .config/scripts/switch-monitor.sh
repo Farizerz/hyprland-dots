@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MONITOR_NAME="$($HOME/.config/scripts/get-monitors.sh name_internal)"
-MONITOR_DETAILED="$($HOME/.config/scripts/get-monitors.sh detailed_internal)"
+MONITOR_NAME="$($HOME/.config/scripts/system-scripts/get-monitors.sh name_internal)"
+MONITOR_DETAILED="$($HOME/.config/scripts/system-scripts/get-monitors.sh detailed_internal)"
 CONFIG="$HOME/.config/hypr/hyprconfig/monitors.conf"
 LID_STATE=$(cat /proc/acpi/button/lid/LID/state 2>/dev/null | grep -i 'closed')
 OLD_MONITOR_DETAILS=$(grep "^monitor=$MONITOR_NAME," "$CONFIG")
@@ -12,7 +12,7 @@ if [[ $LID_STATE == *"closed"* ]]; then
     sed -i "s/^monitor=$MONITOR_DETAILED/monitor=$MONITOR_NAME,disable/" "$CONFIG"
   fi
 else
-  # Only replace if internal monitor in monitor.conf is different from monitor.sources.conf
+  # Only replace if internal monitor in monitor.conf is different from monitor-sources.conf
   if [[ "$OLD_MONITOR_DETAILS" != "monitor=$MONITOR_DETAILED" ]]; then
     sed -i "s/^monitor=$MONITOR_NAME,.*/monitor=$MONITOR_DETAILED/" "$CONFIG"
   fi

@@ -1,6 +1,6 @@
 #/bin/sh
 
-# Deprecated, now using hypridle instead
+# Deprecated, now using hypridle
 
 if [ -f "/usr/bin/swayidle" ]; then
   swayidle -w \
