@@ -1,6 +1,6 @@
 IMAGE_PATH="$1"
 
-~/.config/scripts/switch-monitor.sh 
+~/.config/scripts/switch-monitor.sh
 
 # Change wallpaper
 ~/.config/scripts/theme-scripts/wallpaper.sh "$IMAGE_PATH"

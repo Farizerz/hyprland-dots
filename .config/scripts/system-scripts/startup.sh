@@ -1,3 +1,5 @@
+~/.config/scripts/switch-monitor.sh
+
 # Change Random Wallpaper
 ~/.config/scripts/theme-scripts/wallpaper.sh
 
@@ -13,8 +15,10 @@
 # Change folder color
 ~/.config/scripts/theme-scripts/papirus-folders-color.sh &
 
+# Generate logo
+~/.config/scripts/theme-scripts/generate-logo.sh &
+
 sleep 0.5
-~/.config/scripts/switch-monitor.sh
 
 hyprctl dispatch workspace 2
 

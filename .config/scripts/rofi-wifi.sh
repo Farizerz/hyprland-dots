@@ -44,7 +44,7 @@ else
 	if [[ $(echo "$saved_connections" | grep -w "$chosen_id") = "$chosen_id" ]]; then
 		nmcli connection up id "$chosen_id" | grep "successfully" && notify-send "Connection Established" "$success_message"
 	else
-		if [[ "$chosen_network" =~ "󱚿" ]]; then
+		if [[ "$chosen_network" =~ "" ]]; then
 			wifi_password=$(rofi -dmenu -p "Password: " )
 		fi
 		output=$(nmcli device wifi connect "$chosen_id" password "$wifi_password" 2>&1)

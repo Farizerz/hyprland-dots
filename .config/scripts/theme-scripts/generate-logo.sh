@@ -4,7 +4,7 @@ WAL_COLORS="$HOME/.cache/wal/colors.css"
 COLOR1=$(grep color14 ~/.cache/wal/colors.css | awk '{print $2}' | cut -d';' -f1)
 COLOR2=$(grep color13 ~/.cache/wal/colors.css | awk '{print $2}' | cut -d';' -f1)
 
-# You can change the current logo into your custom svg logo
+# You change the current logo into your custom svg logo
 cat <<EOF > $SVG_PATH
 <?xml version="1.0" encoding="UTF-8"?>
 
