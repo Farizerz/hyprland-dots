@@ -44,11 +44,11 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.1
+Version 1.5.2
 
-1.  Tweaked waybar; using groups on the right module
-2.  Switched from swayidle to hypridle
-3.  Wlogout now displayed in 1 row
-4.  Added logo generator everytime the theme changes
-5.  Fixed cava & tty-clock behavior when changing themes
-6.  Adjusted rofi styling
+1.  Moved system scripts to ~/.config/scripts/system-scripts/
+2.  Fixed rofi-wifi bug where user unable to input password
+3.  Removed unnecessary permissions on visudo during installation process
+4.  Adjusted rofi-battery condition checking
+5.  Fixed sleep behavior user sleeps the laptop and closing the lid, it wakes up
+6.  Added post-update script to ensure if hyprland.desktop is overwritten to default `Exec=Hyprland` after update, replace it back using custom-boot.sh
