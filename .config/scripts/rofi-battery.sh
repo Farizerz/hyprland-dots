@@ -27,7 +27,7 @@ case "$chosen" in
     ;;
   "Balanced (80%)")
     sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
-    sudo tlp starts
+    sudo tlp start
     ;;
   "Maximum Lifespan (60%)")
     sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf

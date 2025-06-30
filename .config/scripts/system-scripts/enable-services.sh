@@ -11,7 +11,7 @@ echo "$SUDO_USER ALL=(ALL) NOPASSWD: /home/$SUDO_USER/.config/scripts/rofi-batte
 
 sudo chmod 0440 /etc/sudoers.d/rofi-battery
 
-### For bypassing auth on custom boot ###
+### For bypassing auth on custom boot & ryzenadj ###
 sudo EDITOR="tee -a" visudo <<EOF
 
 $SUDO_USER ALL=(ALL) NOPASSWD: \\

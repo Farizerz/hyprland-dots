@@ -9,3 +9,5 @@ if [[ "$LID_STATE" == "closed" ]]; then
 else
   hyprctl keyword monitor "$DETAILED_INTERNAL"
 fi
+
+hyprlock

@@ -15,7 +15,7 @@ else
   convert "$WALLPAPER_PATH[0]" "$ROFI_THUMB_PATH"
 fi
 
-magick "$ROFI_THUMB_PATH" -crop 500x1280+950+200 "$ROFI_THUMB_PATH"
+magick "$ROFI_THUMB_PATH" -crop 500x1280+950+100 "$ROFI_THUMB_PATH"
 
 # Update Rofi Colors
 $HOME/.config/scripts/rofi-import-colors.sh

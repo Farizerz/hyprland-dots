@@ -1,5 +1,4 @@
 {
-  "layer": "top",
   "position": "top",
   "margin-bottom": -10,
   "spacing": 0,
@@ -7,7 +6,7 @@
     "custom/image",
     "image#logo",
     "clock",
-    "pulseaudio",
+    "group/audio",
     "custom/mic",
     "network",
     "bluetooth",
@@ -17,9 +16,8 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "tray",
     "custom/updates",
-    "group/hardware",
+    "group/hardwaretray",
     "custom/power"
   ],
   "image#logo": {
@@ -28,7 +26,6 @@
     "on-click": "rofi -show drun"
   },
   "mpris": {
-    "interval": 1,
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
     "player-icons": {
@@ -62,6 +59,14 @@
       }
     }
   },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ],
+    "drawer": {}
+  },
   "pulseaudio": {
     "format": "{icon} {volume:3d}",
     "format-icons": [
@@ -72,6 +77,11 @@
     "format-muted": "   -",
     "on-click": "hyprctl dispatch exec pavucontrol",
     "rotate": 2
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
   },
   "custom/mic": {
     "format": "{}",
@@ -132,11 +142,6 @@
       "4": []
     }
   },
-  "tray": {
-    "icon-size": 15,
-    "show-passive-items": false,
-    "spacing": 5
-  },
   "custom/updates": {
     "format": " {}",
     "exec": "~/.config/scripts/check-updates.sh",
@@ -144,12 +149,22 @@
     "tooltip": true,
     "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
   },
+  "group/hardwaretray": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/hardware",
+      "tray"
+    ],
+    "drawer": {
+      "transition-left-to-right": false
+    }
+  },
   "group/hardware": {
     "orientation": "horizontal",
     "modules": [
       "temperature",
-      "memory",
       "cpu",
+      "memory",
       "battery"
     ]
   },

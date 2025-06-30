@@ -73,6 +73,7 @@ pacman=(
   cava
   obs-studio
   libreoffice-still
+  yt-dlp
 )
 
 # Install packages using pacman
