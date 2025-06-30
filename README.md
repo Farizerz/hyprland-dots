@@ -44,10 +44,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.3
+Version 1.5.4
 
-1.  Moved tray icon into groups with group/hardware (hover to right modules to see active tray)
-2.  Added slider to volume module
-3.  Auto lock after sleep / hibernate
-4.  Added swappy config
-5.  Fixed rofi-battery typo at balanced preset
+1.  Increased cava bar width
+2.  Updated waybar; temp, cpu, mem, and battery now using dynamic colors
