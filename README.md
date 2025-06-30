@@ -44,11 +44,10 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.2
+Version 1.5.3
 
-1.  Moved system scripts to ~/.config/scripts/system-scripts/
-2.  Fixed rofi-wifi bug where user unable to input password
-3.  Removed unnecessary permissions on visudo during installation process
-4.  Adjusted rofi-battery condition checking
-5.  Fixed sleep behavior user sleeps the laptop and closing the lid, it wakes up
-6.  Added post-update script to ensure if hyprland.desktop is overwritten to default `Exec=Hyprland` after update, replace it back using custom-boot.sh
+1.  Moved tray icon into groups with group/hardware (hover to right modules to see active tray)
+2.  Added slider to volume module
+3.  Auto lock after sleep / hibernate
+4.  Added swappy config
+5.  Fixed rofi-battery typo at balanced preset
