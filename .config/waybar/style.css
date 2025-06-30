@@ -103,12 +103,17 @@ tooltip {
 }
 
 #network {
-  padding-right: 12px;
+  padding-right: 9px;
+  padding-left: 9px;
+}
+
+#network.disconnected {
+  padding-right: 11px;
   padding-left: 9px;
 }
 
 #network.disabled {
-  padding-right: 14px;
+  padding-right: 13px;
   padding-left: 9px;
 }
 
@@ -174,19 +179,61 @@ tooltip {
   margin-right: 5px;
 }
 
-#temperature {
+#temperaturegroup {
   padding: 0px 10px 0px 12px;
 }
 
-#memory,
-#cpu {
+#temperature {
+  color: inherit;
+}
+
+#cpugroup,
+#memorygroup {
   padding: 0px 10px 0px 10px;
 }
 
-#battery {
+#cpu {
+  color: @color8;
+}
+
+#memory {
+  color: @color11;
+}
+
+#batterygroup {
   padding: 0px 12px 0px 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+#battery {
+  color: #3cb371;
+}
+
+#battery.charging,
+#battery.warning.charging,
+#battery.critical.charging {
+  color: #00fa9a;
+}
+
+#temperature.degree,
+#cpu.percentage,
+#memory.percentage,
+#battery.percentage {
+  color: @foreground;
+}
+
+#battery.warning,
+#cpu.warning,
+#memory.warning {
+  color: #ffc069;
+}
+
+#temperature.critical,
+#cpu.critical,
+#memory.critical,
+#battery.critical {
+  color: #d20f39;
 }
 
 #custom-power {
@@ -199,11 +246,20 @@ tooltip {
 #network:hover,
 #bluetooth:hover,
 #custom-updates:hover,
-#memory:hover,
-#cpu:hover,
-#battery:hover,
+#cpugroup:hover,
+#memorygroup:hover,
+#batterygroup:hover,
 #custom-power:hover {
   animation: glow 0.2s ease forwards;
+}
+
+#cpugroup:hover #cpu,
+#cpugroup:hover #cpu.percentage,
+#memorygroup:hover #memory,
+#memorygroup:hover #memory.percentage,
+#batterygroup:hover #battery,
+#batterygroup:hover #battery.percentage {
+  animation: invertColor 0.2s ease forwards;
 }
 
 @keyframes bounce {
@@ -226,6 +282,14 @@ tooltip {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes invertColor {
+  from {
+  }
+  to {
+    color: @background;
   }
 }
 

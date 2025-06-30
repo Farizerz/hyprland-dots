@@ -70,11 +70,11 @@
   "pulseaudio": {
     "format": "{icon} {volume:3d}",
     "format-icons": [
-      "󰕿",
-      "󰖀",
-      "󰕾"
+      "<span font='11'>󰕿</span>",
+      "<span font='11'>󰖀</span>",
+      "<span font='11'>󰕾</span>"
     ],
-    "format-muted": "   -",
+    "format-muted": "<span font='11'> </span>  -",
     "on-click": "hyprctl dispatch exec pavucontrol",
     "rotate": 2
   },
@@ -93,7 +93,7 @@
   "network": {
     "interval": 2,
     "format-wifi": "{icon}  {essid}",
-    "format-ethernet": "󰈀",
+    "format-ethernet": "󰈀  Ethernet",
     "format-disconnected": "",
     "format-disabled": "󰤮",
     "format-icons": [
@@ -162,76 +162,139 @@
   "group/hardware": {
     "orientation": "horizontal",
     "modules": [
+      "group/temperaturegroup",
+      "group/cpugroup",
+      "group/memorygroup",
+      "group/batterygroup"
+    ]
+  },
+  "group/temperaturegroup": {
+    "orientation": "horizontal",
+    "modules": [
       "temperature",
-      "cpu",
-      "memory",
-      "battery"
+      "temperature#degree"
     ]
   },
   "temperature": {
     "interval": 2,
-    "format": "{icon} {temperatureC}°C",
+    "critical-threshold": 80,
+    "format": "{icon} ",
     "format-icons": [
-      "<span color='#00C8FF' font='11'></span>",
-      "<span color='#00C8FF' font='11'></span>",
-      "<span color='#FFD700' font='11'></span>",
-      "<span color='#FFD700' font='11'></span>",
-      "<span color='#FF0000' font='11'></span>"
+      "<span font='11'></span>",
+      "<span font='11'></span>",
+      "<span font='11'></span>",
+      "<span color='#FFC069' font='11'></span>",
+      "<span font='11'></span>"
     ],
     "tooltip-format": "CPU Temp: {temperatureC}°C"
   },
+  "temperature#degree": {
+    "interval": 2,
+    "format": "{temperatureC}°C",
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
+  },
+  "group/cpugroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "cpu#percentage"
+    ]
+  },
+  "cpu": {
+    "interval": 2,
+    "states": {
+      "warning": 50,
+      "critical": 80
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>"
+    ],
+    "on-click": "alacritty -e btop"
+  },
+  "cpu#percentage": {
+    "interval": 2,
+    "format": "{usage:3d}%",
+    "on-click": "alacritty -e btop"
+  },
+  "group/memorygroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "memory",
+      "memory#percentage"
+    ]
+  },
   "memory": {
     "interval": 2,
-    "format": "{icon}{percentage:3d}%",
+    "states": {
+      "warning": 50,
+      "critical": 90
+    },
+    "format": "{icon}",
     "format-icons": [
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FFC069'>  </span>",
-      "<span color='#FF0000'>  </span>",
-      "<span color='#FF0000'>  </span>"
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>",
+      "<span>  </span>"
     ],
     "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
     "on-click": "alacritty -e btop"
   },
-  "cpu": {
+  "memory#percentage": {
     "interval": 2,
-    "format": "{icon}{usage:3d}%",
-    "format-icons": [
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#85C2FF'>  </span>",
-      "<span color='#FFD700'>  </span>",
-      "<span color='#FFD700'>  </span>",
-      "<span color='#FF0000'>  </span>",
-      "<span color='#FF0000'>  </span>"
-    ],
+    "format": "{percentage:3d}%",
+    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
     "on-click": "alacritty -e btop"
+  },
+  "group/batterygroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "battery",
+      "battery#percentage"
+    ]
   },
   "battery": {
     "interval": 2,
-    "adapter": "AC POWER",
-    "format": "{icon}{capacity:3d}%",
-    "format-charging": "<span color='#00FA9A'><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>{capacity:3d}%",
+    "format": "{icon}",
+    "format-charging": "<span><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>",
+    "states": {
+      "full": 100,
+      "warning": 50,
+      "critical": 30
+    },
     "format-icons": [
-      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
-      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
-      "<span color='#FF0000'><span font='11'>󰁹</span> </span>",
-      "<span color='#FFD700'><span font='11'>󰁹</span> </span>",
-      "<span color='#FFD700'><span font='11'>󰁹</span> </span>",
-      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
-      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
-      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
-      "<span color='#3CB371'><span font='11'>󰁹</span> </span>",
-      "<span color='#00FA9A'><span font='11'>󰁹</span> </span>"
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>",
+      "<span><span font='11'>󰁹</span> </span>"
     ],
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
+  },
+  "battery#percentage": {
+    "class": "battery-percentage",
+    "interval": 2,
+    "format": "{capacity:3d}%",
     "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
   "custom/power": {
