@@ -1,0 +1,46 @@
+{
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+  "editor.tabSize": 2,
+  "editor.fontWeight": "600",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "workbench.settings.applyToAllProfiles": [],
+  "workbench.colorCustomizations": {
+    "editorGroupHeader.tabsBackground": "#161921",
+    "tab.activeBorderTop": "#e0ded0",
+    "tab.activeBackground": "#e0ded020",
+    "tab.inactiveBackground": "#161921",
+    "activityBar.background": "#161921",
+    "statusBar.background": "#161921",
+    "editor.background": "#161921",
+    "sideBar.background": "#161921",
+    "sideBarSectionHeader.background": "#e5c6be20",
+    "panel.background": "#161921",
+    "panelTitle.activeBorder": "#e0ded0",
+    "panelTitleBadge.background": "#e0ded0",
+    "panelTitleBadge.foreground": "#161921",
+    "terminal.background": "#161921"
+  },
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "window.titleBarStyle": "native",
+  "github.copilot.advanced": {},
+  "github.copilot.enable": {
+    "*": false
+  },
+  "settingsSync.ignoredSettings": [],
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "window.commandCenter": false,
+  "window.menuStyle": "custom",
+  "window.menuBarVisibility": "compact",
+  "window.customTitleBarVisibility": "never",
+  "json.schemas": [],
+  "workbench.editor.editorActionsLocation": "hidden",
+  "editor.stickyScroll.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 15,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false
+}

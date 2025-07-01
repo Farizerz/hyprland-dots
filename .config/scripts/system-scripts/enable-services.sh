@@ -15,7 +15,8 @@ sudo chmod 0440 /etc/sudoers.d/rofi-battery
 sudo EDITOR="tee -a" visudo <<EOF
 
 $SUDO_USER ALL=(ALL) NOPASSWD: \\
-/home/$SUDO_USER/.config/scripts/system-scripts/custom-boot.sh
+/home/$SUDO_USER/.config/scripts/system-scripts/custom-boot.sh, \\
+/usr/bin/ryzenadj
 EOF
 
 ### Change hyprland boot service using custom script ###
