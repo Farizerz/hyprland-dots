@@ -15,6 +15,9 @@
 # Change folder color
 ~/.config/scripts/theme-scripts/papirus-folders-color.sh &
 
+# Change vs code theme
+~/.config/scripts/theme-scripts/code.sh &
+
 # Generate logo
 ~/.config/scripts/theme-scripts/generate-logo.sh &
 
