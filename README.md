@@ -44,7 +44,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.4
+Version 1.5.5
 
-1.  Increased cava bar width
-2.  Updated waybar; temp, cpu, mem, and battery now using dynamic colors
+1.  Added vs code dynamic theme
