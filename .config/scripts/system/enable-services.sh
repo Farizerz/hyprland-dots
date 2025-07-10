@@ -11,15 +11,15 @@ echo "$SUDO_USER ALL=(ALL) NOPASSWD: /home/$SUDO_USER/.config/scripts/rofi-batte
 
 sudo chmod 0440 /etc/sudoers.d/rofi-battery
 
-### For bypassing auth on custom boot & ryzenadj ###
+### For bypassing auth on custom boot & others ###
 sudo EDITOR="tee -a" visudo <<EOF
 
 $SUDO_USER ALL=(ALL) NOPASSWD: \\
-/home/$SUDO_USER/.config/scripts/system-scripts/custom-boot.sh, \\
-/usr/bin/ryzenadj
+/home/$SUDO_USER/.config/scripts/system/custom-boot.sh, \\
+/usr/sbin/efibootmgr
 EOF
 
 ### Change hyprland boot service using custom script ###
-sudo ~/.config/scripts/system-scripts/custom-boot.sh 
+sudo ~/.config/scripts/system/custom-boot.sh 
 
 echo "✅ Services enabled and started."

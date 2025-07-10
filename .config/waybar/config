@@ -74,7 +74,7 @@
       "<span font='11'>󰖀</span>",
       "<span font='11'>󰕾</span>"
     ],
-    "format-muted": "<span font='11'> </span>  -",
+    "format-muted": "<span font='11'> </span> -",
     "on-click": "hyprctl dispatch exec pavucontrol",
     "rotate": 2
   },
@@ -92,8 +92,8 @@
   },
   "network": {
     "interval": 2,
-    "format-wifi": "{icon}  {essid}",
-    "format-ethernet": "󰈀  Ethernet",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 Ethernet",
     "format-disconnected": "",
     "format-disabled": "󰤮",
     "format-icons": [
@@ -144,7 +144,7 @@
   },
   "custom/updates": {
     "format": " {}",
-    "exec": "~/.config/scripts/check-updates.sh",
+    "exec": "~/.config/scripts/waybar/check-updates.sh",
     "return-type": "json",
     "tooltip": true,
     "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
@@ -208,16 +208,16 @@
     },
     "format": "{icon}",
     "format-icons": [
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>"
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>"
     ],
     "on-click": "alacritty -e btop"
   },
@@ -241,16 +241,16 @@
     },
     "format": "{icon}",
     "format-icons": [
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>",
-      "<span>  </span>"
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>"
     ],
     "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
     "on-click": "alacritty -e btop"
@@ -264,13 +264,13 @@
   "group/batterygroup": {
     "orientation": "horizontal",
     "modules": [
-      "battery",
-      "battery#percentage"
+      "custom/battery",
+      "custom/batterypercentage"
     ]
   },
   "battery": {
     "interval": 2,
-    "format": "{icon}",
+    "format": "{icon} (currently not used, using custom/battery instead)",
     "format-charging": "<span><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>",
     "states": {
       "full": 100,
@@ -291,15 +291,29 @@
     ],
     "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
+  "custom/battery": {
+    "interval": 2,
+    "exec": "~/.config/scripts/waybar/custom-battery.sh",
+    "return-type": "json",
+    "format": "{text}",
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
+  },
   "battery#percentage": {
     "class": "battery-percentage",
     "interval": 2,
-    "format": "{capacity:3d}%",
+    "format": "{capacity:3d}% (currently not used, using custom/batterypercentage instead)",
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
+  },
+  "custom/batterypercentage": {
+    "interval": 2,
+    "exec": "~/.config/scripts/waybar/custom-battery.sh",
+    "return-type": "json",
+    "format": "{percentage:3d}%",
     "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout --buttons-per-row 5",
+    "on-click": "wlogout --buttons-per-row 6",
     "tooltip-format": "Power Options"
   }
 }

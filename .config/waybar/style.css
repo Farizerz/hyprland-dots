@@ -1,7 +1,7 @@
 @import "../colors/colors.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
   font-size: 13px;
   min-height: 0;
 }
@@ -41,8 +41,7 @@ tooltip {
 #network,
 #bluetooth,
 #workspaces,
-#custom-updates,
-#custom-power {
+#custom-updates {
   background-color: @background;
   padding-left: 10px;
   padding-right: 10px;
@@ -50,7 +49,8 @@ tooltip {
   padding-top: 4px;
 }
 
-#hardware {
+#hardware,
+#custom-power {
   background-color: @background;
 }
 
@@ -102,24 +102,10 @@ tooltip {
   border: none;
 }
 
-#network {
-  padding-right: 9px;
-  padding-left: 9px;
-}
-
+#network.disabled,
 #network.disconnected {
-  padding-right: 11px;
-  padding-left: 9px;
-}
-
-#network.disabled {
-  padding-right: 13px;
-  padding-left: 9px;
-}
-
-#bluetooth {
-  padding-right: 11px;
-  padding-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #bluetooth.off {
@@ -128,6 +114,8 @@ tooltip {
 
 #bluetooth.connected {
   color: #00aeff;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 #custom-updates {
@@ -146,7 +134,7 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 0 10px 0px 6px;
+  padding: 0 8px 0px 9px;
   background-color: transparent;
   border: 0px;
   color: @color8;
@@ -206,13 +194,13 @@ tooltip {
   border-bottom-right-radius: 20px;
 }
 
-#battery {
+#custom-battery {
   color: #3cb371;
 }
 
-#battery.charging,
-#battery.warning.charging,
-#battery.critical.charging {
+#custom-battery.charging,
+#custom-battery.warning.charging,
+#custom-battery.critical.charging {
   color: #00fa9a;
 }
 
@@ -223,7 +211,7 @@ tooltip {
   color: @foreground;
 }
 
-#battery.warning,
+#custom-battery.warning,
 #cpu.warning,
 #memory.warning {
   color: #ffc069;
@@ -232,13 +220,16 @@ tooltip {
 #temperature.critical,
 #cpu.critical,
 #memory.critical,
-#battery.critical {
+#custom-battery.low,
+#custom-battery.critical {
   color: #d20f39;
 }
 
 #custom-power {
-  padding: 1px 13px 2px 10px;
   margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 9px;
+  padding-bottom: 0.5px;
 }
 
 #audio:hover,
@@ -257,9 +248,13 @@ tooltip {
 #cpugroup:hover #cpu.percentage,
 #memorygroup:hover #memory,
 #memorygroup:hover #memory.percentage,
-#batterygroup:hover #battery,
+#batterygroup:hover #custom-battery,
 #batterygroup:hover #battery.percentage {
   animation: invertColor 0.2s ease forwards;
+}
+
+#custom-battery.critical {
+  animation: blink 1s infinite;
 }
 
 @keyframes bounce {
@@ -273,6 +268,18 @@ tooltip {
   }
   100% {
     min-width: 25px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
