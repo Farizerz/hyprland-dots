@@ -17,7 +17,7 @@
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl), bc
 
 # Constants
-divider=""
+divider="─────────────────────────────────────────"
 goback="Back"
 
 # Checks if bluetooth controller is powered on
@@ -246,7 +246,7 @@ device_menu() {
     fi
 
     # Open rofi menu, read chosen option
-    chosen="$(echo -e "$options" | $rofi_command "$device_name")"
+    chosen="$(echo -e "$options" | $rofi_command "$device_name ")"
 
     # Match chosen option to command
     case "$chosen" in

@@ -15,7 +15,7 @@ fi
 
 forget_option="󰅛  Forget Wi-Fi"
 
-separator=""
+separator="─────────────────────────────────────────"
 
 # Use rofi to select wifi network
 chosen_network=$(echo -e "$toggle\n$forget_option\n$separator\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 2 -p "Wi-Fi " )
@@ -54,7 +54,7 @@ else
 			if ! ping -q -c 1 -W 1 archlinux.org >/dev/null; then
     		notify-send "Captive Portal Detected" "Opening browser for Wi-Fi login..."
     		# Replace with your preferred browser
-    		hyprctl dispatch exec "[workspace special:portal silent] chromium http://neverssl.com"
+    		chromium http://neverssl.com
 			fi
 		else
     	notify-send "Connection Failed" "$(echo "$output" | grep -m1 -oP '(?<=Error: ).*' || echo 'Could not connect to Wi-Fi.')"

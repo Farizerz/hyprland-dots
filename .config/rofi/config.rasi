@@ -4,12 +4,15 @@ configuration {
   display-drun: " ";
   display-window: "Windows: ";
   drun-display-format: "{icon} {name}";
-  font: "JetBrainsMono Nerd Font Bold 11";
+  font: "JetBrainsMono Nerd Font Propo Bold 11";
   modi: "window,run,drun,emoji";
   show-icons: true;
   icon-theme: "Papirus";
   sort: true;
   disable-history: true;
+  hover-select: true;
+  me-select-entry: "";
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
 
 * {
@@ -166,9 +169,9 @@ prompt {
 
 textbox-prompt-colon {
   expand:     false;
-  str:        " ";
+  str:        "";
   text-color: @color0;
-  font: 'JetBrainsMono Nerd Font Bold 12';
+  font: 'JetBrainsMono Nerd Font Propo Bold';
   background-color: @color15;
-  padding: 0px 6px 0px 2px;
+  padding: 0px 12px 0px 2px;
 }

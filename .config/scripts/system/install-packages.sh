@@ -74,6 +74,7 @@ pacman=(
   obs-studio
   libreoffice-still
   yt-dlp
+  chafa
 )
 
 # Install packages using pacman

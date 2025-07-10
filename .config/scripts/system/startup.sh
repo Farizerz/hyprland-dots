@@ -1,9 +1,7 @@
-IMAGE_PATH="$1"
-
 ~/.config/scripts/switch-monitor.sh
 
-# Change wallpaper
-~/.config/scripts/theme/wallpaper.sh "$IMAGE_PATH"
+# Change Random Wallpaper
+~/.config/scripts/theme/wallpaper.sh
 
 # Change rofi theme
 ~/.config/scripts/theme/rofi.sh &
@@ -23,6 +21,8 @@ IMAGE_PATH="$1"
 # Generate logo
 ~/.config/scripts/theme/generate-logo.sh &
 
-sleep 1.5
-pkill thunar && thunar &
-pkill waybar && waybar
+sleep 0.5
+
+hyprctl dispatch workspace 2
+
+waybar

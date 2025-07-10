@@ -41,7 +41,7 @@ read -rp "Enter choice [1-4]: " choice
 
 post_update() {
   sleep 1
-  sudo ~/.config/scripts/system-scripts/custom-boot.sh 
+  sudo ~/.config/scripts/system/custom-boot.sh 
   killall waybar && nohup waybar >/dev/null 2>&1 &
   echo "✅ Update finished."
   sleep 2

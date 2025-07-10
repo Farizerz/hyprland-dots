@@ -2,9 +2,9 @@
 
 # For toggling internal monitors on / off if connected to external monitor
 
-MONITOR_INTERNAL_NAME="$($HOME/.config/scripts/system-scripts/get-monitors.sh name_internal)"
-MONITOR_INTERNAL_DETAILED="$($HOME/.config/scripts/system-scripts/get-monitors.sh detailed_internal)"
-MONITOR_EXTERNAL_NAME="$($HOME/.config/scripts/system-scripts/get-monitors.sh name_external)"
+MONITOR_INTERNAL_NAME="$($HOME/.config/scripts/system/get-monitors.sh name_internal)"
+MONITOR_INTERNAL_DETAILED="$($HOME/.config/scripts/system/get-monitors.sh detailed_internal)"
+MONITOR_EXTERNAL_NAME="$($HOME/.config/scripts/system/get-monitors.sh name_external)"
 MONITORS=$(hyprctl monitors)
 
 if echo "$MONITORS" | grep -q "^Monitor $MONITOR_INTERNAL_NAME" && echo "$monitors" | grep -q "^Monitor $MONITOR_EXTERNAL_NAME"; then
