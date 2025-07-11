@@ -44,9 +44,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.6
+Version 1.5.7
 
-1.  Changed fastfetch output
-2.  Using JetBrainsMono Nerd Font Propo for proportional Icons
-3.  Using custom/battery on waybar to show uptime on hover
-4.  Changed script folder name for shorter name
+1.  Added mountpoint checker on install update
