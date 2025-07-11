@@ -1,25 +1,28 @@
 {
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', 'monospace', monospace",
   "editor.tabSize": 2,
-  "editor.fontWeight": "600",
+  "editor.fontWeight": "500",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "workbench.settings.applyToAllProfiles": [],
   "workbench.colorCustomizations": {
-    "editorGroupHeader.tabsBackground": "#161921",
-    "tab.activeBorderTop": "#e0ded0",
-    "tab.activeBackground": "#e0ded020",
-    "tab.inactiveBackground": "#161921",
-    "activityBar.background": "#161921",
-    "statusBar.background": "#161921",
-    "editor.background": "#161921",
-    "sideBar.background": "#161921",
+    "activityBar.background": "#0f1c07",
+    "activityBar.activeBorder": "#c7d1ba",
+    "activityBarBadge.background": "#c7d1ba",
+    "activityBarBadge.foreground": "#0f1c07",
+    "editor.background": "#0f1c07",
+    "editorGroupHeader.tabsBackground": "#0f1c07",
+    "panel.background": "#0f1c07",
+    "panelTitle.activeBorder": "#c7d1ba",
+    "panelTitleBadge.background": "#c7d1ba",
+    "panelTitleBadge.foreground": "#0f1c07",
+    "sideBar.background": "#0f1c07",
     "sideBarSectionHeader.background": "#e5c6be20",
-    "panel.background": "#161921",
-    "panelTitle.activeBorder": "#e0ded0",
-    "panelTitleBadge.background": "#e0ded0",
-    "panelTitleBadge.foreground": "#161921",
-    "terminal.background": "#161921"
+    "statusBar.background": "#0f1c07",
+    "tab.activeBorderTop": "#c7d1ba",
+    "tab.activeBackground": "#c7d1ba20",
+    "tab.inactiveBackground": "#0f1c07",
+    "terminal.background": "#0f1c07"
   },
   "workbench.editorAssociations": {
     "*.svg": "default"
@@ -39,8 +42,11 @@
   "json.schemas": [],
   "workbench.editor.editorActionsLocation": "hidden",
   "editor.stickyScroll.enabled": false,
-  "editor.renderWhitespace": "all",
-  "editor.fontSize": 15,
+  "editor.renderWhitespace": "none",
+  "editor.fontSize": 14.8,
   "breadcrumbs.enabled": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.mouseWheelZoom": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true
 }
