@@ -48,9 +48,21 @@ post_update() {
 
 }
 
+mount_boot() {
+    # Safe mount check
+    echo "Checking mountpoint..."
+    if ! mountpoint -q /boot; then
+      echo "⚠️ /boot is not mounted. Mounting now..."
+      sudo mount /boot || { echo "❌ Failed to mount /boot"; sleep 2; exit 1; }
+    else 
+      echo "✅ /boot already mounted."
+    fi
+}
+
 case "$choice" in
   1)
     echo "🔃 Updating Pacman packages..."
+    mount_boot
     sudo pacman -Syu --noconfirm
     post_update
     ;;
@@ -60,6 +72,7 @@ case "$choice" in
     post_update
     ;;
   3)
+    mount_boot
     echo "🔃 Updating everything..."
     yay -Syu --noconfirm
     post_update
