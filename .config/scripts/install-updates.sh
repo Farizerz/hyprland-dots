@@ -39,15 +39,6 @@ echo "3) Update all packages (yay -Syu)"
 echo "4) Cancel"
 read -rp "Enter choice [1-4]: " choice
 
-post_update() {
-  sleep 1
-  sudo ~/.config/scripts/system/custom-boot.sh 
-  killall waybar && nohup waybar >/dev/null 2>&1 &
-  echo "✅ Update finished."
-  sleep 2
-
-}
-
 mount_boot() {
     # Safe mount check
     echo "Checking mountpoint..."
@@ -59,11 +50,21 @@ mount_boot() {
     fi
 }
 
+post_update() {
+  sleep 1
+  sudo ~/.config/scripts/system/custom-boot.sh 
+  killall waybar && nohup waybar >/dev/null 2>&1 &
+  echo "✅ Update finished."
+  sleep 2
+
+}
+
 case "$choice" in
   1)
     echo "🔃 Updating Pacman packages..."
     mount_boot
     sudo pacman -Syu --noconfirm
+    mount_boot
     post_update
     ;;
   2)
@@ -75,6 +76,7 @@ case "$choice" in
     mount_boot
     echo "🔃 Updating everything..."
     yay -Syu --noconfirm
+    mount_boot
     post_update
     ;;
   4)
