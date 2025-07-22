@@ -44,6 +44,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.7
+Version 1.5.8
 
-1.  Added mountpoint checker on install update
+1.  Changed fastfetch display
+2.  Added aliases on bashrc
