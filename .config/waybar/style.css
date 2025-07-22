@@ -125,7 +125,7 @@ tooltip {
 #mpris {
   font-size: 11px;
   text-shadow: 1px 1.5px 1px @color0;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 5px;
 }
 
 #workspaces {
@@ -227,9 +227,7 @@ tooltip {
 
 #custom-power {
   margin-left: 5px;
-  padding-left: 10px;
-  padding-right: 9px;
-  padding-bottom: 0.5px;
+  padding: 0px 9px 0.5px 9px;
 }
 
 #audio:hover,

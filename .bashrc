@@ -22,7 +22,9 @@ fi
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ipconfig='ip addr show'
-alias rebootwindows='sudo efibootmgr --bootnext 0000 && reboot'
+alias reboot-windows='sudo efibootmgr --bootnext 0000 && reboot'
+alias execute-scripts='~/.config/scripts/system/execute-scripts.sh'
+alias neofetch='fastfetch'
 
 add() {
   sudo pacman -S "$@" --noconfirm
@@ -46,4 +48,8 @@ removey() {
 
 updatey() {
   yay -Syu --noconfirm
+}
+
+dlp() {
+  yt-dlp -P ~/Videos "$@"
 }
