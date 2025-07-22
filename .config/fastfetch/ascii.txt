@@ -1,17 +1,17 @@
- FFFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZZ
-  FFFFFFFFFFFFFFFF  ZZZZZZZZZZZZZZZZ 
-   FFFF        FFF  ZZZ        ZZZZ  
-    FFFF       FFF  ZZZ       ZZZZ   
-     FFFFFFFFFF        ZZZZZZZZZZ    
-      FFFFFFFFF      ZZZZZZZZZZZ     
-       FFFF         ZZZ              
-        FFFF        ZZZ              
-         FFFF       ZZZ  ZZZZ        
-          FFFF      ZZZ ZZZZ         
-           FFFF     ZZZZZZZ          
-            FFFF    ZZZZZZ           
-             FFFF   ZZZZZ            
-              FFFF  ZZZZ             
-               FFF  ZZZ              
-                FF  ZZ               
-                 F  Z                
+ [96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m
+  [96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m 
+   [96mF[0m[96mF[0m[96mF[0m[96mF[0m        [96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m        [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m  
+    [96mF[0m[96mF[0m[96mF[0m[96mF[0m       [96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m       [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m   
+     [96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m        [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m    
+      [96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m[96mF[0m      [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m     
+       [96mF[0m[96mF[0m[96mF[0m[96mF[0m         [91mZ[0m[91mZ[0m[91mZ[0m              
+        [96mF[0m[96mF[0m[96mF[0m[96mF[0m        [91mZ[0m[91mZ[0m[91mZ[0m              
+         [96mF[0m[96mF[0m[96mF[0m[96mF[0m       [91mZ[0m[91mZ[0m[91mZ[0m  [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m        
+          [96mF[0m[96mF[0m[96mF[0m[96mF[0m      [91mZ[0m[91mZ[0m[91mZ[0m [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m         
+           [96mF[0m[96mF[0m[96mF[0m[96mF[0m     [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m          
+            [96mF[0m[96mF[0m[96mF[0m[96mF[0m    [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m           
+             [96mF[0m[96mF[0m[96mF[0m[96mF[0m   [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m            
+              [96mF[0m[96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m[91mZ[0m             
+               [96mF[0m[96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m[91mZ[0m              
+                [96mF[0m[96mF[0m  [91mZ[0m[91mZ[0m               
+                 [96mF[0m  [91mZ[0m                

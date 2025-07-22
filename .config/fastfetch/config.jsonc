@@ -7,36 +7,36 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╭──\u001b[91mSoftware\u001b[36m──╮"
+      "format": "\u001b[36m╭───\u001b[91mOS\u001b[36m───╮"
     },
     // "host",
     {
       "type": "os",
-      "key": "│  OS       │"
+      "key": "│  Dist │"
     },
     {
       "type": "kernel",
-      "key": "│  Kernel   │"
+      "key": "│  Krnl │"
     },
     {
       "type": "de",
-      "key": "│ 󰪫 DE       │"
+      "key": "│ 󰪫 DE   │"
     },
     {
       "type": "wm",
-      "key": "│ 󱂬 WM       │"
+      "key": "│ 󱂬 WM   │"
     },
     {
       "type": "packages",
-      "key": "│  Packages │"
+      "key": "│  Pkgs │"
     },
     {
       "type": "terminal",
-      "key": "│  Terminal │"
+      "key": "│  Term │"
     },
     {
       "type": "shell",
-      "key": "│  Shell    │"
+      "key": "│  Sh   │"
     },
     // "wmtheme",
     // "theme",
@@ -47,43 +47,45 @@
     // },
     {
       "type": "custom",
-      "format": "\u001b[36m├──\u001b[91mHardware\u001b[36m──┤"
+      "format": "\u001b[36m├───\u001b[91mPC\u001b[36m───┤"
     },
     {
       "type": "display",
-      "key": "│ 󰍹 Display  │",
+      "key": "│ 󰍹 Res  │",
       "compactType": "original-with-refresh-rate"
     },
     {
       "type": "cpu",
-      "key": "│  CPU      │"
+      "key": "│  CPU  │"
     },
     {
       "type": "gpu",
-      "key": "│ 󱎴 GPU      │"
+      "key": "│ 󱎴 GPU  │",
+      "format": "{vendor} {name}"
     },
     {
       "type": "memory",
-      "key": "│  Memory   │"
+      "key": "│  RAM  │"
     },
     // "battery",
     // "poweradapter",
     {
       "type": "custom",
-      "format": "\u001b[36m├────\u001b[91mMisc\u001b[36m────┤"
+      "format": "\u001b[36m├──\u001b[91mMisc\u001b[36m──┤"
     },
     {
       "type": "command",
-      "key": "│  OS Age   │",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "key": "│  Age  │",
+      // "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); years=$((days_difference / 365)); remaining_days=$((days_difference % 365)); if [ $years -gt 0 ]; then months=$((remaining_days / 31)); days=$((remaining_days % 31)); else months=$((remaining_days / 30)); days=$((remaining_days % 30)); fi; output=''; if [ $years -gt 0 ]; then output+=\"$years year\"; if [ $years -gt 1 ]; then output+='s'; fi; if [ $months -gt 0 ] || [ $days -gt 0 ]; then output+=', '; fi; fi; if [ $months -gt 0 ]; then output+=\"$months month\"; if [ $months -gt 1 ]; then output+='s'; fi; if [ $days -gt 0 ]; then output+=', '; fi; elif [ $years -eq 0 ] && [ $days -gt 0 ]; then output+=\"$days day\"; if [ $days -gt 1 ]; then output+='s'; fi; fi; if [ $days -gt 0 ] && { [ $years -gt 0 ] || [ $months -gt 0 ]; }; then output+=\"$days day\"; if [ $days -gt 1 ]; then output+='s'; fi; fi; echo $output"
     },
     {
       "type": "uptime",
-      "key": "│ 󰥔 Uptime   │"
+      "key": "│ 󰥔 Up   │"
     },
     {
       "type": "custom",
-      "format": "\u001b[36m╰────────────╯"
+      "format": "\u001b[36m╰────────╯"
     },
     {
       "type": "colors",
