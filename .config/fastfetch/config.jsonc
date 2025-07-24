@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "title",
-      "key": ""
+      "key": " "
     },
     {
       "type": "custom",
@@ -43,7 +43,7 @@
     // "icons",
     // {
     //   "type": "font",
-    //   "key": "│  Font     │"
+    //   "key": "│  Font │"
     // },
     {
       "type": "custom",
@@ -87,9 +87,13 @@
       "type": "custom",
       "format": "\u001b[36m╰────────╯"
     },
+    // {
+    //   "type": "colors",
+    //   "symbol": "circle"
+    // }
     {
-      "type": "colors",
-      "symbol": "circle"
+      "type": "custom",
+      "format": "\u001b[90m \u001b[91m \u001b[92m \u001b[93m \u001b[94m \u001b[95m \u001b[96m \u001b[97m"
     }
   ],
   "display": {

@@ -10,7 +10,7 @@ export SUDO_EDITOR="nvim"
 
 # PS1='[\u@\h \W]\$ '
 
-PS1='\[\e[36m\]\[\e[0m\]\[\e[37;46m\]   \[\e[0m\]\[\e[36;47m\]\[\e[36;47m\] 󰋞 \w\[\e[0m\]\[\e[37m\]\[\e[36m\] \[\e[0m\]'
+PS1='\[\e[34m\]\[\e[0m\]\[\e[37;44m\] \u \[\e[0m\]\[\e[34;47m\]\e[34;47m\] 󰋞 \w\[\e[0m\]\[\e[37m\]\[\e[34m\] \[\e[0m\]'
 
 if [[ $((RANDOM % 30)) -eq 0 ]]; then
   pokemon-colorscripts -r -s --no-title

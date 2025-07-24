@@ -25,4 +25,8 @@ sleep 0.5
 
 hyprctl dispatch workspace 2
 
-waybar
+waybar &
+
+sleep 1
+
+ffplay -nodisp -autoexit -volume 50 ~/assets/audio/startup.mp3 &

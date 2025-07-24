@@ -2,6 +2,8 @@
 
 BAT="/sys/class/power_supply/BAT0"
 
+[[ ! -e "$BAT" ]] && exit
+
 STATUS=$(<"$BAT/status")
 AC_POWER=$(cat "/sys/class/power_supply/AC0/online")
 CAPACITY=$(<"$BAT/capacity")
@@ -26,26 +28,28 @@ else
   TIME_REMAINING="$(if [ "$AC_POWER" == "1" ]; then echo 'Plugged'; else echo 'N/A'; fi)"
 fi
 
+BAT_ICON="$(if [ "$AC_POWER" == "1" ]; then echo ''; else echo '󰁹'; fi)"
+
 # Change Icons based on Percentage
 ICON=""
 ICON_LEVEL=$((CAPACITY / 10))
 case $ICON_LEVEL in
-  0) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  1) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  2) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  3) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  4) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  5) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  6) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  7) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  8) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  9) ICON="<span><span font='11'>󰁹</span> </span>" ;;
-  10) ICON="<span><span font='11'>󰁹</span>  </span>" ;;
+  0) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  1) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  2) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  3) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  4) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  5) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  6) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  7) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  8) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  9) ICON="<span><span font='11'>$BAT_ICON</span> </span>" ;;
+  10) ICON="<span><span font='11'>$BAT_ICON</span>  </span>" ;;
 esac
 
 # Decide text and class
 if [[ "$STATUS" == "Charging" ]]; then
-  TEXT="<span><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>"
+  TEXT="<span><span font='11'>$BAT_ICON</span> <span color='#FFD700' font='11'>󱐋</span></span>"
   CLASS="charging"
 elif [[ "$CAPACITY" -le 15 ]]; then
   TEXT=$ICON
