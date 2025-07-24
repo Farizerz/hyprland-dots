@@ -122,10 +122,34 @@ tooltip {
   font-weight: 800;
 }
 
+#image.albumart {
+  background-color: alpha(@color8, 0.9);
+  padding: 4px 5px 5px 5px;
+}
+
+#image.albumart.empty {
+  opacity: 0;
+  padding: 0px;
+  min-width: 30px;
+}
+
 #mpris {
-  font-size: 11px;
   text-shadow: 1px 1.5px 1px @color0;
-  padding: 0px 10px 0px 5px;
+  padding-left: 5px;
+}
+
+#mpris.audiostatus {
+  font-size: 18px;
+  margin-left: -41px;
+}
+
+#mpris.title {
+  font-size: 10px;
+}
+
+#mpris.artist {
+  font-size: 9px;
+  padding-top: 1px;
 }
 
 #workspaces {
@@ -147,10 +171,10 @@ tooltip {
 }
 
 #workspaces button.active {
-  padding: 0 7px 0px 6px;
+  padding: 0px 7px 0px 6px;
   background: linear-gradient(135deg, @color14, @color13);
   color: @color0;
-  animation: bounce 0.2s ease-in-out forwards;
+  animation: bounce 0.2s steps(15) forwards;
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -239,7 +263,7 @@ tooltip {
 #memorygroup:hover,
 #batterygroup:hover,
 #custom-power:hover {
-  animation: glow 0.2s ease forwards;
+  animation: glow 0.2s steps(12) forwards;
 }
 
 #cpugroup:hover #cpu,
@@ -248,11 +272,11 @@ tooltip {
 #memorygroup:hover #memory.percentage,
 #batterygroup:hover #custom-battery,
 #batterygroup:hover #battery.percentage {
-  animation: invertColor 0.2s ease forwards;
+  animation: invertColor 0.2s steps(12) forwards;
 }
 
 #custom-battery.critical {
-  animation: blink 1s infinite;
+  animation: blink 1s steps(2) infinite;
 }
 
 @keyframes bounce {

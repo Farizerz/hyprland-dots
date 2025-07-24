@@ -10,7 +10,7 @@
     "custom/mic",
     "network",
     "bluetooth",
-    "mpris"
+    "group/mpris"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -25,21 +25,47 @@
     "size": 20,
     "on-click": "rofi -show drun"
   },
-  "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "player-icons": {
-      "default": "󰎇",
-      "mpv": "󰎇"
-    },
-    "status-icons": {
-      "paused": "󰏤"
-    },
-    "dynamic-order": [
-      "artist",
-      "title"
-    ],
-    "max-length": 50
+  "group/mpris": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/albumart",
+      "group/audiosource"
+    ]
+  },
+  "group/albumart": {
+    "orientation": "horizontal",
+    "modules": [
+      "image#albumart",
+      "mpris#audiostatus"
+    ]
+  },
+  "mpris#audiostatus": {
+    "format": "",
+    "format-paused": "󰏤"
+  },
+  "image#albumart": {
+    "exec": "$HOME/.config/scripts/waybar/album-art.sh",
+    "size": 20,
+    "interval": 2,
+    "on-click": "playerctl play-pause",
+    "cursor": false
+  },
+  "group/audiosource": {
+    "orientation": "vertical",
+    "modules": [
+      "mpris#title",
+      "mpris#artist"
+    ]
+  },
+  "mpris#title": {
+    "format": "{title}",
+    "max-length": 50,
+    "align": 0
+  },
+  "mpris#artist": {
+    "format": "{artist}",
+    "max-length": 50,
+    "align": 0
   },
   "clock": {
     "interval": 60,
