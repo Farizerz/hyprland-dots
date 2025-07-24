@@ -44,7 +44,8 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.5.8
+Version 1.6.0
 
-1.  Changed fastfetch display
-2.  Added aliases on bashrc
+1.  Added notification & startup sound
+2.  Waybar media player overhaul & added album art
+3.  Changed waybar animation behavior from 'ease' to 'steps(n)' to reduce cpu usage
