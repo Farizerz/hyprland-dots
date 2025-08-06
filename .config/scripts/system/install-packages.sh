@@ -128,9 +128,9 @@ fi
 yay -S --noconfirm --needed "${yay[@]}"
 
 # Post-installation steps
-sudo chown -R "$USERNAME":"$USERNAME" $HOME/.local
-
 sudo mv /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark /usr/share/icons/Papirus-Light ~/.local/share/icons/
+
+sudo chown -R "$USERNAME":"$USERNAME" $HOME/.local
 
 # # Post-installation steps - Applying sddm theme
 sudo cp -r /home/$USERNAME/.local/share/sddm/themes /usr/share/sddm
