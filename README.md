@@ -44,8 +44,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.6.0
+Version 1.6.1
 
-1.  Added notification & startup sound
-2.  Waybar media player overhaul & added album art
-3.  Changed waybar animation behavior from 'ease' to 'steps(n)' to reduce cpu usage
+1.  Updated waybar custom battery script
+2.  Updated install package script
