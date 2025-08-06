@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USERNAME=$(whoami)
+
 # Packages to install
 pacman=(
   hyprland
@@ -29,9 +31,13 @@ pacman=(
   polkit-gnome
   qt5-wayland
   qt6-wayland
+  qt6-svg 
+  qt6-virtualkeyboard 
+  qt6-multimedia-ffmpeg
   xdg-desktop-portal-hyprland
   xdg-desktop-portal-gtk
   xdg-user-dirs
+  xdg-utils
   pacman-contrib
   parallel
   jq
@@ -75,6 +81,12 @@ pacman=(
   libreoffice-still
   yt-dlp
   chafa
+  iwd
+  openssh
+  smartmontools
+  wget
+  wireless_tools
+  wpa_supplicant
 )
 
 # Install packages using pacman
@@ -116,12 +128,12 @@ fi
 yay -S --noconfirm --needed "${yay[@]}"
 
 # Post-installation steps
-sudo chown -R "$SUDO_USER":"$SUDO_USER" $HOME/.local
-
 sudo mv /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark /usr/share/icons/Papirus-Light ~/.local/share/icons/
 
+sudo chown -R "$USERNAME":"$USERNAME" $HOME/.local
+
 # # Post-installation steps - Applying sddm theme
-sudo cp -r /home/$SUDO_USER/.local/share/sddm/themes /usr/share/sddm
+sudo cp -r /home/$USERNAME/.local/share/sddm/themes /usr/share/sddm
 
 sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 

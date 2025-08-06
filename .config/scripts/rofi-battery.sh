@@ -1,7 +1,15 @@
 #!/bin/bash
 
+BAT=$(grep -l "Battery" /sys/class/power_supply/*/type | sed 's|/type||')
+THRESHOLD_FILE="$BAT/charge_control_end_threshold"
+
+if [[ ! -f "$THRESHOLD_FILE" ]]; then
+  echo "❌ Battery threshold control not supported on this device."
+  exit 1
+fi
+
 OPTIONS="Full Capacity (100%)\nBalanced (80%)\nMaximum Lifespan (60%)"
-CURRENT_THRESHOLD=$(cat /sys/class/power_supply/BAT0/charge_control_end_threshold)
+CURRENT_THRESHOLD=$(cat $THRESHOLD_FILE)
 
 if [[ $CURRENT_THRESHOLD == 100 ]]; then
   current="Full Capacity (100%)"

@@ -1,16 +1,30 @@
 #!/bin/bash
 
-BAT="/sys/class/power_supply/BAT0"
+BAT=$(grep -l "Battery" /sys/class/power_supply/*/type | sed 's|/type||')
+AC=$(grep -l "Mains" /sys/class/power_supply/*/type | sed 's|/type||')
 
-[[ ! -e "$BAT" ]] && exit
+[[ ! -e "$BAT" ]] && echo "{\"text\": \"\", \"tooltip\": \"AC POWER\", \"class\": \"nobattery\"}" && exit
 
 STATUS=$(<"$BAT/status")
-AC_POWER=$(cat "/sys/class/power_supply/AC0/online")
+AC_POWER=$(<"$AC/online")
 CAPACITY=$(<"$BAT/capacity")
 UPTIME=$(uptime -p | sed -E 's/up //; s/ hours?/ h/; s/ minutes?/ min/; s/,//g')
-ENERGY_NOW=$(cat "$BAT/energy_now")
-ENERGY_FULL=$(cat "$BAT/energy_full")
-POWER_NOW=$(cat "$BAT/power_now")
+ENERGY_NOW=""
+ENERGY_FULL=""
+POWER_NOW=""
+
+# Detect file type (energy or charge)
+if [[ -f "$BAT/energy_now" ]]; then
+    ENERGY_NOW="energy_now"
+    ENERGY_FULL="energy_full"
+    POWER_NOW="power_now"
+elif [[ -f "$BAT/charge_now" ]]; then
+    ENERGY_NOW="charge_now"
+    ENERGY_FULL="charge_full"
+    POWER_NOW="current_now"
+else
+    echo "{\"text\": \"N/A\", \"class\": \"nobattery\"}" && exit
+fi
 
 # Prevent division by zero
 if [[ "$POWER_NOW" -gt 0 ]]; then
@@ -68,7 +82,7 @@ else
   CLASS=""
 fi
 
-TOOLTIP="Uptime: $UPTIME\\n$TIME_REMAINING"
+TOOLTIP="Uptime: $UPTIME\\n$TIME_REMAINING" 
 
 # Output JSON
 echo "{\"text\": \"$TEXT\", \"percentage\": $CAPACITY, \"tooltip\": \"$TOOLTIP\", \"class\": \"$CLASS\"}"

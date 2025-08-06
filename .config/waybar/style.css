@@ -222,6 +222,14 @@ tooltip {
   color: #3cb371;
 }
 
+#custom-battery.nobattery {
+  color: @foreground;
+}
+
+#custom-batterypercentage.nobattery {
+  margin-right: -30px;
+}
+
 #custom-battery.charging,
 #custom-battery.warning.charging,
 #custom-battery.critical.charging {
