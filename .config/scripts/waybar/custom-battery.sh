@@ -15,13 +15,13 @@ POWER_NOW=""
 
 # Detect file type (energy or charge)
 if [[ -f "$BAT/energy_now" ]]; then
-    ENERGY_NOW="energy_now"
-    ENERGY_FULL="energy_full"
-    POWER_NOW="power_now"
+    ENERGY_NOW=$(cat "$BAT/energy_now")
+    ENERGY_FULL=$(cat "$BAT/energy_full")
+    POWER_NOW=$(cat "$BAT/power_now")
 elif [[ -f "$BAT/charge_now" ]]; then
-    ENERGY_NOW="charge_now"
-    ENERGY_FULL="charge_full"
-    POWER_NOW="current_now"
+    ENERGY_NOW=$(cat "$BAT/charge_now")
+    ENERGY_FULL=$(cat "$BAT/charge_full")
+    POWER_NOW=$(cat "$BAT/current_now")
 else
     echo "{\"text\": \"N/A\", \"class\": \"nobattery\"}" && exit
 fi
