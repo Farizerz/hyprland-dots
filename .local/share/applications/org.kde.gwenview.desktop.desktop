@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/share/applications/org.kde.gwenview.desktop
+MimeType=image/jpeg;
+Name=org.kde.gwenview.desktop
+NoDisplay=true
+Type=Application

@@ -1,0 +1,30 @@
+[Added Associations]
+application/octet-stream=org.xfce.mousepad.desktop;
+application/x-shellscript=org.xfce.mousepad.desktop;
+image/jpeg=org.gnome.eog.desktop;gimp.desktop;org.kde.gwenview.desktop;chromium.desktop;imv.desktop;swappy.desktop;imv-dir.desktop;org.xfce.mousepad.desktop;
+image/png=gimp.desktop;org.kde.gwenview.desktop;org.gnome.eog.desktop;
+image/svg+xml=org.xfce.mousepad.desktop;chromium.desktop;
+inode/directory=org.xfce.mousepad.desktop;
+inode/symlink=org.xfce.mousepad.desktop;
+text/plain=org.xfce.mousepad.desktop;
+text/x-csrc=org.xfce.mousepad.desktop;
+text/vnd.trolltech.linguist=mpv.desktop;
+text/x-lua=org.xfce.mousepad.desktop;code.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+image/webp=chromium.desktop;org.kde.gwenview.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+image/gif=org.gnome.eog.desktop;
+
+[Default Applications]
+application/octet-stream=org.xfce.mousepad.desktop
+image/jpeg=org.gnome.eog.desktop
+inode/symlink=org.xfce.mousepad.desktop
+text/vnd.trolltech.linguist=mpv.desktop
+x-scheme-handler/mailto=thunderbird.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+inode/directory=thunar.desktop
+image/png=org.gnome.eog.desktop
+image/gif=org.gnome.eog.desktop
+
+[Removed Associations]
+image/jpeg=org.kde.gwenview.desktop;

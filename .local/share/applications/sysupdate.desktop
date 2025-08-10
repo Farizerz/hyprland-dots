@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=System Update
-Exec=yay -Syu
+Exec=hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'
 Icon=update-manager
 Terminal=true
 Type=Application
