@@ -12,8 +12,8 @@ Arch Linux already installed.
 
 ## Installation
 
-1.  Copy the contents into the `~/` or
-    `/home/<yourusername>`.
+1.  You can either clone the repo, or download and copy the contents into the root folder (`~/` or
+    `/home/<yourusername>`).
 2.  On the terminal, run `bash ~/install.sh`
 3.  Restart hyprland session or reboot your PC.
 
@@ -44,6 +44,9 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.6.2
+Version 1.6.3
 
-1.  Added apply theme scripts
+1.  Changed image viewer from gwenview to eog (Eye of Gnome)
+2.  Added mimeapps.list
+3.  Fix system update shortcut execution
+4.  Update .bashrc display
