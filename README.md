@@ -44,7 +44,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.6.1
+Version 1.6.2
 
-1.  Updated waybar custom battery script
-2.  Updated install package script
+1.  Added apply theme scripts
