@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Wallpaper
+Exec=bash -c "$HOME/.config/scripts/rofi-wallpaper.sh"
+Icon=wallpaper
+Terminal=false
+Type=Application
+Categories=Theme;Wallpaper;Display;Colors
