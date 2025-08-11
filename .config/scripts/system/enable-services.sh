@@ -13,9 +13,11 @@ sudo EDITOR="tee -a" visudo <<EOF
 
 $SUDO_USER ALL=(ALL) NOPASSWD: \\
 /home/$SUDO_USER/.config/scripts/system/custom-boot.sh, \\
-/usr/sbin/efibootmgr, \\
-/usr/bin/ryzenadj
+/usr/sbin/efibootmgr
 EOF
+
+### For virtual camera on OBS ###
+sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"
 
 ### Change hyprland boot service using custom script ###
 sudo ~/.config/scripts/system/custom-boot.sh 
