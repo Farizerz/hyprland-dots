@@ -16,6 +16,8 @@
 # Depends on:
 #   Arch repositories: rofi, bluez-utils (contains bluetoothctl), bc
 
+trap 'close_terminal' EXIT
+
 # Constants
 divider="─────────────────────────────────────────"
 goback="Back"
@@ -43,73 +45,17 @@ toggle_power() {
     fi
 }
 
-# Checks if controller is scanning for new devices
-scan_on() {
-    if bluetoothctl show | grep -q "Discovering: yes"; then
-        echo "Scan"
-        return 0
-    else
-        echo "Scan"
-        return 1
-    fi
-}
+TERMINAL=$(grep '^\$terminal' ~/.config/hypr/hyprconfig/default-programs.conf | awk -F'= ' '{print $2}' | tr -d ' ')
 
 # Toggles scanning state
 toggle_scan() {
-    if scan_on; then
-        kill $(pgrep -f "bluetoothctl --timeout 5 scan on")
-        bluetoothctl scan off
-        show_menu
-    else
-        notify-send "Scanning list of available devices..."
-        bluetoothctl --timeout 5 scan on
-        echo "Scanning..."
-        show_menu
-    fi
-}
-
-# Checks if controller is able to pair to devices
-pairable_on() {
-    if bluetoothctl show | grep -q "Pairable: yes"; then
-        echo "Pairable: on"
-        return 0
-    else
-        echo "Pairable: off"
-        return 1
-    fi
-}
-
-# Toggles pairable state
-toggle_pairable() {
-    if pairable_on; then
-        bluetoothctl pairable off
-        show_menu
-    else
-        bluetoothctl pairable on
-        show_menu
-    fi
-}
-
-# Checks if controller is discoverable by other devices
-discoverable_on() {
-    if bluetoothctl show | grep -q "Discoverable: yes"; then
-        echo "Discoverable: on"
-        return 0
-    else
-        echo "Discoverable: off"
-        return 1
-    fi
-}
-
-# Toggles discoverable state
-toggle_discoverable() {
-    if discoverable_on; then
-        bluetoothctl discoverable off
-        show_menu
-    else
-        bluetoothctl discoverable on
-        show_menu
-    fi
+    $TERMINAL --title 'bluetoothctl' -e bash -c bluetoothctl &
+    notify-send "Scanning list of available devices..."
+    bluetoothctl pairable on
+    bluetoothctl discoverable on
+    bluetoothctl --timeout 5 scan on
+    echo "Scanning..."
+    show_menu
 }
 
 # Checks if a device is connected
@@ -154,36 +100,20 @@ toggle_paired() {
         notify-send "$device_name_nospace removed."
         show_menu
     else
-        bluetoothctl <<EOF
-agent on
-default-agent
-pair $1
-EOF
+        notify-send "Pairing $device_name_nospace..."
+        bluetoothctl agent NoInputNoOutput
+        bluetoothctl default-agent
+        bluetoothctl trust "$1"
+        pair_output=$(bluetoothctl pair "$1" 2>&1)
+        
+        if echo "$pair_output" | grep -iqE "failed|not available|error"; then
+            notify-send "❌ Pairing failed for $device_name_nospace"
+            show_menu
+            return 1
+        fi
+        bluetoothctl connect "$1"
         notify-send "$device_name_nospace paired."
         timeout 1 device_menu "$device"
-    fi
-}
-
-# Checks if a device is trusted
-device_trusted() {
-    device_info=$(bluetoothctl info "$1")
-    if echo "$device_info" | grep -q "Trusted: yes"; then
-        echo "Trusted: yes"
-        return 0
-    else
-        echo "Trusted: no"
-        return 1
-    fi
-}
-
-# Toggles device connection
-toggle_trust() {
-    if device_trusted "$1"; then
-        bluetoothctl untrust "$1"
-        device_menu "$device"
-    else
-        bluetoothctl trust "$1"
-        device_menu "$device"
     fi
 }
 
@@ -242,7 +172,7 @@ device_menu() {
     if device_paired "$mac"; then
         options="$connected\n$paired\n$divider\n$goback\nExit"
     else
-        options="$paired\n$divider\n$trusted\n$goback\nExit"
+        options="$paired\n$divider\n$goback\nExit"
     fi
 
     # Open rofi menu, read chosen option
@@ -258,9 +188,6 @@ device_menu() {
             ;;
         "$paired")
             toggle_paired "$mac"
-            ;;
-        "$trusted")
-            toggle_trust "$mac"
             ;;
         "$goback")
             show_menu
@@ -279,12 +206,12 @@ show_menu() {
         devices=$(bluetoothctl devices | grep Device | cut -d ' ' -f 3-)
 
         # Get controller flags
-        scan=$(scan_on)
+        scan='Scan'
         pairable=$(pairable_on)
         discoverable=$(discoverable_on)
 
         # Options passed to rofi
-        options="$devices\n$divider\n$power\n$scan\n$pairable\n$discoverable\nExit"
+        options="$devices\n$divider\n$power\n$scan\nExit"
     else
         power="Turn on"
         options="$power\nExit"
@@ -316,6 +243,13 @@ show_menu() {
             if [[ $device ]]; then device_menu "$device"; fi
             ;;
     esac
+}
+
+close_terminal() {
+    bluetoothctl scan off
+    bluetoothctl pairable off
+    bluetoothctl discoverable off
+    hyprctl clients -j | jq -r '.[] | select(.title | test("bluetoothctl"; "i")) | .address' | while read addr; do hyprctl dispatch closewindow address:$addr; done
 }
 
 # Rofi command to pipe into, can add any options here
