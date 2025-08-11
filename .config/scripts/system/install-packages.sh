@@ -93,6 +93,7 @@ pacman=(
 sudo pacman -S --noconfirm --needed "${pacman[@]}"
 
 yay=(
+  pinta
   wlogout
   papirus-folders
   ttf-ms-fonts
