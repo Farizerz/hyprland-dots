@@ -44,7 +44,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.7.0
+Version 1.7.0.1
 
 1.  Added pinta as paint app
 2.  Update rofi bluetooth:
@@ -54,3 +54,6 @@ Version 1.7.0
     Removed manual trust & connect. Changed to auto, simplifying the menu
 
 3.  Hide unused apps on .local/share/applications
+4.  Use 'exa' as the default 'ls'
+5.  Added xwaylandvideobridge window rule for screen sharing on xwayland apps
+6.  Enable v4l2loopback permission for OBS Virtual Camera
