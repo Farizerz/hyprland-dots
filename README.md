@@ -44,9 +44,13 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.6.3
+Version 1.7.0
 
-1.  Changed image viewer from gwenview to eog (Eye of Gnome)
-2.  Added mimeapps.list
-3.  Fix system update shortcut execution
-4.  Update .bashrc display
+1.  Added pinta as paint app
+2.  Update rofi bluetooth:
+
+    When scanning, it opens hidden terminal in the background, it automatically closes after finished pairing / exit
+
+    Removed manual trust & connect. Changed to auto, simplifying the menu
+
+3.  Hide unused apps on .local/share/applications
