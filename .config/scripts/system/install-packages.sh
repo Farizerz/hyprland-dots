@@ -87,6 +87,7 @@ pacman=(
   wget
   wireless_tools
   wpa_supplicant
+  exa
 )
 
 # Install packages using pacman
@@ -102,6 +103,7 @@ yay=(
   python-pywal
   pokemon-colorscripts-git
   visual-studio-code-bin
+  xwaylandvideobridge-git
 )
 
 # Check if yay is installed

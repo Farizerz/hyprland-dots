@@ -22,7 +22,7 @@ else
 fi
 
 # Aliases
-alias ls='ls -a --color=auto'
+alias ls='exa -lh --icons --color=always'
 alias grep='grep --color=auto'
 alias ipconfig='ip addr show'
 alias reboot-windows='sudo efibootmgr --bootnext 0000 && reboot'
@@ -30,6 +30,7 @@ alias execute-scripts='~/.config/scripts/system/execute-scripts.sh'
 alias neofetch='fastfetch'
 alias chromium-nogpu='chromium --disable-gpu'
 alias notepad='mousepad'
+alias paint='pinta'
 
 add() {
   sudo pacman -S "$@" --noconfirm
