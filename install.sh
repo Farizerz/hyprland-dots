@@ -14,6 +14,7 @@ sleep 1
 sudo bash /home/$USER/.config/scripts/system/enable-services.sh
 sleep 1
 echo "Applying themes..."
+sleep 1
 bash /home/$USER/.config/scripts/system/apply-themes.sh
 sleep 1
 echo "Done, restarting..."

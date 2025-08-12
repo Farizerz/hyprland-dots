@@ -1,4 +1,4 @@
-SVG_PATH=$HOME/assets/icons/logo.svg
+SVG_PATH=$HOME/.local/share/assets/icons/logo.svg
 WAL_COLORS="$HOME/.cache/wal/colors.css"
 
 COLOR1=$(grep color14 ~/.cache/wal/colors.css | awk '{print $2}' | cut -d';' -f1)

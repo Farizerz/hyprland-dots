@@ -29,4 +29,4 @@ waybar &
 
 sleep 1
 
-ffplay -nodisp -autoexit -volume 50 ~/assets/audio/startup.mp3 &
+ffplay -nodisp -autoexit -volume 50 ~/.local/share/assets/audio/startup.mp3 &

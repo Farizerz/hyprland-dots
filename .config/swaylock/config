@@ -3,7 +3,7 @@ ignore-empty-password
 clock
 indicator-thickness=15
 indicator-radius=150
-image=~/assets/lockscreens/lockscreen.jpg
+image=~/.local/share/assets/lockscreens/lockscreen.jpg
 effect-blur=3x3
 effect-vignette=0.5:0.5
 ring-color=00000000
