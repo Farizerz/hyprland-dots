@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Telegram
+Exec=chromium --disable-gpu --profile-directory="Profile 1" --app=https://web.telegram.org
+Icon=telegram
+Terminal=false
+Type=Application
+Categories=Messages;Chat;Telegram;
+Comment=
+Path=
+StartupNotify=false

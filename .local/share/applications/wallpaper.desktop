@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Wallpaper
 Exec=bash -c "$HOME/.config/scripts/rofi-wallpaper.sh"
-Icon=/home/fariz/assets/lockscreens/lockscreen.jpg
+Icon=~/.local/share/assets/lockscreens/lockscreen.jpg
 Terminal=false
 Type=Application
 Categories=Theme;Wallpaper;Display;Colors

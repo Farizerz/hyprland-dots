@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Whatsapp
+Exec=chromium --disable-gpu --profile-directory="Profile 1" --app=https://web.whatsapp.com
+Icon=whatsapp
+Terminal=false
+Type=Application
+Categories=Messages;Chat;Whatsapp;
+Comment=
+Path=
+StartupNotify=false
