@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ChatGPT
+Exec=chromium --profile-directory="Profile 1" --app=https://chatgpt.com
+Icon=~/.local/share/icons/custom/chatgpt.png
+Terminal=false
+Type=Application
+Categories=Chatgpt;AI;
+Comment=
+Path=
+StartupNotify=false
