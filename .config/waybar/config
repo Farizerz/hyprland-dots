@@ -21,7 +21,7 @@
     "custom/power"
   ],
   "image#logo": {
-    "exec": "echo $HOME/assets/icons/logo.svg",
+    "exec": "echo $HOME/.local/share/assets/icons/logo.svg",
     "size": 20,
     "on-click": "rofi -show drun"
   },

@@ -13,7 +13,7 @@ WALLPAPER_PATH=$(grep '^wallpaper *= *' ~/.config/waypaper/config.ini | cut -d '
 WALLPAPER_PATH=${WALLPAPER_PATH/#\~/$HOME}
 
 # Change lockscreen to selected wallpaper
-TARGET="$HOME/assets/lockscreens/lockscreen.jpg"
+TARGET="$HOME/.local/share/assets/lockscreens/lockscreen.jpg"
 
 # Check file extension (case-insensitive)
 EXT="${WALLPAPER_PATH##*.}"
