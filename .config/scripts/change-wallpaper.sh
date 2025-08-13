@@ -5,6 +5,8 @@ IMAGE_PATH="$1"
 # Change wallpaper
 ~/.config/scripts/theme/wallpaper.sh "$IMAGE_PATH"
 
+killall -SIGUSR2 waybar
+
 # Change rofi theme
 ~/.config/scripts/theme/rofi.sh &
 
@@ -25,4 +27,3 @@ IMAGE_PATH="$1"
 
 sleep 1.5
 pkill thunar && thunar &
-pkill waybar && waybar
