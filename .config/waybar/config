@@ -10,7 +10,7 @@
     "custom/mic",
     "network",
     "bluetooth",
-    "group/mpris"
+    "group/player"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -25,7 +25,7 @@
     "size": 20,
     "on-click": "rofi -show drun"
   },
-  "group/mpris": {
+  "group/player": {
     "orientation": "horizontal",
     "modules": [
       "group/albumart",
@@ -203,15 +203,17 @@
   },
   "temperature": {
     "interval": 2,
+    "warning-threshold": 60,
     "critical-threshold": 80,
     "format": "{icon} ",
     "format-icons": [
-      "<span font='11'></span>",
-      "<span font='11'></span>",
-      "<span font='11'></span>",
-      "<span color='#FFC069' font='11'></span>",
-      "<span font='11'></span>"
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
+    "format-critical": "<span color='#d20f39'></span> ",
     "tooltip-format": "CPU Temp: {temperatureC}°C"
   },
   "temperature#degree": {
@@ -294,40 +296,11 @@
       "custom/batterypercentage"
     ]
   },
-  "battery": {
-    "interval": 2,
-    "format": "{icon} (currently not used, using custom/battery instead)",
-    "format-charging": "<span><span font='11'></span> <span color='#FFD700' font='11'>󱐋</span></span>",
-    "states": {
-      "full": 100,
-      "warning": 50,
-      "critical": 30
-    },
-    "format-icons": [
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>",
-      "<span><span font='11'>󰁹</span> </span>"
-    ],
-    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
-  },
   "custom/battery": {
     "interval": 2,
     "exec": "~/.config/scripts/waybar/custom-battery.sh",
     "return-type": "json",
     "format": "{text}",
-    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
-  },
-  "battery#percentage": {
-    "class": "battery-percentage",
-    "interval": 2,
-    "format": "{capacity:3d}% (currently not used, using custom/batterypercentage instead)",
     "on-click": "$HOME/.config/scripts/rofi-battery.sh"
   },
   "custom/batterypercentage": {
