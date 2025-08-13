@@ -196,7 +196,11 @@ tooltip {
 }
 
 #temperature {
-  color: inherit;
+  font-size: 14px;
+}
+
+#temperature.degree {
+  font-size: 13px;
 }
 
 #cpugroup,
@@ -243,13 +247,13 @@ tooltip {
   color: @foreground;
 }
 
+#temperature.warning,
 #custom-battery.warning,
 #cpu.warning,
 #memory.warning {
   color: #ffc069;
 }
 
-#temperature.critical,
 #cpu.critical,
 #memory.critical,
 #custom-battery.low,
