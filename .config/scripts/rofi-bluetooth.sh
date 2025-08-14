@@ -71,10 +71,12 @@ device_connected() {
 # Toggles device connection
 toggle_connection() {
     if device_connected "$1"; then
+        bluetoothctl untrust "$1"
         bluetoothctl disconnect "$1"
         notify-send "$device_name_nospace disconnected."
         device_menu "$device"
     else
+        bluetoothctl trust "$1"
         bluetoothctl connect "$1"
         notify-send "$device_name_nospace connected."
         device_menu "$device"
@@ -199,7 +201,7 @@ device_menu() {
 show_menu() {
     # Get menu options
     if power_on; then
-        power="Turn off"
+        power="Disable Bluetooth"
 
         # Human-readable names of devices, one per line
         # If scan is off, will only list paired devices
@@ -211,9 +213,9 @@ show_menu() {
         discoverable=$(discoverable_on)
 
         # Options passed to rofi
-        options="$devices\n$divider\n$power\n$scan\nExit"
+        options="$power\n$scan\n$divider\n$devices"
     else
-        power="Turn on"
+        power="Enable Bluetooth"
         options="$power\nExit"
     fi
 

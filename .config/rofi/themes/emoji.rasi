@@ -6,7 +6,7 @@ configuration {
   drun-display-format: "{icon} {name}";
   font: "JetBrainsMono Nerd Font Propo Bold 11";
   modi: "window,run,drun,emoji";
-  show-icons: true;
+  show-icons: false;
   icon-theme: "Papirus";
   sort: true;
   disable-history: true;
@@ -26,8 +26,9 @@ window {
   border-color:     @color14;
   padding:          0;
   children:         [rowbox];
-  width:            600px;
+  width:            360px;
   border-radius:    10px;
+  text-align: center;
 }
 
 rowbox {
@@ -62,16 +63,16 @@ textbox {
 }
 
 listview {
+  flow:horizontal;
   scrollbar:    true;
   fixed-height: false;
-  lines:        8;
+  rows: 8;
+  columns: 6;
   background-color: @color0;
 }
 
 element {
-  border:  0;
-  padding: 8;
-	margin: 0px -2px 0px 0px;
+  font: "JetBrainsMono Nerd Font Propo Bold 14";
 }
 
 element-icon {
@@ -83,6 +84,8 @@ element-text {
   background-color: inherit;
   text-color:       inherit;
   vertical-align:   0.5;
+  horizontal-align: 0.5;
+  font: "JetBrainsMono Nerd Font Propo Bold 14";
 }
 
 element normal.normal {

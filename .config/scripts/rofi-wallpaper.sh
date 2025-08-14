@@ -3,7 +3,7 @@
 # Show a Rofi menu with icons and get the selected filename
 SELECTED=$(ls ~/.local/share/assets/wallpapers/ | while read -r A; do
   echo -en " $A\x00icon\x1f~/.local/share/assets/wallpapers/$A\n"
-done | rofi -dmenu -show-icons -p "Select Wallpaper ")
+done | rofi -dmenu -show-icons -p "Select Wallpaper " -theme "~/.config/rofi/themes/wallpaper.rasi")
 
 # If nothing is selected, exit
 [ -z "$SELECTED" ] && exit

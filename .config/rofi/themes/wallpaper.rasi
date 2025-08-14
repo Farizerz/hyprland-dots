@@ -26,7 +26,7 @@ window {
   border-color:     @color14;
   padding:          0;
   children:         [rowbox];
-  width:            600px;
+  width:            800px;
   border-radius:    10px;
 }
 
@@ -62,20 +62,23 @@ textbox {
 }
 
 listview {
+  flow: horizontal;
   scrollbar:    true;
   fixed-height: false;
-  lines:        8;
+  lines:        3;
   background-color: @color0;
+  columns: 4;
 }
 
 element {
   border:  0;
   padding: 8;
 	margin: 0px -2px 0px 0px;
+  orientation: vertical;
 }
 
 element-icon {
-  size: 1.5em;
+  size: 5.5em;
   background-color: @transparent;
 }
 
@@ -83,6 +86,7 @@ element-text {
   background-color: inherit;
   text-color:       inherit;
   vertical-align:   0.5;
+  horizontal-align: 0.5;
 }
 
 element normal.normal {
