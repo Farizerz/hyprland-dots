@@ -139,7 +139,7 @@
     "format-on": "<span>󰂯</span>",
     "format-connected": "<span>󰂱</span>",
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected": "({device_battery_percentage}%) {device_alias}",
     "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
   },
   "hyprland/workspaces": {
