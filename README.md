@@ -1,10 +1,12 @@
-# Hyprland Fariz Theme
+# Hyprland Fariz Setup
 
-![image](https://github.com/user-attachments/assets/f8f27dea-39aa-4f0f-8d14-a82987eee240)
+https://github.com/user-attachments/assets/548f53e0-539d-489c-8412-569bac5c37d1
 
-![image](https://github.com/user-attachments/assets/568f8a2c-9a19-48e8-a497-078777ce86a1)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3dfbeb2b-7f84-486f-9cb8-02958fa89382" />
 
-![image](https://github.com/user-attachments/assets/485de9db-c55a-48d6-a1d7-fdf33cb82bca)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3d2bf97-e24e-4fd6-b5dd-b469bc6bc46f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7c794ad1-5b5d-4bf9-a2f3-bbd1304fad61" />
 
 ## Requirements
 
@@ -19,7 +21,7 @@ Arch Linux already installed.
 
 ## Waybar Features
 
-This theme includes interactable waybar buttons such as
+This setup includes interactable waybar buttons such as
 
 - File Manager
 - Sound Controller via pavucontrol
