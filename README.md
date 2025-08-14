@@ -44,7 +44,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.7.1
+Version 1.7.2
 
-1.  Added multiple web apps (ChatGPT, Netflix, Telegram, Whatsapp)
-2.  Add translucent windowrule for web apps & fix floating windowrule
+1.  Added multiple rofi theme for each menu (run, emoji & wallpaper)
+2.  Fix bluetooth toggling connection, also added battery indicator on bluetooth tooltip
