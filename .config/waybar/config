@@ -3,7 +3,6 @@
   "margin-bottom": -10,
   "spacing": 0,
   "modules-left": [
-    "custom/image",
     "image#logo",
     "clock",
     "group/audio",
