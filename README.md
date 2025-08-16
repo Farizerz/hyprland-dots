@@ -23,7 +23,7 @@ Arch Linux already installed.
 
 This setup includes interactable waybar buttons such as
 
-- File Manager
+- App Launcher
 - Sound Controller via pavucontrol
 - Wifi Menu
 - Bluetooth Menu
