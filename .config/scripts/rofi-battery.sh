@@ -32,14 +32,17 @@ case "$chosen" in
   "Full Capacity (100%)")
     sudo cp $HOME/.config/scripts/battery-presets/full-capacity.txt /etc/tlp.conf
     sudo tlp start
+    notify-send "Battery limit set at 100%."
     ;;
   "Balanced (80%)")
     sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
     sudo tlp start
+    notify-send "Battery limit set at 80%."
     ;;
   "Maximum Lifespan (60%)")
     sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf
     sudo tlp start
+    notify-send "Battery limit set at 60%."
     ;;
   *)
     exit 1
