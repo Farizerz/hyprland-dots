@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BAT=$(grep -l "Battery" /sys/class/power_supply/*/type | sed 's|/type||')
+BAT=$(grep -l "Battery" /sys/class/power_supply/*/type | grep -o '/sys/class/power_supply/BAT[0-9]*')
 AC=$(grep -l "Mains" /sys/class/power_supply/*/type | sed 's|/type||')
 
 [[ ! -e "$BAT" ]] && echo "{\"text\": \"\", \"tooltip\": \"AC POWER\", \"class\": \"nobattery\"}" && exit
