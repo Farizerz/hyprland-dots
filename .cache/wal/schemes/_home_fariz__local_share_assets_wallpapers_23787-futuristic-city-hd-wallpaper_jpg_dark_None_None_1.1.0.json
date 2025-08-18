@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/fariz/.local/share/assets/wallpapers/23787-futuristic-city-hd-wallpaper.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0B1002",
+        "foreground": "#ebf0c4",
+        "cursor": "#ebf0c4"
+    },
+    "colors": {
+        "color0": "#0B1002",
+        "color1": "#81783C",
+        "color2": "#649719",
+        "color3": "#74954E",
+        "color4": "#A9CE21",
+        "color5": "#ADC739",
+        "color6": "#D9ED62",
+        "color7": "#ebf0c4",
+        "color8": "#a4a889",
+        "color9": "#81783C",
+        "color10": "#649719",
+        "color11": "#74954E",
+        "color12": "#A9CE21",
+        "color13": "#ADC739",
+        "color14": "#D9ED62",
+        "color15": "#ebf0c4"
+    }
+}

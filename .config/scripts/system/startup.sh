@@ -1,5 +1,8 @@
 ~/.config/scripts/switch-monitor.sh
 
+# Check post install configs
+~/.config/scripts/system/post-install-config.sh
+
 # Change Random Wallpaper
 ~/.config/scripts/theme/wallpaper.sh
 

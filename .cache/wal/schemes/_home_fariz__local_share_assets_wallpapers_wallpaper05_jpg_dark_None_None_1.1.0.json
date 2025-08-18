@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/fariz/.local/share/assets/wallpapers/wallpaper05.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0C1A2A",
+        "foreground": "#e1dcd3",
+        "cursor": "#e1dcd3"
+    },
+    "colors": {
+        "color0": "#0C1A2A",
+        "color1": "#8A8378",
+        "color2": "#386988",
+        "color3": "#5D778A",
+        "color4": "#728895",
+        "color5": "#9DA19F",
+        "color6": "#C3BCAD",
+        "color7": "#e1dcd3",
+        "color8": "#9d9a93",
+        "color9": "#8A8378",
+        "color10": "#386988",
+        "color11": "#5D778A",
+        "color12": "#728895",
+        "color13": "#9DA19F",
+        "color14": "#C3BCAD",
+        "color15": "#e1dcd3"
+    }
+}
