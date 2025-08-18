@@ -81,13 +81,14 @@ pacman=(
   libreoffice-still
   yt-dlp
   chafa
-  iwd
   openssh
   smartmontools
   wget
-  wireless_tools
+  network-manager-applet
   wpa_supplicant
   exa
+  android-tools
+  scrcpy
 )
 
 # Install packages using pacman
@@ -103,7 +104,6 @@ yay=(
   python-pywal
   pokemon-colorscripts-git
   visual-studio-code-bin
-  xwaylandvideobridge-git
 )
 
 # Check if yay is installed

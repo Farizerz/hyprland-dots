@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/fariz/.local/share/assets/wallpapers/pixel_sakura.gif",
+    "alpha": "100",
+    "special": {
+        "background": "#252b36",
+        "foreground": "#e0e4e8",
+        "cursor": "#e0e4e8"
+    },
+    "colors": {
+        "color0": "#252b36",
+        "color1": "#93A0AF",
+        "color2": "#CCBBBF",
+        "color3": "#9EB7C3",
+        "color4": "#A8BCC6",
+        "color5": "#EEB9CC",
+        "color6": "#CAD3DD",
+        "color7": "#e0e4e8",
+        "color8": "#9c9fa2",
+        "color9": "#93A0AF",
+        "color10": "#CCBBBF",
+        "color11": "#9EB7C3",
+        "color12": "#A8BCC6",
+        "color13": "#EEB9CC",
+        "color14": "#CAD3DD",
+        "color15": "#e0e4e8"
+    }
+}

@@ -1,0 +1,21 @@
+set $wallpaper /home/fariz/.local/share/assets/wallpapers/wallpaper07.jpg
+
+set $background #010D15
+set $foreground #88c0d8
+
+set $color0 #010D15
+set $color1 #0F627C
+set $color2 #405169
+set $color3 #08548B
+set $color4 #106994
+set $color5 #0D6FAC
+set $color6 #2E76B3
+set $color7 #88c0d8
+set $color8 #5f8697
+set $color9 #0F627C
+set $color10 #405169
+set $color11 #08548B
+set $color12 #106994
+set $color13 #0D6FAC
+set $color14 #2E76B3
+set $color15 #88c0d8

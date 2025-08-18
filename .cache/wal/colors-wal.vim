@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/fariz/.local/share/assets/wallpapers/wallpaper07.jpg"
+let background = "#010D15"
+let foreground = "#88c0d8"
+let cursor     = "#88c0d8"
+
+" Colors
+let color0  = "#010D15"
+let color1  = "#0F627C"
+let color2  = "#405169"
+let color3  = "#08548B"
+let color4  = "#106994"
+let color5  = "#0D6FAC"
+let color6  = "#2E76B3"
+let color7  = "#88c0d8"
+let color8  = "#5f8697"
+let color9  = "#0F627C"
+let color10 = "#405169"
+let color11 = "#08548B"
+let color12 = "#106994"
+let color13 = "#0D6FAC"
+let color14 = "#2E76B3"
+let color15 = "#88c0d8"

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/fariz/.local/share/assets/wallpapers/osaka-jade-bg.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#080B0D",
+        "foreground": "#bedeb1",
+        "cursor": "#bedeb1"
+    },
+    "colors": {
+        "color0": "#080B0D",
+        "color1": "#2C6B49",
+        "color2": "#4C6644",
+        "color3": "#108C58",
+        "color4": "#199B5F",
+        "color5": "#0BAD66",
+        "color6": "#51A55F",
+        "color7": "#bedeb1",
+        "color8": "#859b7b",
+        "color9": "#2C6B49",
+        "color10": "#4C6644",
+        "color11": "#108C58",
+        "color12": "#199B5F",
+        "color13": "#0BAD66",
+        "color14": "#51A55F",
+        "color15": "#bedeb1"
+    }
+}
