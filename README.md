@@ -10,14 +10,13 @@ https://github.com/user-attachments/assets/548f53e0-539d-489c-8412-569bac5c37d1
 
 ## Requirements
 
-Freshly installed Arch Linux.
+Arch Linux with wget installed & connected to the internet.
 
 ## Installation
 
-1.  You can either clone the repo, or download and copy the contents into the root folder (`~/` or
-    `/home/<yourusername>`).
-2.  On the terminal, run `bash ~/install.sh`
-3.  Restart hyprland session or reboot your PC.
+1.  On the terminal, run `wget -qO- https://farizerz.github.io/hyprland-dots/getfiles.sh | bash`
+2.  During installation process, input your password when prompted.
+3.  Your PC will reboot & installation finished.
 
 ## Waybar Features
 
@@ -46,7 +45,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.7.3
+Version 1.8.0
 
-1.  Removed redundant applications on install-package.sh
-2.  Added initial pywal cache & post-install configurations
+1.  Changed installation method (now using wget)
+2.  Added multiple graphic packages (Intel, AMD, Nvidia) on install-packages.sh
