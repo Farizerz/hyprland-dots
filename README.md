@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/548f53e0-539d-489c-8412-569bac5c37d1
 
 ## Requirements
 
-Arch Linux already installed.
+Freshly installed Arch Linux.
 
 ## Installation
 
@@ -29,7 +29,7 @@ This setup includes interactable waybar buttons such as
 - Bluetooth Menu
 - Battery Profile Menu (For laptops that support limit charging)
 - System Update Checker
-- Toggle Wifi
+- Toggle Microphone
 
 ## XWayland Apps
 
@@ -46,7 +46,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.7.2
+Version 1.7.3
 
-1.  Added multiple rofi theme for each menu (run, emoji & wallpaper)
-2.  Fix bluetooth toggling connection, also added battery indicator on bluetooth tooltip
+1.  Removed redundant applications on install-package.sh
+2.  Added initial pywal cache & post-install configurations
