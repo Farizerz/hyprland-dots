@@ -40,11 +40,15 @@ for dir in "${xdg_dirs[@]}"; do
     mkdir -p "$HOME/$dir"
 done
 
-# Restart thunar if open
-if pgrep -x thunar >/dev/null; then
-        pkill thunar
-    fi
-    thunar &
+# Forget previous iwctl connections (Necessary for connecting wifi using nmcli)
+iwctl known-networks list | \
+  sed -r "s/\x1B\[[0-9;]*[mK]//g" | \
+  tail -n +5 | \
+  awk 'NF > 0 {print $1}' | \
+  while read -r ssid; do
+    echo "Forgetting: $ssid"
+    iwctl known-networks "$ssid" forget
+  done
 
 # Create a flag so the script runs only once
 mkdir -p ~/.cache

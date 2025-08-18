@@ -7,7 +7,6 @@ pacman=(
   hyprland
   sddm
   uwsm
-  git base-devel
   waybar
   hyprpaper
   swww
@@ -89,6 +88,23 @@ pacman=(
   exa
   android-tools
   scrcpy
+  xorg-server
+  xorg-xinit
+  # intel graphics
+  intel-media-driver
+  libva-intel-driver
+  vulkan-intel
+  # AMD graphics
+  libva-mesa-driver
+  mesa
+  vulkan-radeon
+  xf86-video-amdgpu
+  xf86-video-ati
+  # Nvidia graphics
+  libva-nvidia-driver
+  dkms
+  nvidia-dkms
+  nvidia-utils
 )
 
 # Install packages using pacman
