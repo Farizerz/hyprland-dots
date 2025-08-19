@@ -21,6 +21,58 @@ Arch Linux with wget installed & connected to the internet.
 2.  During installation process, input your password when prompted.
 3.  Your PC will reboot & installation finished.
 
+### ⚠ Note
+
+Installing this setup will overwrite your previous config files (if exists), so it's best to proceed on freshly installed Arch Linux.
+
+## Keybindings
+
+These are the default keybindings inspired by Windows. You can change them in `~/.config/hypr/hyprconfig/keybindings.conf`
+
+### Navigation
+
+| Hotkey                     | Description                      |
+| -------------------------- | -------------------------------- |
+| `ALT + [0-9]`              | Move to workspace                |
+| `` ALT + ` ``              | Move to hidden workspace         |
+| `ALT + SHIFT + [0-9]`      | Move window to workspace         |
+| `` ALT + SHIFT + ` ``      | Move window to hidden workspace  |
+| `ALT + TAB`                | Switch focus between windows     |
+| `ALT + Arrow keys`         | Switch focus between windows     |
+| `ALT + SHIFT + Arrow keys` | Move windows using arrow keys    |
+| `ALT + F4`                 | Close window                     |
+| `ALT + V`                  | Toggle floating window           |
+| `ALT + SHIFT + P`          | Toggle pseudo                    |
+| `ALT + J`                  | Toggle tiling direction          |
+| `ALT + U / P`              | Resize split window horizontally |
+| `ALT + I / O`              | Resize split window vertically   |
+| `ALT + Mouse scroll`       | Scroll through workspaces        |
+| `ALT + Left mouse`         | Drag window                      |
+| `ALT + Right mouse`        | Resize window                    |
+| `F11`                      | Fullscreen window                |
+
+### Main Modifier
+
+| Hotkey                 | Description                                                     |
+| ---------------------- | --------------------------------------------------------------- |
+| `SUPER + Q`            | Launch terminal                                                 |
+| `SUPER + R`            | App launcher                                                    |
+| `SUPER + E`            | File explorer / manager                                         |
+| `SUPER + Esc`          | Power menu                                                      |
+| `SUPER + P`            | Battery profile menu                                            |
+| `SUPER + W`            | Wifi menu                                                       |
+| `SUPER + B`            | Bluetooth menu                                                  |
+| `SUPER + .`            | Emoji menu                                                      |
+| `SUPER + TAB`          | Wallpaper menu                                                  |
+| `SUPER + SHIFT + TAB`  | Shuffle random wallpaper                                        |
+| `SUPER + M`            | Toggle microphone                                               |
+| `SUPER + Print screen` | Screenshot                                                      |
+| `SUPER + SHIFT + S`    | Screen snipping tool                                            |
+| `SUPER + C`            | Color picker                                                    |
+| `SUPER + X`            | Start waybar                                                    |
+| `SUPER + SHIFT + X`    | Restart waybar                                                  |
+| `SUPER + D`            | Toggle laptop monitor on/off (if connected to external display) |
+
 ## Waybar Features
 
 This setup includes interactable waybar buttons such as
