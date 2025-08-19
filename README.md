@@ -14,7 +14,10 @@ Arch Linux with wget installed & connected to the internet.
 
 ## Installation
 
-1.  On the terminal, run `wget -qO- https://farizerz.github.io/hyprland-dots/getfiles.sh | bash`
+1.  On the terminal, run
+    ```
+    wget -qO- https://farizerz.github.io/hyprland-dots/getfiles.sh | bash
+    ```
 2.  During installation process, input your password when prompted.
 3.  Your PC will reboot & installation finished.
 
