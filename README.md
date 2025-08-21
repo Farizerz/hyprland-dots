@@ -18,7 +18,7 @@ Arch Linux with wget installed & connected to the internet.
     ```
     wget -qO- https://farizerz.github.io/hyprland-dots/getfiles.sh | bash
     ```
-2.  During installation process, input your password when prompted.
+2.  During installation process, choose your GPU driver & input your password when prompted.
 3.  Your PC will reboot & installation finished.
 
 ### ⚠ Note
@@ -100,7 +100,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.8.0
+Version 1.8.1
 
-1.  Changed installation method (now using wget)
-2.  Added multiple graphic packages (Intel, AMD, Nvidia) on install-packages.sh
+1.  Added GPU driver options on install
