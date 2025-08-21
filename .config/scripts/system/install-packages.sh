@@ -90,25 +90,53 @@ pacman=(
   scrcpy
   xorg-server
   xorg-xinit
-  # intel graphics
-  intel-media-driver
-  libva-intel-driver
-  vulkan-intel
-  # AMD graphics
+)
+
+pacman_nvidia=(
+  libva-nvidia-driver
+  dkms
+  nvidia-dkms
+  nvidia-utils
+  nvidia-settings
+  egl-wayland
+  opencl-nvidia
+)
+
+pacman_amd=(
   libva-mesa-driver
   mesa
   vulkan-radeon
   xf86-video-amdgpu
   xf86-video-ati
-  # Nvidia graphics
-  libva-nvidia-driver
-  dkms
-  nvidia-dkms
-  nvidia-utils
 )
 
+pacman_intel=(
+  intel-media-driver
+  libva-intel-driver
+  vulkan-intel
+)
+
+while true; do
+  echo "Select your GPU driver:"
+  echo "1) Nvidia"
+  echo "2) AMD"
+  echo "3) Intel"
+  echo "4) Other (install all drivers)"
+  read -rp "Enter choice [1-4]: " choice
+
+  case "$choice" in
+    1) gpu_packages=("${pacman_nvidia[@]}"); break ;;
+    2) gpu_packages=("${pacman_amd[@]}"); break ;;
+    3) gpu_packages=("${pacman_intel[@]}"); break ;;
+    4) gpu_packages=("${pacman_intel[@]}" "${pacman_amd[@]}" "${pacman_nvidia[@]}"); break ;;
+    *) echo "Invalid choice. Please enter 1, 2, 3, or 4." ;;
+  esac
+done
+
+all_pacman=("${pacman[@]}" "${gpu_packages[@]}")
+
 # Install packages using pacman
-sudo pacman -S --noconfirm --needed "${pacman[@]}"
+sudo pacman -S --noconfirm --needed "${all_pacman[@]}"
 
 yay=(
   pinta

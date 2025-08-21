@@ -8,7 +8,7 @@ bash /home/$USER/.config/scripts/system/execute-scripts.sh
 sleep 1
 echo "Enabling services..."
 sleep 1
-sudo bash /home/$USER/.config/scripts/system/enable-services.sh
+bash /home/$USER/.config/scripts/system/enable-services.sh
 sleep 1
 echo "Done, restarting..."
 sleep 2
