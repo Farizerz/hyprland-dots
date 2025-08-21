@@ -1,18 +1,22 @@
-sudo systemctl enable NetworkManager
+#!/bin/bash
+
+sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now bluetooth.service
 sudo systemctl enable --now tlp
 sudo systemctl enable --now sddm
 
+USERNAME=$1
+
 ### For bypassing auth on battery preset services ###
-echo "$SUDO_USER ALL=(ALL) NOPASSWD: /home/$SUDO_USER/.config/scripts/rofi-battery.sh, /bin/cp, /usr/bin/tlp" | sudo tee /etc/sudoers.d/rofi-battery > /dev/null
+echo "$USERNAME ALL=(ALL) NOPASSWD: /home/$USERNAME/.config/scripts/rofi-battery.sh, /bin/cp, /usr/bin/tlp" | sudo tee /etc/sudoers.d/rofi-battery > /dev/null
 
 sudo chmod 0440 /etc/sudoers.d/rofi-battery
 
 ### For bypassing auth on custom boot & others ###
 sudo EDITOR="tee -a" visudo <<EOF
 
-$SUDO_USER ALL=(ALL) NOPASSWD: \\
-/home/$SUDO_USER/.config/scripts/system/custom-boot.sh, \\
+$USERNAME ALL=(ALL) NOPASSWD: \\
+/home/$USERNAME/.config/scripts/system/custom-boot.sh, \\
 /usr/sbin/efibootmgr
 EOF
 
