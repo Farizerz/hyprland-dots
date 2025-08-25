@@ -56,6 +56,10 @@ updatey() {
   yay -Syu --noconfirm
 }
 
-dlp() {
-  yt-dlp -P ~/Videos "$@"
+yt-dlp() {
+  command yt-dlp -p ~/videos "$@"
+}
+
+nvim() {
+  cd "$@" && command nvim "$@"
 }
