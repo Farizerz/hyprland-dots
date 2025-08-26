@@ -1,15 +1,20 @@
 #!/bin/bash
 
 status=$(playerctl status 2>/dev/null)
-if [[  ! "$status" || "$status" == "Stopped" ]]; then
+if [[ -z "$status" || "$status" == "Stopped" ]]; then
   [[ -f /tmp/cover.svg ]] && rm -f /tmp/cover.svg
-  exit
+  exit 0
 fi
 
 album_art=$(playerctl metadata mpris:artUrl 2>/dev/null | sed 's|^file://||')
 
-if [[ -z $album_art ]]; then
-  cat > /tmp/cover.svg <<EOF
+if [[ -n "$album_art" && -f "$album_art" ]]; then
+  echo "$album_art"
+  exit 0
+fi
+
+if [[ ! -f /tmp/cover.svg ]]; then
+  cat >/tmp/cover.svg <<EOF
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" version="1">
   <circle style="opacity:.2" cx="11" cy="11.5" r="10"/>
   <circle style="fill:#8d348e" cx="11" cy="11" r="10"/>
@@ -20,10 +25,8 @@ if [[ -z $album_art ]]; then
   <path style="fill:#ffffff;opacity:.1" d="M 11,1 A 10,10 0 0 0 1,11 10,10 0 0 0 1.0107422,11.291016 10,10 0 0 1 11,1.5 10,10 0 0 1 20.989258,11.208985 10,10 0 0 0 21,11 10,10 0 0 0 11,1 Z"/>
 </svg>
 EOF
-
-  echo "/tmp/cover.svg"
-  exit
-else
-  echo $album_art
-  exit
 fi
+
+echo "/tmp/cover.svg"
+exit 0
+
