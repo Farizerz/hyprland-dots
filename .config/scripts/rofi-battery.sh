@@ -25,26 +25,26 @@ else
   select_index=0
 fi
 
-
-chosen=$(echo -e "$OPTIONS" | rofi -dmenu -p "Select Battery Preset " -selected-row $select_index)
+chosen=$(echo -e "$OPTIONS" | rofi -dmenu -p "Select Battery Profile " -selected-row $select_index)
 
 case "$chosen" in
-  "Full Capacity (100%)")
-    sudo cp $HOME/.config/scripts/battery-presets/full-capacity.txt /etc/tlp.conf
-    sudo tlp start
-    notify-send "Battery limit set at 100%."
-    ;;
-  "Balanced (80%)")
-    sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
-    sudo tlp start
-    notify-send "Battery limit set at 80%."
-    ;;
-  "Maximum Lifespan (60%)")
-    sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf
-    sudo tlp start
-    notify-send "Battery limit set at 60%."
-    ;;
-  *)
-    exit 1
-    ;;
+"Full Capacity (100%)")
+  sudo cp $HOME/.config/scripts/battery-presets/full-capacity.txt /etc/tlp.conf
+  sudo tlp start
+  notify-send "Battery limit set at 100%."
+  ;;
+"Balanced (80%)")
+  sudo cp $HOME/.config/scripts/battery-presets/balanced.txt /etc/tlp.conf
+  sudo tlp start
+  notify-send "Battery limit set at 80%."
+  ;;
+"Maximum Lifespan (60%)")
+  sudo cp $HOME/.config/scripts/battery-presets/maximum-lifespan.txt /etc/tlp.conf
+  sudo tlp start
+  notify-send "Battery limit set at 60%."
+  ;;
+*)
+  exit 1
+  ;;
 esac
+

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 WALLPAPER_PATH=$(grep '^wallpaper *= *' ~/.config/waypaper/config.ini | cut -d '=' -f2- | xargs)
 WALLPAPER_PATH=${WALLPAPER_PATH/#\~/$HOME}
 WAL_COLORS="$HOME/.cache/wal/colors.css"

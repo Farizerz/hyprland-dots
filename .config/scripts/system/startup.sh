@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ~/.config/scripts/switch-monitor.sh
 
 # Check post install configs
