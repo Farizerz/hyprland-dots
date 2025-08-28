@@ -100,6 +100,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.8.1
+Version 1.9.0
 
-1.  Added GPU driver options on install
+1.  Added screensaver feature (Blank & Random pokemon sprites)
