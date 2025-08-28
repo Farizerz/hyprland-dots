@@ -3,6 +3,9 @@
 # Check post install configs
 ~/.config/scripts/system/post-install-config.sh
 
+# Clear unnecessary flags in .cache on boot
+~/.config/scripts/system/clear-flags.sh
+
 # Change Random Wallpaper
 ~/.config/scripts/theme/wallpaper.sh
 

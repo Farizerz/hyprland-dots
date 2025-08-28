@@ -13,3 +13,7 @@ normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font Propo", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font Propo", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font Propo", style = "Bold Italic" }
+
+[colors]
+transparent_background_colors = true
+
