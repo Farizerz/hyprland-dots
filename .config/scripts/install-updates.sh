@@ -39,20 +39,27 @@ echo "3) Update all packages (yay -Syu)"
 echo "4) Cancel"
 read -rp "Enter choice [1-4]: " choice
 
+# Necessary to remount /boot directory, because there are instances after update,
+# Somehow the mountpoint is removed automatically, which prevents the system from booting.
+# So this is a safety precaution to ensure the /boot is still mounted post-update.
 mount_boot() {
-    # Safe mount check
-    echo "Checking mountpoint..."
-    if ! mountpoint -q /boot; then
-      echo "⚠️ /boot is not mounted. Mounting now..."
-      sudo mount /boot || { echo "❌ Failed to mount /boot"; sleep 2; exit 1; }
-    else 
-      echo "✅ /boot already mounted."
-    fi
+  # Safe mount check
+  echo "Checking mountpoint..."
+  if ! mountpoint -q /boot; then
+    echo "⚠️ /boot is not mounted. Mounting now..."
+    sudo mount /boot || {
+      echo "❌ Failed to mount /boot"
+      sleep 2
+      exit 1
+    }
+  else
+    echo "✅ /boot already mounted."
+  fi
 }
 
 post_update() {
   sleep 1
-  sudo ~/.config/scripts/system/custom-boot.sh 
+  sudo ~/.config/scripts/system/custom-boot.sh
   killall waybar && nohup waybar >/dev/null 2>&1 &
   echo "✅ Update finished."
   sleep 2
@@ -60,33 +67,31 @@ post_update() {
 }
 
 case "$choice" in
-  1)
-    echo "🔃 Updating Pacman packages..."
-    mount_boot
-    sudo pacman -Syu --noconfirm
-    mount_boot
-    post_update
-    ;;
-  2)
-    echo "🔃 Updating AUR packages..."
-    yay -Sua --noconfirm
-    post_update
-    ;;
-  3)
-    mount_boot
-    echo "🔃 Updating everything..."
-    yay -Syu --noconfirm
-    mount_boot
-    post_update
-    ;;
-  4)
-    echo "❌ Update cancelled."
-    sleep 2
-    exit 0
-    ;;
-  *)
-    echo "❓ Invalid choice."
-    sleep 2
-    exit 1
-    ;;
+1)
+  echo "🔃 Updating Pacman packages..."
+  sudo pacman -Syu --noconfirm
+  mount_boot
+  post_update
+  ;;
+2)
+  echo "🔃 Updating AUR packages..."
+  yay -Sua --noconfirm
+  post_update
+  ;;
+3)
+  echo "🔃 Updating everything..."
+  yay -Syu --noconfirm
+  mount_boot
+  post_update
+  ;;
+4)
+  echo "❌ Update cancelled."
+  sleep 2
+  exit 0
+  ;;
+*)
+  echo "❓ Invalid choice."
+  sleep 2
+  exit 1
+  ;;
 esac
