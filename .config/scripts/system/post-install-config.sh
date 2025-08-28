@@ -2,7 +2,7 @@
 
 FLAG="$HOME/.cache/.post_install_config"
 if [[ -f "$FLAG" ]]; then
-    exit 0
+  exit 0
 fi
 
 # Applying themes
@@ -24,27 +24,27 @@ XDG_VIDEOS_DIR="$HOME/Videos"
 EOL
 
 if [[ -f "$USER_DIR" ]]; then
-    if cmp -s <(echo "$NEW_USER_DIR") "$USER_DIR"; then
-        :
-    else
-        echo "$NEW_USER_DIR" > "$USER_DIR"
-    fi
+  if cmp -s <(echo "$NEW_USER_DIR") "$USER_DIR"; then
+    :
+  else
+    echo "$NEW_USER_DIR" >"$USER_DIR"
+  fi
 else
-    echo "$NEW_USER_DIR" > "$USER_DIR"
+  echo "$NEW_USER_DIR" >"$USER_DIR"
 fi
 
 # Create the XDG directories if they don't exist
 xdg_dirs=(Desktop Downloads Templates Public Documents Music Pictures Videos)
 
 for dir in "${xdg_dirs[@]}"; do
-    mkdir -p "$HOME/$dir"
+  mkdir -p "$HOME/$dir"
 done
 
 # Forget previous iwctl connections (Necessary for connecting wifi using nmcli)
-iwctl known-networks list | \
-  sed -r "s/\x1B\[[0-9;]*[mK]//g" | \
-  tail -n +5 | \
-  awk 'NF > 0 {print $1}' | \
+iwctl known-networks list |
+  sed -r "s/\x1B\[[0-9;]*[mK]//g" |
+  tail -n +5 |
+  awk 'NF > 0 {print $1}' |
   while read -r ssid; do
     echo "Forgetting: $ssid"
     iwctl known-networks "$ssid" forget
