@@ -1,3 +1,5 @@
+#!/bin/bash
+
 IMAGE_PATH="$1"
 
 if [[ -n "$IMAGE_PATH" ]]; then
@@ -50,12 +52,12 @@ OUTPUT_FILE=$HOME/.cache/wal/colors-alacritty.toml
 # Read all key-value pairs from kitty config
 declare -A colors
 while read -r key value; do
-    [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
-    colors[$key]=$value
-done < "$INPUT_FILE"
+  [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
+  colors[$key]=$value
+done <"$INPUT_FILE"
 
 # Write to alacritty.toml
-cat <<EOF > "$OUTPUT_FILE"
+cat <<EOF >"$OUTPUT_FILE"
 [colors.primary]
 foreground = "${colors[foreground]}"
 background = "${colors[background]}"

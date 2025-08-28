@@ -1,3 +1,5 @@
+#!/bin/bash
+
 IMAGE_PATH="$1"
 
 ~/.config/scripts/switch-monitor.sh

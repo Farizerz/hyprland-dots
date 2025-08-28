@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CAVA_CONFIG="$HOME/.config/cava/config"
 WAL_COLORS="$HOME/.cache/wal/colors.css"
 
@@ -7,8 +9,8 @@ gradientColor2=$(grep -Po -- '--color15:\s*\K#[0-9a-fA-F]+' "$WAL_COLORS")
 
 # Make sure color was found
 if [[ -z "$gradientColor1" || -z "$gradientColor2" ]]; then
-    echo "color not found in $WAL_COLORS"
-    exit 1
+  echo "color not found in $WAL_COLORS"
+  exit 1
 fi
 
 # Replace color in cava config
@@ -20,14 +22,15 @@ awk -v new_color1="$gradientColor1" -v new_color2="$gradientColor2" '
       sub(/#[0-9a-fA-F]{6}/, new_color2)
   }
   { print }
-' "$CAVA_CONFIG" > "$CAVA_CONFIG.tmp" && mv "$CAVA_CONFIG.tmp" "$CAVA_CONFIG"
+' "$CAVA_CONFIG" >"$CAVA_CONFIG.tmp" && mv "$CAVA_CONFIG.tmp" "$CAVA_CONFIG"
 
 # Check if cava is running
-if pgrep -x "cava" > /dev/null; then
-    pkill -SIGUSR1 cava
+if pgrep -x "cava" >/dev/null; then
+  pkill -SIGUSR1 cava
 fi
 
 # Check if tty-clock is running
-if pgrep -x "tty-clock" > /dev/null; then
-    for i in 1 2; do tty-clock || break; done
+if pgrep -x "tty-clock" >/dev/null; then
+  for i in 1 2; do tty-clock || break; done
 fi
+
