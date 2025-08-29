@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FLAG="$HOME/.cache/screensaver"
+FLAG="$HOME/.cache/.screensaver"
 if [[ -f "$FLAG" ]]; then
   exit 0
 fi
@@ -30,10 +30,11 @@ while true; do
   if [ "$LAST_CURSOR_POSITION" != "$CURRENT_CURSOR_POSITION" ]; then
     break
   fi
+
+  sleep 0.1
 done
 
 hyprctl dispatch focusmonitor $FOCUSED_MONITOR
 pkill -f "alacritty --class Screensaver" 2>/dev/null
-rm -rf ~/.cache/screensaver
+rm -rf "$FLAG"
 exit 0
-
