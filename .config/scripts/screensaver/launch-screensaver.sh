@@ -25,6 +25,11 @@ LAST_CURSOR_POSITION=$(hyprctl cursorpos)
 
 # Detect cursor movement
 while true; do
+  if ! pgrep -f "alacritty --class Screensaver" >/dev/null; then
+    rm -rf "$FLAG"
+    exit 0
+  fi
+
   CURRENT_CURSOR_POSITION=$(hyprctl cursorpos)
 
   if [ "$LAST_CURSOR_POSITION" != "$CURRENT_CURSOR_POSITION" ]; then
