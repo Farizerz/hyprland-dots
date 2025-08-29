@@ -14,7 +14,7 @@ while true; do
   case $choice in
   0) pad=0 ;;              # left
   1) pad=$((cols / 2)) ;;  # center
-  2) pad=$((cols - 35)) ;; # right
+  2) pad=$((cols - 50)) ;; # right
   esac
   [ $pad -lt 0 ] && pad=0
 
@@ -24,15 +24,11 @@ while true; do
   clear
   printf "\033[%d;1H" "$row"
 
-  pokemon-colorscripts -r | while IFS= read -r line; do
+  while IFS= read -r line; do
     printf "%*s%s\n" "$pad" "" "$line"
-  done
-
-  sleep $INTERVAL &
-  sleep_pid=$!
+  done <<<$(pokemon-colorscripts -r)
 
   if read -t $INTERVAL -n 1 key; then
-    kill $sleep_pid
     hyprctl dispatch focusmonitor $LAST_FOCUSED_MONITOR
     pkill -f "alacritty --class Screensaver" 2>/dev/null
     stty icanon echo
