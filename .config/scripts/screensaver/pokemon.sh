@@ -36,8 +36,7 @@ while true; do
     hyprctl dispatch focusmonitor $LAST_FOCUSED_MONITOR
     pkill -f "alacritty --class Screensaver" 2>/dev/null
     stty icanon echo
-    rm -rf ~/.cache/screensaver
+    rm -rf ~/.cache/.screensaver
     exit 0
   fi
 done
-
