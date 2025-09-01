@@ -49,7 +49,7 @@ cp $HOME/.cache/wal/colors-waybar.css $HOME/.config/colors/colors.css
 INPUT_FILE=$HOME/.cache/wal/colors-kitty.conf
 OUTPUT_FILE=$HOME/.cache/wal/colors-alacritty.toml
 
-# Read all key-value pairs from kitty config
+# Read all key-value pairs from alacritty config
 declare -A colors
 while read -r key value; do
   [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
