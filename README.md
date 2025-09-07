@@ -65,6 +65,7 @@ These are the default keybindings inspired by Windows. You can change them in `~
 | `SUPER + .`            | Emoji menu                                                      |
 | `SUPER + TAB`          | Wallpaper menu                                                  |
 | `SUPER + SHIFT + TAB`  | Shuffle random wallpaper                                        |
+| `SUPER + T`            | Visual style menu                                               |
 | `SUPER + M`            | Toggle microphone                                               |
 | `SUPER + Print screen` | Screenshot                                                      |
 | `SUPER + SHIFT + S`    | Screen snipping tool                                            |
@@ -100,6 +101,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.9.0
+Version 1.9.1
 
 1.  Added screensaver feature (Blank & Random pokemon sprites)
+2.  Added visual style menu (Default, minimal, squared, squared-minimal)
