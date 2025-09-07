@@ -1,0 +1,317 @@
+{
+  "position": "top",
+  "margin-bottom": -10,
+  "spacing": 0,
+  "modules-left": [
+    "image#logo",
+    "clock",
+    "group/audio",
+    "custom/mic",
+    "network",
+    "bluetooth",
+    "group/player"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "group/hardwaretray",
+    "custom/power"
+  ],
+  "image#logo": {
+    "exec": "echo $HOME/.local/share/assets/icons/logo.svg",
+    "size": 20,
+    "on-click": "rofi -show drun"
+  },
+  "group/player": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/albumart",
+      "group/audiosource"
+    ]
+  },
+  "group/albumart": {
+    "orientation": "horizontal",
+    "modules": [
+      "image#albumart",
+      "mpris#audiostatus"
+    ]
+  },
+  "mpris#audiostatus": {
+    "format": "",
+    "format-paused": "󰏤"
+  },
+  "image#albumart": {
+    "exec": "$HOME/.config/scripts/waybar/album-art.sh",
+    "size": 20,
+    "interval": 2,
+    "on-click": "playerctl play-pause",
+    "cursor": false
+  },
+  "group/audiosource": {
+    "orientation": "vertical",
+    "modules": [
+      "mpris#title",
+      "mpris#artist"
+    ]
+  },
+  "mpris#title": {
+    "format": "{title}",
+    "max-length": 50,
+    "align": 0
+  },
+  "mpris#artist": {
+    "format": "{artist}",
+    "max-length": 50,
+    "align": 0
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%a, %b %d  %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#eaeaea'><b>{}</b></span>",
+        "weeks": "<span color='#ffead3'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc00'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ],
+    "drawer": {}
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume:3d}",
+    "format-icons": [
+      "<span font='11'>󰕿</span>",
+      "<span font='11'>󰖀</span>",
+      "<span font='11'>󰕾</span>"
+    ],
+    "format-muted": "<span font='11'> </span> -",
+    "on-click": "hyprctl dispatch exec pavucontrol",
+    "rotate": 2
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "custom/mic": {
+    "format": "{}",
+    "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\\[MUTED\\]' && exit 0 || echo ''",
+    "interval": 2,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && notify-send 'Mic disabled.'",
+    "tooltip-format": "Mic on"
+  },
+  "network": {
+    "interval": 3,
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 Ethernet",
+    "format-disconnected": "",
+    "format-disabled": "󰤮",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip-format": "<span color='#00FF00'>󰁆</span> {bandwidthDownBits}\n<span color='#FF0000'>󰁞</span> {bandwidthUpBits}",
+    "on-click": "$HOME/.config/scripts/rofi-wifi.sh"
+  },
+  "bluetooth": {
+    "format-disabled": "<span>󰂲</span>",
+    "format-no-controller": "<span color='#FF0000'>󰂲</span>",
+    "format-off": "<span>󰂲</span>",
+    "format-on": "<span>󰂯</span>",
+    "format-connected": "<span>󰂱</span>",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "({device_battery_percentage}%) {device_alias}",
+    "on-click": "$HOME/.config/scripts/rofi-bluetooth.sh"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "󰲠",
+      "3": "󰲢",
+      "4": "󰲤",
+      "5": "󰲦",
+      "6": "󰲨",
+      "7": "󰲪",
+      "8": "󰲬",
+      "9": "󰲮",
+      "10": "󰲰",
+      "11": "󰿬",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "2": [],
+      "3": [],
+      "4": []
+    }
+  },
+  "custom/updates": {
+    "format": " {}",
+    "exec": "~/.config/scripts/waybar/check-updates.sh",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "hyprctl dispatch exec 'alacritty -e $HOME/.config/scripts/install-updates.sh'"
+  },
+  "group/hardwaretray": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/hardware",
+      "tray"
+    ],
+    "drawer": {
+      "transition-left-to-right": false
+    }
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/temperaturegroup",
+      "group/cpugroup",
+      "group/memorygroup",
+      "group/batterygroup"
+    ]
+  },
+  "group/temperaturegroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature",
+      "temperature#degree"
+    ]
+  },
+  "temperature": {
+    "interval": 3,
+    "warning-threshold": 60,
+    "critical-threshold": 80,
+    "format": "{icon} ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-critical": "<span color='#d20f39'></span> ",
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
+  },
+  "temperature#degree": {
+    "interval": 3,
+    "format": "{temperatureC}°C",
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
+  },
+  "group/cpugroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "cpu#percentage"
+    ]
+  },
+  "cpu": {
+    "interval": 3,
+    "states": {
+      "warning": 50,
+      "critical": 80
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>"
+    ],
+    "on-click": "alacritty -e btop"
+  },
+  "cpu#percentage": {
+    "interval": 3,
+    "format": "{usage:3d}%",
+    "on-click": "alacritty -e btop"
+  },
+  "group/memorygroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "memory",
+      "memory#percentage"
+    ]
+  },
+  "memory": {
+    "interval": 3,
+    "states": {
+      "warning": 50,
+      "critical": 90
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>",
+      "<span> </span>"
+    ],
+    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
+    "on-click": "alacritty -e btop"
+  },
+  "memory#percentage": {
+    "interval": 3,
+    "format": "{percentage:3d}%",
+    "tooltip-format": "RAM\nTotal: {total} GB\nUsed: {used} GB\nFree: {avail} GB",
+    "on-click": "alacritty -e btop"
+  },
+  "group/batterygroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/battery",
+      "custom/batterypercentage"
+    ]
+  },
+  "custom/battery": {
+    "interval": 3,
+    "exec": "~/.config/scripts/waybar/custom-battery.sh",
+    "return-type": "json",
+    "format": "{text}",
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
+  },
+  "custom/batterypercentage": {
+    "interval": 3,
+    "exec": "~/.config/scripts/waybar/custom-battery.sh",
+    "return-type": "json",
+    "format": "{percentage:3d}%",
+    "on-click": "$HOME/.config/scripts/rofi-battery.sh"
+  },
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout --buttons-per-row 6",
+    "tooltip-format": "Power Options"
+  }
+}

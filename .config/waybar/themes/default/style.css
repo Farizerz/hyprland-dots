@@ -1,0 +1,346 @@
+@import "../colors/colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @foreground;
+  font-weight: bold;
+}
+
+tooltip {
+  border-radius: 10px;
+  background-color: @color0;
+}
+
+#image {
+  margin-bottom: -2px;
+}
+
+#clock,
+#custom-mic,
+#network,
+#bluetooth,
+#workspaces,
+#custom-updates {
+  background-color: @background;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+#hardware,
+#custom-power {
+  background-color: @background;
+}
+
+#clock,
+#audio,
+#pulseaudio,
+#custom-mic,
+#network,
+#bluetooth,
+#workspaces,
+#workspaces button,
+#custom-updates,
+#hardware,
+#custom-power {
+  border-radius: 20px;
+}
+
+#audio {
+  background-color: @background;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pulseaudio-slider {
+  margin-right: -4px;
+}
+
+#pulseaudio-slider slider {
+  background-image: none;
+  background-color: @foreground;
+  border: none;
+  box-shadow: none;
+  min-height: 10px;
+  min-width: 10px;
+}
+
+#pulseaudio-slider trough {
+  min-height: 2px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: @background;
+  border: 1px solid @background;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @foreground;
+  border: none;
+}
+
+#network.disabled,
+#network.disconnected {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#bluetooth.off {
+  color: @color8;
+}
+
+#bluetooth.connected {
+  color: #00aeff;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+#custom-updates {
+  font-weight: 800;
+}
+
+#image.albumart {
+  background-color: alpha(@color8, 0.9);
+  padding: 4px 5px 5px 5px;
+}
+
+#image.albumart.empty {
+  opacity: 0;
+  padding: 0px;
+  min-width: 30px;
+}
+
+#mpris {
+  text-shadow: 1px 1.5px 1px @color0;
+  padding-left: 5px;
+}
+
+#mpris.audiostatus {
+  font-size: 18px;
+  margin-left: -41px;
+}
+
+#mpris.title {
+  font-size: 10px;
+}
+
+#mpris.artist {
+  font-size: 9px;
+  padding-top: 1px;
+}
+
+#workspaces {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#workspaces button {
+  padding: 0 8px 0px 9px;
+  background-color: transparent;
+  border: 0px;
+  color: @color8;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+}
+
+#workspaces button.active {
+  padding: 0px 7px 0px 6px;
+  background: linear-gradient(135deg, @color14, @color13);
+  color: @color0;
+  animation: bounce 0.2s steps(15) forwards;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#image,
+#clock,
+#audio,
+#custom-mic,
+#network,
+#bluetooth,
+#mpris,
+#custom-updates,
+#tray {
+  margin-right: 5px;
+}
+
+#temperaturegroup {
+  padding: 0px 10px 0px 12px;
+}
+
+#temperature {
+  font-size: 14px;
+}
+
+#temperature.degree {
+  font-size: 13px;
+}
+
+#cpugroup,
+#memorygroup {
+  padding: 0px 10px 0px 10px;
+}
+
+#cpu {
+  color: @color8;
+}
+
+#memory {
+  color: @color11;
+}
+
+#batterygroup {
+  padding: 0px 12px 0px 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#custom-battery {
+  color: #3cb371;
+}
+
+#custom-battery.nobattery {
+  color: @foreground;
+}
+
+#custom-batterypercentage.nobattery {
+  margin-right: -30px;
+}
+
+#custom-battery.charging,
+#custom-battery.warning.charging,
+#custom-battery.critical.charging {
+  color: #00fa9a;
+}
+
+#temperature.degree,
+#cpu.percentage,
+#memory.percentage,
+#battery.percentage {
+  color: @foreground;
+}
+
+#temperature.warning,
+#custom-battery.warning,
+#cpu.warning,
+#memory.warning {
+  color: #ffc069;
+}
+
+#cpu.critical,
+#memory.critical,
+#custom-battery.low,
+#custom-battery.critical {
+  color: #d20f39;
+}
+
+#custom-power {
+  margin-left: 5px;
+  padding: 0px 9px 0.5px 9px;
+}
+
+#audio:hover,
+#custom-mic:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-updates:hover,
+#cpugroup:hover,
+#memorygroup:hover,
+#batterygroup:hover,
+#custom-power:hover {
+  animation: glow 0.2s steps(12) forwards;
+}
+
+#cpugroup:hover #cpu,
+#cpugroup:hover #cpu.percentage,
+#memorygroup:hover #memory,
+#memorygroup:hover #memory.percentage,
+#batterygroup:hover #custom-battery,
+#batterygroup:hover #battery.percentage {
+  animation: invertColor 0.2s steps(12) forwards;
+}
+
+#custom-battery.critical {
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes bounce {
+  0% {
+    min-width: 0;
+    opacity: 0;
+  }
+  50% {
+    min-width: 50px;
+    opacity: 1;
+  }
+  100% {
+    min-width: 25px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes invertColor {
+  from {
+  }
+  to {
+    color: @background;
+  }
+}
+
+@keyframes glow {
+  from {
+    background-color: @background;
+    color: @foreground;
+  }
+  to {
+    background: linear-gradient(135deg, @color14, @color13);
+    color: @background;
+  }
+}
