@@ -101,7 +101,6 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.9.1
+Version 1.9.2
 
-1.  Added screensaver feature (Blank & Random pokemon sprites)
-2.  Added visual style menu (Default, minimal, squared, squared-minimal)
+1.  Updated window & layer rule config to v3
