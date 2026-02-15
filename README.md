@@ -101,6 +101,7 @@ You can make the scripts for the other xwayland apps, you just need to find the 
 
 ## Changelogs
 
-Version 1.9.2
+Version 1.9.3
 
-1.  Updated window & layer rule config to v3
+1.  Added interval to logo on waybar, this fixes the waybar error on version 0.15.0
+2.  Updated Hyprland start command to start-hyprland
