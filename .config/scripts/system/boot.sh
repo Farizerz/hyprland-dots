@@ -9,4 +9,4 @@ if grep -q "^monitor=$MONITOR_NAME,disable" "$CONFIG"; then
   sed -i "s/^monitor=$MONITOR_NAME,disable/monitor=$MONITOR_DETAILED/" "$CONFIG"
 fi
 
-hyprland
+start-hyprland
